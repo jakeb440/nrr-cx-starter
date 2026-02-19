@@ -202,14 +202,21 @@ function StageDetail({ stage, onClose }: { stage: JourneyStage; onClose: () => v
             </h4>
             <ul className="space-y-2">
               {stage.strengths.map((s, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm text-slate-700">
+                <li key={i} className="flex items-start gap-2 text-sm">
                   <span
                     className={cn(
                       "mt-1.5 h-2 w-2 shrink-0 rounded-full",
                       SEVERITY_COLORS[s.severity].strength
                     )}
                   />
-                  {s.text}
+                  <div>
+                    <span className="text-slate-700">{s.text}</span>
+                    {s.source && (
+                      <span className="block mt-0.5 text-xs text-slate-400 italic">
+                        — {s.source}
+                      </span>
+                    )}
+                  </div>
                 </li>
               ))}
             </ul>
@@ -224,14 +231,21 @@ function StageDetail({ stage, onClose }: { stage: JourneyStage; onClose: () => v
             </h4>
             <ul className="space-y-2">
               {stage.painPoints.map((p, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm text-slate-700">
+                <li key={i} className="flex items-start gap-2 text-sm">
                   <span
                     className={cn(
                       "mt-1.5 h-2 w-2 shrink-0 rounded-full",
                       SEVERITY_COLORS[p.severity].pain
                     )}
                   />
-                  {p.text}
+                  <div>
+                    <span className="text-slate-700">{p.text}</span>
+                    {p.source && (
+                      <span className="block mt-0.5 text-xs text-slate-400 italic">
+                        — {p.source}
+                      </span>
+                    )}
+                  </div>
                 </li>
               ))}
             </ul>

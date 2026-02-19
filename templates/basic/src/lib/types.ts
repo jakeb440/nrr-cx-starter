@@ -44,18 +44,18 @@ export interface JourneyData {
   stages: JourneyStage[];
 }
 
+export interface JourneyFinding {
+  text: string;
+  severity: "high" | "medium" | "low";
+  source?: string;
+}
+
 export interface JourneyStage {
   number: number;
   name: string;
   description: string;
-  strengths: {
-    text: string;
-    severity: "high" | "medium" | "low";
-  }[];
-  painPoints: {
-    text: string;
-    severity: "high" | "medium" | "low";
-  }[];
+  strengths: JourneyFinding[];
+  painPoints: JourneyFinding[];
   competitiveContext?: {
     label: string;
     type: "unique" | "competitors-better" | "industry-wide";

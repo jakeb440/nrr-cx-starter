@@ -207,11 +207,16 @@ function StageCard({ stage }: { stage: JourneyStage }) {
                 <li
                   key={i}
                   className={cn(
-                    "text-sm text-text rounded-md px-3 py-2 border-l-2",
+                    "text-sm rounded-md px-3 py-2 border-l-2",
                     severityBorder(s.severity, "positive")
                   )}
                 >
-                  {s.text}
+                  <span className="text-text">{s.text}</span>
+                  {s.source && (
+                    <span className="block mt-1 text-xs text-text-muted italic">
+                      — {s.source}
+                    </span>
+                  )}
                 </li>
               ))}
               {stage.strengths.length === 0 && (
@@ -232,11 +237,16 @@ function StageCard({ stage }: { stage: JourneyStage }) {
                 <li
                   key={i}
                   className={cn(
-                    "text-sm text-text rounded-md px-3 py-2 border-l-2",
+                    "text-sm rounded-md px-3 py-2 border-l-2",
                     severityBorder(p.severity, "negative")
                   )}
                 >
-                  {p.text}
+                  <span className="text-text">{p.text}</span>
+                  {p.source && (
+                    <span className="block mt-1 text-xs text-text-muted italic">
+                      — {p.source}
+                    </span>
+                  )}
                 </li>
               ))}
               {stage.painPoints.length === 0 && (
