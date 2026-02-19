@@ -52,7 +52,7 @@ export default function Home() {
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           <ProductCard
             icon={BarChart3}
-            title="NRR Diagnostic (Basic)"
+            title="NRR + CX Diagnostic"
             description="NRR benchmark vs peers, customer journey map with pain points, diagnostic synthesis with top strengths and risks to NRR."
             time="~15–30 min"
             exampleUrl="https://nrr-cx-okta.vercel.app/"
@@ -61,7 +61,7 @@ export default function Home() {
           />
           <ProductCard
             icon={TrendingUp}
-            title="NRR Diagnostic (Enhanced)"
+            title="NRR Growth Diagnostic"
             description="Full deep-dive: NRR benchmark, maturity assessment, waterfall analysis, value-at-stake scenarios, highest-impact actions."
             time="~15–30 min"
             exampleUrl="https://nrr-cx-databricks-enhanced.vercel.app/"

@@ -12,18 +12,18 @@ type FilterTab = "all" | "basic" | "enhanced" | "agentic";
 
 const TABS: { key: FilterTab; label: string }[] = [
   { key: "all", label: "All" },
-  { key: "basic", label: "Basic" },
-  { key: "enhanced", label: "Enhanced" },
-  { key: "agentic", label: "Agentic" },
+  { key: "basic", label: "NRR + CX" },
+  { key: "enhanced", label: "NRR Growth" },
+  { key: "agentic", label: "Operations" },
 ];
 
 const BADGE_STYLES: Record<
   Diagnostic["product"],
-  { bg: string; text: string }
+  { bg: string; text: string; label: string }
 > = {
-  basic: { bg: "bg-emerald-500/15", text: "text-emerald-400" },
-  enhanced: { bg: "bg-blue-500/15", text: "text-blue-400" },
-  agentic: { bg: "bg-purple-500/15", text: "text-purple-400" },
+  basic: { bg: "bg-emerald-500/15", text: "text-emerald-400", label: "NRR + CX" },
+  enhanced: { bg: "bg-blue-500/15", text: "text-blue-400", label: "NRR Growth" },
+  agentic: { bg: "bg-purple-500/15", text: "text-purple-400", label: "Operations" },
 };
 
 function formatDate(iso: string): string {
@@ -148,9 +148,9 @@ export default function DiagnosticsTable() {
                 </td>
                 <td className="px-5 py-3.5">
                   <span
-                    className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-semibold capitalize ${BADGE_STYLES[d.product]?.bg ?? ""} ${BADGE_STYLES[d.product]?.text ?? "text-slate-400"}`}
+                    className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-semibold ${BADGE_STYLES[d.product]?.bg ?? ""} ${BADGE_STYLES[d.product]?.text ?? "text-slate-400"}`}
                   >
-                    {d.product}
+                    {BADGE_STYLES[d.product]?.label ?? d.product}
                   </span>
                 </td>
                 <td className="px-5 py-3.5">
@@ -194,9 +194,9 @@ export default function DiagnosticsTable() {
                 {d.client}
               </span>
               <span
-                className={`rounded-full px-2.5 py-0.5 text-xs font-semibold capitalize ${BADGE_STYLES[d.product]?.bg ?? ""} ${BADGE_STYLES[d.product]?.text ?? "text-slate-400"}`}
+                className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${BADGE_STYLES[d.product]?.bg ?? ""} ${BADGE_STYLES[d.product]?.text ?? "text-slate-400"}`}
               >
-                {d.product}
+                {BADGE_STYLES[d.product]?.label ?? d.product}
               </span>
             </div>
             <a
