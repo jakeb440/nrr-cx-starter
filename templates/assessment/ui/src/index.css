@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-surface-primary text-text-primary m-0 p-0;
+    min-height: 100vh;
+  }
+
+  /* Custom scrollbar - clean and minimal */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-surface-secondary;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface-border rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-text-muted;
+  }
+
+  /* Selection color - McKinsey blue */
+  ::selection {
+    @apply bg-mck-blue-500/20;
+  }
+}
+
+@layer components {
+  /* Clean card style - McKinsey aesthetic */
+  .mck-card {
+    @apply bg-surface-primary border border-surface-border rounded-lg shadow-mck;
+  }
+
+  .mck-card-elevated {
+    @apply bg-surface-primary border border-surface-borderLight rounded-lg shadow-mck-md;
+  }
+
+  /* Subtle hover effect */
+  .mck-hover {
+    @apply transition-all duration-200 hover:shadow-mck-md hover:border-surface-border;
+  }
+
+  /* McKinsey button styles */
+  .mck-btn-primary {
+    @apply bg-mck-blue-500 text-white font-medium rounded-md px-4 py-2 
+           transition-all duration-200 hover:bg-mck-blue-600 
+           focus:outline-none focus:ring-2 focus:ring-mck-blue-500/30;
+  }
+
+  .mck-btn-secondary {
+    @apply bg-surface-secondary text-text-primary font-medium rounded-md px-4 py-2 
+           border border-surface-border transition-all duration-200 
+           hover:bg-surface-tertiary hover:border-text-muted
+           focus:outline-none focus:ring-2 focus:ring-mck-blue-500/20;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

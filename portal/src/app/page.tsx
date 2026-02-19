@@ -38,7 +38,7 @@ export default function Home() {
             value={String(diagnosticCount)}
             label="Diagnostics Generated"
           />
-          <StatCard icon={Zap} value="~2hrs" label="To Deploy" />
+          <StatCard icon={Zap} value="~20min" label="To Deploy" />
         </div>
       </section>
 
@@ -54,7 +54,7 @@ export default function Home() {
             icon={BarChart3}
             title="NRR Diagnostic (Basic)"
             description="NRR benchmark vs peers, customer journey map with pain points, diagnostic synthesis with top strengths and risks to NRR."
-            time="~2–4 hours"
+            time="~15–30 min"
             exampleUrl="https://nrr-cx-okta.vercel.app/"
             accentColor="#10b981"
             badgeBg="rgba(16, 185, 129, 0.15)"
@@ -63,7 +63,7 @@ export default function Home() {
             icon={TrendingUp}
             title="NRR Diagnostic (Enhanced)"
             description="Full deep-dive: NRR benchmark, maturity assessment, waterfall analysis, value-at-stake scenarios, highest-impact actions."
-            time="~4–8 hours"
+            time="~15–30 min"
             exampleUrl="https://nrr-cx-databricks-enhanced.vercel.app/"
             accentColor="#3b82f6"
             badgeBg="rgba(59, 130, 246, 0.15)"
@@ -72,7 +72,7 @@ export default function Home() {
             icon={Bot}
             title="Customer Operations Assessment"
             description="Agentic AI readiness assessment for Customer Success, Professional Services, and Support. Role-by-role impact and transformation roadmap."
-            time="~2–4 hours"
+            time="~15–30 min"
             exampleUrl="https://oracle-ops-assessment.vercel.app/"
             repoUrl="https://github.com/maxfj433/Customer-Operations-Assessment"
             accentColor="#a855f7"

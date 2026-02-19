@@ -1,0 +1,177 @@
+{
+  "metadata": {
+    "description": "Role-level benchmarks for healthcare IT SaaS companies at $1-3B revenue scale with managed services model. FTE_per_100M = typical FTEs per $100M annual revenue. Calibrated against a composite of healthcare IT peers including Epic, Cerner, Veeva, eClinicalWorks, NextGen. Sources: Technology & Services Benchmarking, SaaS Org Design studies, KLAS Research, MGMA, HFMA.",
+    "source": "Composite of industry benchmarks for healthcare IT managed services vertical",
+    "context": "athenahealth has ~$1.7B revenue and ~8,500 total employees. Benchmarks reflect industry medians — some roles where athena has invested in automation or runs lean will be below benchmark, while roles where complexity or service model drives headcount will be above."
+  },
+  "professional_services": {
+    "label": "Professional Services / Implementation",
+    "typical_pct_of_total_headcount": [7.0, 14.0],
+    "roles": [
+      {
+        "role": "Implementation & Delivery Managers",
+        "short": "Impl & Del Mgrs",
+        "description": "Lead implementation projects end-to-end; manage timelines, budgets, client stakeholders. Includes engagement management and scoping responsibilities (merged PM + EM).",
+        "fte_per_100m": [7.5, 13.5],
+        "median_fte_per_100m": 10.0,
+        "typical_pct_of_function": [15, 25]
+      },
+      {
+        "role": "Configuration / Technical Analysts",
+        "short": "Config Analysts",
+        "description": "Configure EHR/RCM to client requirements; build workflows, integrations, data migrations. Includes foundational build and table configuration.",
+        "fte_per_100m": [11.0, 19.0],
+        "median_fte_per_100m": 14.5,
+        "typical_pct_of_function": [25, 35]
+      },
+      {
+        "role": "Solution Architects",
+        "short": "Solution Archs",
+        "description": "Design technical solutions pre- and post-sale; tablespace architecture, integration scoping.",
+        "fte_per_100m": [3.0, 6.0],
+        "median_fte_per_100m": 5.0,
+        "typical_pct_of_function": [6, 12]
+      },
+      {
+        "role": "Training & Enablement Specialists",
+        "short": "Training Specs",
+        "description": "Develop and deliver product training, EUT agendas, clinical coaching, e-learning content.",
+        "fte_per_100m": [5.0, 9.5],
+        "median_fte_per_100m": 7.5,
+        "typical_pct_of_function": [8, 15]
+      },
+      {
+        "role": "QA / Test Engineers",
+        "short": "QA Engineers",
+        "description": "Validate configurations, run UAT, regression tests, mock go-live validation.",
+        "fte_per_100m": [4.0, 8.0],
+        "median_fte_per_100m": 6.5,
+        "typical_pct_of_function": [7, 14]
+      },
+      {
+        "role": "Practice Leads / Directors",
+        "short": "Practice Leads",
+        "description": "Senior leaders managing practice areas, methodology, team staffing and complexity scoring.",
+        "fte_per_100m": [2.5, 5.0],
+        "median_fte_per_100m": 3.5,
+        "typical_pct_of_function": [3, 7]
+      }
+    ]
+  },
+  "customer_success": {
+    "label": "Customer Success",
+    "typical_pct_of_total_headcount": [5.0, 9.0],
+    "roles": [
+      {
+        "role": "Customer Success Managers",
+        "short": "CSMs",
+        "description": "Own post-go-live relationship; drive adoption, expansion, retention for named practices/health systems.",
+        "fte_per_100m": [7.0, 14.0],
+        "median_fte_per_100m": 10.5,
+        "typical_pct_of_function": [28, 38]
+      },
+      {
+        "role": "Renewal Managers",
+        "short": "Renewal Mgrs",
+        "description": "Manage contract renewal pipeline; negotiate terms, forecast churn. Healthcare IT: subscription + collections model.",
+        "fte_per_100m": [3.0, 6.5],
+        "median_fte_per_100m": 5.0,
+        "typical_pct_of_function": [10, 16]
+      },
+      {
+        "role": "Onboarding Specialists",
+        "short": "Onboarding Specs",
+        "description": "Bridge between go-live and steady-state CSM relationship. Guide through first-value milestones.",
+        "fte_per_100m": [3.5, 8.0],
+        "median_fte_per_100m": 5.5,
+        "typical_pct_of_function": [12, 20]
+      },
+      {
+        "role": "Customer Health / Analytics Analysts",
+        "short": "Health Analysts",
+        "description": "Build and monitor health scores, usage analytics, churn-risk models.",
+        "fte_per_100m": [2.0, 5.0],
+        "median_fte_per_100m": 3.5,
+        "typical_pct_of_function": [5, 10]
+      },
+      {
+        "role": "Scale / Digital CS Reps",
+        "short": "Digital CS",
+        "description": "Manage long-tail SMB practices via 1:many digital motions, webinars, automated campaigns.",
+        "fte_per_100m": [3.0, 7.0],
+        "median_fte_per_100m": 4.5,
+        "typical_pct_of_function": [10, 16]
+      },
+      {
+        "role": "CS Operations / Strategy Analysts",
+        "short": "CS Ops",
+        "description": "Tooling, process design, reporting, territory planning for CS organization.",
+        "fte_per_100m": [2.0, 5.0],
+        "median_fte_per_100m": 3.5,
+        "typical_pct_of_function": [4, 8]
+      }
+    ]
+  },
+  "customer_support": {
+    "label": "Customer Support",
+    "typical_pct_of_total_headcount": [10.0, 18.0],
+    "roles": [
+      {
+        "role": "Tier-1 Support Representatives",
+        "short": "Tier-1 Reps",
+        "description": "Handle inbound: password resets, claims questions, eligibility verification, basic how-to, patient portal issues.",
+        "fte_per_100m": [20.0, 35.0],
+        "median_fte_per_100m": 27.0,
+        "typical_pct_of_function": [35, 45]
+      },
+      {
+        "role": "Tier-2 Technical Support Engineers",
+        "short": "Tier-2 Engineers",
+        "description": "Complex technical issues: integration failures, configuration errors, API connectivity, payer enrollment.",
+        "fte_per_100m": [9.0, 18.0],
+        "median_fte_per_100m": 13.5,
+        "typical_pct_of_function": [18, 26]
+      },
+      {
+        "role": "Support Operations / Workforce Mgmt",
+        "short": "Support Ops",
+        "description": "Scheduling, queue management, SLA tracking, workforce planning for 24/7 support.",
+        "fte_per_100m": [4.0, 8.5],
+        "median_fte_per_100m": 7.0,
+        "typical_pct_of_function": [5, 10]
+      },
+      {
+        "role": "Knowledge Base Authors / Content Mgrs",
+        "short": "KB Authors",
+        "description": "Create and maintain help articles, troubleshooting guides, release notes, O-help content.",
+        "fte_per_100m": [3.5, 7.0],
+        "median_fte_per_100m": 5.5,
+        "typical_pct_of_function": [3, 6]
+      },
+      {
+        "role": "Escalation / Critical-Issue Managers",
+        "short": "Escalation Mgrs",
+        "description": "Manage P1/P2 incidents, outage response, executive escalations.",
+        "fte_per_100m": [2.0, 4.5],
+        "median_fte_per_100m": 3.5,
+        "typical_pct_of_function": [2, 5]
+      },
+      {
+        "role": "Support QA / CSAT Analysts",
+        "short": "Support QA",
+        "description": "Review case quality, analyze CSAT/NPS, identify coaching opportunities.",
+        "fte_per_100m": [3.0, 6.5],
+        "median_fte_per_100m": 5.0,
+        "typical_pct_of_function": [3, 6]
+      },
+      {
+        "role": "Premium / Designated Support Engineers",
+        "short": "Premium Support",
+        "description": "Dedicated support for large health systems with enhanced SLAs.",
+        "fte_per_100m": [5.0, 11.0],
+        "median_fte_per_100m": 8.0,
+        "typical_pct_of_function": [5, 10]
+      }
+    ]
+  }
+}

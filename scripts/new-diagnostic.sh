@@ -19,12 +19,12 @@ usage() {
   echo -e "${BOLD}Usage:${RESET} ./scripts/new-diagnostic.sh <client> <product>"
   echo ""
   echo "  client   Lowercase client name (e.g. oracle, crowdstrike, t-mobile)"
-  echo "  product  One of: basic, enhanced, agentic"
+  echo "  product  One of: basic, enhanced, assessment"
   echo ""
   echo -e "${BOLD}Examples:${RESET}"
   echo "  ./scripts/new-diagnostic.sh oracle enhanced"
   echo "  ./scripts/new-diagnostic.sh crowdstrike basic"
-  echo "  ./scripts/new-diagnostic.sh servicenow agentic"
+  echo "  ./scripts/new-diagnostic.sh servicenow assessment"
   exit 1
 }
 
@@ -44,15 +44,15 @@ if [[ ! "$CLIENT" =~ ^[a-z][a-z0-9-]*$ ]]; then
 fi
 
 # Validate product type
-if [[ "$PRODUCT" != "basic" && "$PRODUCT" != "enhanced" && "$PRODUCT" != "agentic" ]]; then
-  echo -e "${RED}Error:${RESET} Product must be one of: basic, enhanced, agentic."
+if [[ "$PRODUCT" != "basic" && "$PRODUCT" != "enhanced" && "$PRODUCT" != "assessment" ]]; then
+  echo -e "${RED}Error:${RESET} Product must be one of: basic, enhanced, assessment."
   echo "  Got: '$PRODUCT'"
   exit 1
 fi
 
 # Construct output name following naming convention
-if [[ "$PRODUCT" == "agentic" ]]; then
-  NAME="agentic-cx-${CLIENT}"
+if [[ "$PRODUCT" == "assessment" ]]; then
+  NAME="${CLIENT}-ops-assessment"
 else
   NAME="nrr-cx-${CLIENT}-${PRODUCT}"
 fi

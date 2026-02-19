@@ -1,0 +1,113 @@
+# Generate Customer Operations Assessment
+
+When the user asks to generate a Customer Operations Assessment, follow this process.
+
+## What It Is
+
+A customer operations optimization assessment for software/tech companies (>$500M revenue). It evaluates CS, Professional Services, and Support across three levers: (1) productivity benchmarking, (2) AI/agentic potential, (3) offshoring potential.
+
+**Examples:**
+- Oracle: https://oracle-ops-assessment.vercel.app/
+- athenahealth: https://athenahealth-ops-assessment.vercel.app/
+
+**Source repo:** https://github.com/maxfj433/Customer-Operations-Assessment (branch: ops-assess)
+
+## Architecture
+
+This is a Python agent + React UI app (different from the NRR diagnostics which are static Next.js sites):
+
+- **Python backend** (FastAPI): agent framework with `customer_ops_optimizer` agent that uses reference data (benchmarks, role costs, AI horizons) to generate assessments
+- **React frontend** (Vite + Tailwind): dashboard with ExecutiveSummary, FunctionPanel, PriorityMatrix, PriorityRoadmap, and RoleDetail components
+- **Data flow**: Agent generates `assessment.json` → frontend reads it from `ui/public/assessment.json`
+- **Reference data**: Per-company JSON files with roles, costs, benchmarks, commentary
+
+## Template Location
+
+`templates/assessment/` in this repo contains the full framework:
+
+```
+templates/assessment/
+├── agents/                    # Python agent framework
+│   ├── customer_ops_optimizer.py
+│   └── base.py, catchall.py
+├── configs/
+│   ├── prompts/customer_ops_optimizer.system.txt
+│   ├── routing.yaml
+│   └── settings.yaml
+├── services/                  # Assessment generation, SEC data, job data
+│   ├── assessment.py
+│   ├── edgar.py
+│   └── job_data.py
+├── llm/                       # LLM client (AI Gateway / OpenAI)
+├── workflows/                 # Agent routing
+├── reference/                 # Per-company reference data
+│   ├── benchmarks.json        # FTE benchmarks by function
+│   ├── ai_agentic_levers.json # AI automation potential
+│   ├── offshoring_levers.json # Offshoring suitability
+│   ├── {company}_roles.json   # Company-specific role data
+│   └── {company}_commentary.json
+├── scripts/
+│   ├── generate_assessment.py # Generate assessment for a company
+│   └── deploy_vercel.py       # Deploy to Vercel
+├── ui/                        # Vite + React frontend
+│   ├── src/components/        # Dashboard sections
+│   ├── public/assessment.json # Generated assessment data
+│   └── vercel.json
+├── api.py                     # FastAPI backend
+├── requirements.txt
+└── .env.example
+```
+
+## How to Generate for a New Company
+
+### Step 1: Scaffold
+```bash
+./scripts/new-diagnostic.sh {company} assessment
+```
+
+### Step 2: Add company reference data
+Create these files in `reference/`:
+- `{company}_roles.json` — Headcount by function and role (from SEC filings, LinkedIn, or estimates)
+- `{company}_role_costs.json` — Average compensation by role
+- `{company}_role_benchmarks.json` — Company-specific benchmark comparisons
+- `{company}_commentary.json` — Management quotes about customer operations from earnings calls
+
+Use the existing athenahealth and oracle files as templates.
+
+### Step 3: Generate the assessment
+```bash
+python scripts/generate_assessment.py --company "{Company Name}"
+```
+This runs the agent pipeline and produces `ui/public/assessment.json`.
+
+### Step 4: Preview and deploy
+```bash
+cd ui && npm install && npm run dev     # Preview at localhost:5173
+cd ui && npx vercel --prod              # Deploy
+```
+
+## Data Gathering for Reference Files
+
+For a new company, gather:
+- **Headcount**: Total FTEs in CS, PS, Support (from 10-K, LinkedIn, or estimate from revenue)
+- **Role breakdown**: Titles and approximate counts per function
+- **Compensation**: Glassdoor/Levels.fyi averages by role
+- **Revenue and growth**: From SEC filings
+- **Management commentary**: Earnings call quotes about customer operations, retention, professional services
+- **Peer context**: How peers structure their customer operations
+
+## Naming Convention
+
+- Repo output: `{company}-ops-assessment`
+- Vercel project: `{company}-ops-assessment`
+- URL: `{company}-ops-assessment.vercel.app`
+
+## Quality Checklist
+
+- [ ] Reference data files created for the target company
+- [ ] Role headcount estimates are reasonable for company size
+- [ ] Assessment.json generated and renders correctly in the UI
+- [ ] All 5 dashboard sections populate (Executive Summary, Function Panels, Priority Matrix, Roadmap, Role Detail)
+- [ ] Benchmarks reference real peer data
+- [ ] No internal references in deployed version
+- [ ] Responsive layout

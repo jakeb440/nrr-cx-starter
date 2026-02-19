@@ -1,0 +1,242 @@
+{
+  "metadata": {
+    "description": "Three-horizon AI/agentic potential per role. H1=Automate (rules-based), H2=AI-Assisted (human-in-loop), H3=Agentic (autonomous with oversight). efficiency_pct_2026/2027/2028 = projected cumulative % of role work addressable by AI by end of that year.",
+    "impact_pct": "Estimated % of that role's work addressable by this horizon at full maturity.",
+    "efficiency_note": "2026 reflects H1 + early H2 adoption (quick wins, pilots). 2027 reflects scaled H2 + early H3. 2028 reflects full H2 + scaled H3. Year-over-year ramp reflects realistic enterprise adoption curves.",
+    "adjustment_rule": "If role FTEs are 10%+ below median benchmark, multiply AI efficiency by 0.85 to reflect organization already running lean."
+  },
+  "professional_services": [
+    {
+      "role": "Implementation & Delivery Managers",
+      "efficiency_pct_2026": 10,
+      "efficiency_pct_2027": 18,
+      "efficiency_pct_2028": 28,
+      "horizons": {
+        "h1_automate": {"tasks": "Status report generation, schedule updates, resource allocation templates, meeting-notes distribution, handoff document synthesis", "impact_pct": 12},
+        "h2_ai_assisted": {"tasks": "Risk identification from project data, scope-change impact analysis, auto-drafted SOWs, predictive timeline adjustments, QSG-to-athena auto-mapping", "impact_pct": 16},
+        "h3_agentic": {"tasks": "Autonomous project health monitoring with auto-escalation, self-adjusting resource plans, proactive client comms for at-risk milestones", "impact_pct": 6}
+      },
+      "total_impact_pct": 34
+    },
+    {
+      "role": "Configuration / Technical Analysts",
+      "efficiency_pct_2026": 18,
+      "efficiency_pct_2027": 32,
+      "efficiency_pct_2028": 48,
+      "horizons": {
+        "h1_automate": {"tasks": "Template-based configurations from QSG data, regression test execution, data migration scripts, environment cloning, foundational build auto-generation", "impact_pct": 20},
+        "h2_ai_assisted": {"tasks": "AI-generated config from requirements docs, smart field mapping QSG-to-athena, anomaly detection in migrated data, automated table-build validation", "impact_pct": 18},
+        "h3_agentic": {"tasks": "Self-configuring environments from natural-language specs, autonomous test case generation and execution, auto-remediation of config drift", "impact_pct": 10}
+      },
+      "total_impact_pct": 48
+    },
+    {
+      "role": "Solution Architects",
+      "efficiency_pct_2026": 6,
+      "efficiency_pct_2027": 14,
+      "efficiency_pct_2028": 22,
+      "horizons": {
+        "h1_automate": {"tasks": "Diagram generation from templates, standard integration pattern docs, bill-of-materials creation", "impact_pct": 8},
+        "h2_ai_assisted": {"tasks": "Architecture option comparison from requirements, API compatibility checks, performance sizing recommendations", "impact_pct": 12},
+        "h3_agentic": {"tasks": "End-to-end solution design drafts from discovery notes, autonomous technical feasibility assessments", "impact_pct": 5}
+      },
+      "total_impact_pct": 25
+    },
+    {
+      "role": "Training & Enablement Specialists",
+      "efficiency_pct_2026": 14,
+      "efficiency_pct_2027": 26,
+      "efficiency_pct_2028": 38,
+      "horizons": {
+        "h1_automate": {"tasks": "LMS enrollment workflows, certificate issuance, training schedule management, feedback survey distribution", "impact_pct": 14},
+        "h2_ai_assisted": {"tasks": "Auto-generated EUT content from athenaOne product docs, personalized learning paths, knowledge-gap analysis from quiz data, clinical coaching content generation", "impact_pct": 18},
+        "h3_agentic": {"tasks": "AI tutors that answer product questions in real-time, adaptive courseware that adjusts difficulty autonomously", "impact_pct": 8}
+      },
+      "total_impact_pct": 40
+    },
+    {
+      "role": "QA / Test Engineers",
+      "efficiency_pct_2026": 20,
+      "efficiency_pct_2027": 35,
+      "efficiency_pct_2028": 50,
+      "horizons": {
+        "h1_automate": {"tasks": "Regression test suite execution, environment spin-up/teardown, test data generation, automated UAT checklists", "impact_pct": 22},
+        "h2_ai_assisted": {"tasks": "AI-generated test cases from user stories, visual regression detection, smart test prioritization", "impact_pct": 18},
+        "h3_agentic": {"tasks": "Autonomous exploratory testing, self-healing test scripts, continuous quality monitoring with auto-filed bugs", "impact_pct": 10}
+      },
+      "total_impact_pct": 50
+    },
+    {
+      "role": "Practice Leads / Directors",
+      "efficiency_pct_2026": 5,
+      "efficiency_pct_2027": 10,
+      "efficiency_pct_2028": 16,
+      "horizons": {
+        "h1_automate": {"tasks": "Utilization dashboards, pipeline reporting, standard org-health metrics, staffing complexity scoring", "impact_pct": 8},
+        "h2_ai_assisted": {"tasks": "Talent-demand forecasting, methodology effectiveness analysis, competitive intelligence summaries", "impact_pct": 8},
+        "h3_agentic": {"tasks": "Limited — strategic leadership requires human judgment", "impact_pct": 2}
+      },
+      "total_impact_pct": 18
+    }
+  ],
+  "customer_success": [
+    {
+      "role": "Customer Success Managers",
+      "efficiency_pct_2026": 10,
+      "efficiency_pct_2027": 20,
+      "efficiency_pct_2028": 32,
+      "horizons": {
+        "h1_automate": {"tasks": "Recurring check-in scheduling, usage report generation, renewal date alerts, standard onboarding emails", "impact_pct": 10},
+        "h2_ai_assisted": {"tasks": "Proactive churn-risk alerts with recommended actions, next-best-action suggestions, AI-drafted EBR decks, sentiment scoring from calls", "impact_pct": 16},
+        "h3_agentic": {"tasks": "Autonomous low-touch account management for healthy practices, auto-triggered expansion plays, self-service health dashboards", "impact_pct": 8}
+      },
+      "total_impact_pct": 34
+    },
+    {
+      "role": "Renewal Managers",
+      "efficiency_pct_2026": 14,
+      "efficiency_pct_2027": 24,
+      "efficiency_pct_2028": 36,
+      "horizons": {
+        "h1_automate": {"tasks": "Renewal quote generation, contract template population, reminder cadences, CRM pipeline updates", "impact_pct": 16},
+        "h2_ai_assisted": {"tasks": "Churn propensity scoring, optimal discount recommendations, competitive intel alerts, multi-year deal structuring", "impact_pct": 14},
+        "h3_agentic": {"tasks": "Autonomous renewal execution for low-risk standard renewals, auto-negotiation within guardrails for SMB tier", "impact_pct": 8}
+      },
+      "total_impact_pct": 38
+    },
+    {
+      "role": "Onboarding Specialists",
+      "efficiency_pct_2026": 15,
+      "efficiency_pct_2027": 28,
+      "efficiency_pct_2028": 40,
+      "horizons": {
+        "h1_automate": {"tasks": "Welcome email sequences, provisioning checklists, milestone tracking, standard kickoff deck generation", "impact_pct": 16},
+        "h2_ai_assisted": {"tasks": "Personalized onboarding plans based on practice profile, smart content recommendations, readiness prediction models", "impact_pct": 16},
+        "h3_agentic": {"tasks": "Self-serve interactive onboarding guides that adapt in real-time, autonomous milestone verification and nudges", "impact_pct": 10}
+      },
+      "total_impact_pct": 42
+    },
+    {
+      "role": "Customer Health / Analytics Analysts",
+      "efficiency_pct_2026": 18,
+      "efficiency_pct_2027": 30,
+      "efficiency_pct_2028": 42,
+      "horizons": {
+        "h1_automate": {"tasks": "Health score calculation pipelines, scheduled report distribution, data quality checks", "impact_pct": 18},
+        "h2_ai_assisted": {"tasks": "Anomaly detection in usage patterns, causal analysis of churn drivers, predictive lifetime-value models", "impact_pct": 16},
+        "h3_agentic": {"tasks": "Self-tuning health models, autonomous insight generation and distribution to CSMs, real-time alerting", "impact_pct": 8}
+      },
+      "total_impact_pct": 42
+    },
+    {
+      "role": "Scale / Digital CS Reps",
+      "efficiency_pct_2026": 20,
+      "efficiency_pct_2027": 34,
+      "efficiency_pct_2028": 48,
+      "horizons": {
+        "h1_automate": {"tasks": "Automated email campaigns, webinar registration flows, in-app messaging triggers, survey distribution", "impact_pct": 22},
+        "h2_ai_assisted": {"tasks": "Personalized content recommendations, segment-specific messaging, engagement scoring, optimal send-time prediction", "impact_pct": 16},
+        "h3_agentic": {"tasks": "Fully autonomous digital-touch customer journey management, AI-driven 1:many relationship management", "impact_pct": 12}
+      },
+      "total_impact_pct": 50
+    },
+    {
+      "role": "CS Operations / Strategy Analysts",
+      "efficiency_pct_2026": 12,
+      "efficiency_pct_2027": 20,
+      "efficiency_pct_2028": 30,
+      "horizons": {
+        "h1_automate": {"tasks": "Territory assignment rules, quota calculations, admin tasks, standard reporting", "impact_pct": 12},
+        "h2_ai_assisted": {"tasks": "Capacity planning models, process bottleneck identification, tool ROI analysis", "impact_pct": 12},
+        "h3_agentic": {"tasks": "Self-optimizing territory models, autonomous playbook effectiveness testing", "impact_pct": 6}
+      },
+      "total_impact_pct": 30
+    }
+  ],
+  "customer_support": [
+    {
+      "role": "Tier-1 Support Representatives",
+      "efficiency_pct_2026": 22,
+      "efficiency_pct_2027": 38,
+      "efficiency_pct_2028": 55,
+      "horizons": {
+        "h1_automate": {"tasks": "Password resets, account lockouts, claims status lookups, known-issue auto-responses, ticket routing, FAQ deflection via chatbot", "impact_pct": 24},
+        "h2_ai_assisted": {"tasks": "Suggested resolutions from O-help KB, sentiment-based priority routing, auto-drafted responses for agent review, real-time translation", "impact_pct": 18},
+        "h3_agentic": {"tasks": "Autonomous case resolution for known-pattern issues, AI agent handling full Tier-1 conversations, auto-escalation with context summary", "impact_pct": 14}
+      },
+      "total_impact_pct": 56
+    },
+    {
+      "role": "Tier-2 Technical Support Engineers",
+      "efficiency_pct_2026": 8,
+      "efficiency_pct_2027": 18,
+      "efficiency_pct_2028": 32,
+      "horizons": {
+        "h1_automate": {"tasks": "Log collection, environment snapshot capture, standard diagnostic script execution, integration health checks", "impact_pct": 10},
+        "h2_ai_assisted": {"tasks": "Root-cause suggestion from log analysis, similar-case retrieval, auto-generated reproduction steps, fix recommendation ranking", "impact_pct": 16},
+        "h3_agentic": {"tasks": "Autonomous log analysis and diagnosis for known failure modes, auto-patching for documented fixes, proactive issue detection from telemetry", "impact_pct": 10}
+      },
+      "total_impact_pct": 36
+    },
+    {
+      "role": "Support Operations / Workforce Mgmt",
+      "efficiency_pct_2026": 16,
+      "efficiency_pct_2027": 28,
+      "efficiency_pct_2028": 40,
+      "horizons": {
+        "h1_automate": {"tasks": "Schedule generation, SLA breach alerts, queue rebalancing rules, standard operational reports", "impact_pct": 18},
+        "h2_ai_assisted": {"tasks": "Demand forecasting from ticket trends, optimal staffing models, real-time workload balancing recommendations", "impact_pct": 14},
+        "h3_agentic": {"tasks": "Self-adjusting workforce schedules based on real-time demand, autonomous queue optimization", "impact_pct": 8}
+      },
+      "total_impact_pct": 40
+    },
+    {
+      "role": "Knowledge Base Authors / Content Mgrs",
+      "efficiency_pct_2026": 16,
+      "efficiency_pct_2027": 30,
+      "efficiency_pct_2028": 45,
+      "horizons": {
+        "h1_automate": {"tasks": "Article template generation, link checking, content expiry alerts, search analytics reports", "impact_pct": 14},
+        "h2_ai_assisted": {"tasks": "Auto-drafted articles from resolved tickets, content gap identification, SEO optimization, multi-language translation", "impact_pct": 20},
+        "h3_agentic": {"tasks": "Autonomous KB maintenance: auto-update from product changes, auto-retire outdated O-help content, auto-generate from ticket clusters", "impact_pct": 12}
+      },
+      "total_impact_pct": 46
+    },
+    {
+      "role": "Escalation / Critical-Issue Managers",
+      "efficiency_pct_2026": 6,
+      "efficiency_pct_2027": 14,
+      "efficiency_pct_2028": 22,
+      "horizons": {
+        "h1_automate": {"tasks": "Escalation notification chains, status page updates, war room scheduling, post-incident report templates", "impact_pct": 10},
+        "h2_ai_assisted": {"tasks": "Impact radius estimation, similar-incident retrieval, auto-drafted customer comms, root-cause pattern matching", "impact_pct": 10},
+        "h3_agentic": {"tasks": "Limited — crisis management requires human judgment and executive communication", "impact_pct": 4}
+      },
+      "total_impact_pct": 24
+    },
+    {
+      "role": "Support QA / CSAT Analysts",
+      "efficiency_pct_2026": 16,
+      "efficiency_pct_2027": 28,
+      "efficiency_pct_2028": 42,
+      "horizons": {
+        "h1_automate": {"tasks": "Random case sampling, CSAT survey distribution, standard QA scorecards, trend reporting", "impact_pct": 16},
+        "h2_ai_assisted": {"tasks": "AI-powered case quality scoring, sentiment trend analysis, coaching recommendation generation, root-cause categorization", "impact_pct": 18},
+        "h3_agentic": {"tasks": "Continuous autonomous QA of all interactions (not just samples), real-time coaching nudges to agents", "impact_pct": 10}
+      },
+      "total_impact_pct": 44
+    },
+    {
+      "role": "Premium / Designated Support Engineers",
+      "efficiency_pct_2026": 10,
+      "efficiency_pct_2027": 20,
+      "efficiency_pct_2028": 30,
+      "horizons": {
+        "h1_automate": {"tasks": "Proactive monitoring alerts, scheduled health checks, automated environment audits", "impact_pct": 12},
+        "h2_ai_assisted": {"tasks": "Predictive issue detection from telemetry, personalized optimization recommendations, AI-drafted account reviews", "impact_pct": 12},
+        "h3_agentic": {"tasks": "Autonomous environment monitoring and self-healing for known issues, proactive outreach for detected anomalies", "impact_pct": 6}
+      },
+      "total_impact_pct": 30
+    }
+  ]
+}

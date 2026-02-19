@@ -1,0 +1,155 @@
+{
+  "metadata": {
+    "company": "Oracle",
+    "ownership": "Public — NYSE: ORCL",
+    "revenue_usd": 53000000000,
+    "total_employees": 164000,
+    "india_employees": 45000,
+    "india_locations": ["Bangalore", "Hyderabad", "Mumbai", "Pune", "Chennai", "Noida"],
+    "us_locations": ["Austin TX (HQ)", "Redwood City CA", "Seattle WA", "Nashville TN", "Burlington MA"],
+    "industry": "Enterprise Software — Cloud Infrastructure (OCI), Cloud Applications (Fusion, NetSuite), Database, On-Prem",
+    "description": "FTEs estimated via LinkedIn-based methodology: (1) LinkedIn People Search — count of current employees listing matching titles at Oracle, scaled for India LinkedIn penetration (India scale factor: 1.4x for customer ops roles). (2) Open-role extrapolation — open roles divided by estimated open-role ratio (8-12%, varies by function). Cross-referenced with industry sizing benchmarks and publicly available organizational data (~3,200 frontline support roles across product lines; >10K FTEs in Oracle Consulting globally).",
+    "methodology_notes": {
+      "linkedin_people_search": "Search LinkedIn for 'Current company: Oracle' with title keyword clusters. Oracle's size (~164K employees) means LinkedIn captures a higher share of profiles than smaller companies. India LinkedIn penetration for Oracle tech workers estimated at ~70%, so apply 1.4x multiplier to India-based role counts.",
+      "open_role_extrapolation": "Oracle has ~8,000+ open roles on LinkedIn (Feb 2026). Open-role ratio estimated at 8-12% depending on function. Formula: estimated_ftes = open_roles / open_role_ratio.",
+      "industry_cross_check": "Industry benchmarks and public sources indicate Oracle support split across Fusion Apps (~1,500), OCI (~1,000), On-Prem (~700) = ~3,200 frontline support roles; Oracle Consulting globally in the range of 10K+ FTEs. Customer Success estimated from LinkedIn and peer benchmarking.",
+      "revenue_context": "Oracle $53B revenue. Cloud revenue (~$20B) growing rapidly; on-prem license declining. Customer ops headcount skewed toward support and PS for legacy products while cloud CS is growing."
+    },
+    "last_updated": "2026-02"
+  },
+  "professional_services": {
+    "label": "Professional Services / Oracle Consulting",
+    "estimated_total_ftes": 8500,
+    "estimation_note": "Industry benchmarks indicate >10K FTEs in Oracle Consulting globally; adjusted to ~8,500 to reflect shift toward partner-led delivery (partner/Oracle ratio ~60/40 in NA) and headcount optimization. LinkedIn People Search: ~2,800 profiles with consulting/implementation/delivery titles at Oracle. India scaling (2,800 × 1.4x for India penetration) = ~3,920 visible. Coverage factor 0.46 (large enterprise, many titles not on LinkedIn) = ~8,500. Open roles cross-check: ~650 PS-related roles ÷ 8% = ~8,125.",
+    "roles": {
+      "Practice Managers / Engagement Leads": {
+        "estimated_ftes": 1400,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~520 profiles with 'Practice Manager,' 'Engagement Manager,' 'Delivery Manager,' or 'Project Director' in Oracle Consulting. Practice managers serve customer success roles throughout delivery. India presence moderate (~25%). 520 visible / 0.37 coverage = ~1,400.",
+        "current_offshore_pct": 25
+      },
+      "Delivery Engineers (Functional)": {
+        "estimated_ftes": 2600,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~780 profiles with 'Functional Consultant,' 'Applications Consultant,' 'ERP Consultant,' or 'HCM Consultant' at Oracle. Largest PS role — covers Fusion Apps, NetSuite, and on-prem configuration. Heavy India presence for standard implementations. 780 visible × 1.4x India scaling / 0.42 coverage = ~2,600.",
+        "current_offshore_pct": 52
+      },
+      "Delivery Engineers (Technical)": {
+        "estimated_ftes": 2000,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~610 profiles with 'Technical Consultant,' 'Integration Specialist,' 'Cloud Architect,' or 'Technical Delivery' at Oracle Consulting. Covers OCI migrations, database upgrades, integration builds. Very heavy India presence. 610 visible × 1.4x India / 0.43 coverage = ~2,000.",
+        "current_offshore_pct": 58
+      },
+      "Solution Architects": {
+        "estimated_ftes": 900,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~380 profiles with 'Solution Architect,' 'Enterprise Architect,' or 'Cloud Architect' in pre-sales/consulting at Oracle. Solution Architects scope integrations and architecture pre-sale. Primarily US/EU-based. 380 visible / 0.42 coverage = ~900.",
+        "current_offshore_pct": 15
+      },
+      "Program / Project Managers": {
+        "estimated_ftes": 800,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~310 profiles with 'Program Manager,' 'Project Manager,' or 'PMO' in Oracle Consulting/Services. Manage large multi-module implementations. Mix of onshore (client-facing) and offshore (reporting/tracking). 310 visible / 0.39 coverage = ~800.",
+        "current_offshore_pct": 30
+      },
+      "PS Leadership / Regional Delivery Heads": {
+        "estimated_ftes": 450,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~280 profiles with 'Director,' 'VP,' 'Senior Director,' or 'Regional Head' in Oracle Consulting. Each sales org has its own consulting lead with regional directors underneath. 280 visible / 0.62 coverage (senior roles well-represented on LinkedIn) = ~450.",
+        "current_offshore_pct": 5
+      }
+    }
+  },
+  "customer_success": {
+    "label": "Customer Success",
+    "estimated_total_ftes": 3200,
+    "estimation_note": "Oracle's CS function is newer and growing, driven by cloud subscription model. Formal Customer Success roles exist for cloud renewals. LinkedIn People Search: ~850 profiles with 'Customer Success,' 'Renewal,' 'TAM,' or 'Service Delivery Manager' at Oracle. India scaling: 850 × 1.4x = ~1,190 visible. Coverage factor 0.37 = ~3,200. Oracle's EVP Customer Success Services oversees this organization.",
+    "roles": {
+      "Customer Success Managers": {
+        "estimated_ftes": 1100,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~420 profiles with 'Customer Success Manager,' 'Senior CSM,' or 'Cloud Customer Success' at Oracle. Primarily covering Fusion Apps and NetSuite cloud customers. Growing rapidly as Oracle shifts to subscription model. Predominantly US/EU-based. 420 visible / 0.38 coverage = ~1,100.",
+        "current_offshore_pct": 12
+      },
+      "Service Delivery Managers (Paid Tier)": {
+        "estimated_ftes": 550,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~195 profiles with 'Service Delivery Manager,' 'SDM,' or 'Customer Service Manager' in Oracle support/services. Manage paid Premier and Mission Critical tier customers; SDMs coordinate with ASEs and TAMs. 195 visible / 0.35 coverage = ~550.",
+        "current_offshore_pct": 20
+      },
+      "Technical Account Managers (TAMs)": {
+        "estimated_ftes": 650,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~245 profiles with 'Technical Account Manager' or 'TAM' at Oracle. TAMs manage customer relationships and handle escalations for premier/mission critical tier. Dedicated to large enterprise accounts. 245 visible / 0.38 coverage = ~650.",
+        "current_offshore_pct": 10
+      },
+      "Renewal / Expansion Managers": {
+        "estimated_ftes": 480,
+        "source": "linkedin_openroles",
+        "source_note": "LinkedIn open roles: ~45 renewal/retention/expansion roles at Oracle. Open-role ratio 9.5% (specialized role). 45 / 0.095 = ~475. Oracle's cloud shift makes renewals critical — $20B+ cloud revenue requires active renewal management. Some India presence for mid-market renewals.",
+        "current_offshore_pct": 18
+      },
+      "CS Operations / Strategy Analysts": {
+        "estimated_ftes": 350,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~125 profiles with 'CS Operations,' 'Customer Operations,' 'Success Operations,' or 'Strategy Analyst' in CS org at Oracle. Tooling, territory planning, reporting, Gainsight/Salesforce admin. 125 visible / 0.36 coverage = ~350.",
+        "current_offshore_pct": 40
+      }
+    }
+  },
+  "customer_support": {
+    "label": "Customer Support",
+    "estimated_total_ftes": 5800,
+    "estimation_note": "Industry benchmarks indicate ~3,200 frontline support roles across Fusion Apps (~1,500), OCI (~1,000), and On-Prem (~700). Adding paid-tier support (ASEs, Sr. ASEs), support ops, KB, QA, and incident management brings total to ~5,800. LinkedIn People Search: ~1,850 profiles with support-related titles at Oracle. India scaling (1,850 × 1.4x) = ~2,590 visible. Coverage factor 0.45 (high turnover, many junior roles) = ~5,800. Open roles cross-check: ~520 support roles ÷ 9% = ~5,780.",
+    "roles": {
+      "L1 Support Engineers (Fusion/SaaS)": {
+        "estimated_ftes": 1500,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~380 profiles with 'Support Analyst,' 'Support Engineer I,' 'Customer Support,' or 'Application Support' for Fusion/SaaS products at Oracle. Industry sizing indicates ~1,500 support roles in Fusion Apps org. Heavily offshore — India and Romania delivery centers provide 24/7 coverage. 380 visible × 1.4x India / 0.35 coverage = ~1,520.",
+        "current_offshore_pct": 68
+      },
+      "L1/L2 NOC Engineers (OCI)": {
+        "estimated_ftes": 1000,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~290 profiles with 'NOC,' 'Network Operations,' 'Cloud Operations,' or 'Site Reliability' in OCI support at Oracle. Industry structure and public role definitions indicate ~1,000 support roles in OCI with NOC acting as L1/L2. 24/7 operations center model. 290 visible × 1.4x India / 0.41 coverage = ~990.",
+        "current_offshore_pct": 62
+      },
+      "L2 Frontend Support Engineers": {
+        "estimated_ftes": 700,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~220 profiles with 'Support Engineer II,' 'Senior Support Engineer,' or 'Product Support Engineer' at Oracle (non-ASE, non-OCI). Product-specific L2 for On-Prem database, analytics, and architecture. Industry structure and public role definitions indicate ~700 support roles under On-Prem. 220 visible × 1.4x India / 0.44 coverage = ~700.",
+        "current_offshore_pct": 48
+      },
+      "Advanced Support Engineers (ASE)": {
+        "estimated_ftes": 800,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~310 profiles with 'Advanced Support Engineer' or 'ASE' at Oracle. Industry structure and public role definitions indicate ASEs act as L1 support for paid-tier customers, offering dedicated expertise. Available for Premier and Mission Critical tier customers. Mix of US and India. 310 visible / 0.39 coverage = ~800.",
+        "current_offshore_pct": 35
+      },
+      "Senior Advanced Support Engineers (Sr. ASE)": {
+        "estimated_ftes": 400,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~165 profiles with 'Senior Advanced Support Engineer' or 'Sr. ASE' at Oracle. Senior tier of paid support — handle complex cross-product issues for Mission Critical customers. Industry structure and public role definitions indicate they manage escalation flow. Primarily US/EU-based. 165 visible / 0.41 coverage = ~400.",
+        "current_offshore_pct": 18
+      },
+      "Support Operations / Workforce Mgmt": {
+        "estimated_ftes": 500,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~155 profiles with 'Support Operations,' 'Workforce Management,' 'Queue Management,' or 'Support Planning' at Oracle. Required for 24/7 scheduling across multiple product support orgs (Fusion, OCI, On-Prem). 155 visible × 1.4x India / 0.43 coverage = ~500.",
+        "current_offshore_pct": 55
+      },
+      "Knowledge Base / Content Engineers": {
+        "estimated_ftes": 350,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~105 profiles with 'Knowledge Engineer,' 'Technical Writer,' 'Content Manager,' or 'Documentation' in support org at Oracle. Maintain My Oracle Support knowledge base. Industry structure and public role definitions indicate knowledge database available through My Oracle Support portal. 105 visible × 1.4x India / 0.42 coverage = ~350.",
+        "current_offshore_pct": 52
+      },
+      "Incident Management (OCI Critical)": {
+        "estimated_ftes": 180,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~75 profiles with 'Incident Manager,' 'Incident Commander,' or 'Critical Incident' at Oracle. Industry structure and public role definitions indicate only OCI has a dedicated incident management team acting as PMO for multi-company impact incidents. Small, senior team. 75 visible / 0.42 coverage = ~180.",
+        "current_offshore_pct": 8
+      }
+    }
+  }
+}

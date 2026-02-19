@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "description": "Software/tech companies >$500M revenue for dropdown; CIK = SEC Central Index Key (10-digit, verified)."
+  },
+  "companies": [
+    { "id": "oracle", "name": "Oracle", "cik": "0001341439", "ticker": "ORCL" },
+    { "id": "salesforce", "name": "Salesforce", "cik": "0001108524", "ticker": "CRM" },
+    { "id": "adobe", "name": "Adobe", "cik": "0000796343", "ticker": "ADBE" },
+    { "id": "servicenow", "name": "ServiceNow", "cik": "0001373715", "ticker": "NOW" },
+    { "id": "workday", "name": "Workday", "cik": "0001327811", "ticker": "WDAY" },
+    { "id": "snowflake", "name": "Snowflake", "cik": "0001640147", "ticker": "SNOW" },
+    { "id": "datadog", "name": "Datadog", "cik": "0001561550", "ticker": "DDOG" },
+    { "id": "crowdstrike", "name": "CrowdStrike", "cik": "0001535527", "ticker": "CRWD" },
+    { "id": "palantir", "name": "Palantir", "cik": "0001321655", "ticker": "PLTR" },
+    { "id": "hubspot", "name": "HubSpot", "cik": "0001404655", "ticker": "HUBS" }
+  ]
+}

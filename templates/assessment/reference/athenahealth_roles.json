@@ -1,0 +1,156 @@
+{
+  "metadata": {
+    "company": "athenahealth",
+    "ownership": "Private — Bain Capital + Hellman & Friedman",
+    "revenue_usd": 1700000000,
+    "total_employees": 8500,
+    "india_employees": 2500,
+    "india_locations": ["Chennai", "Bangalore", "Pune"],
+    "us_locations": ["Boston (HQ)", "Atlanta", "Austin", "Belfast ME", "Burlington"],
+    "industry": "Healthcare IT — EHR, RCM, Practice Management",
+    "clinicians_on_platform": 160000,
+    "description": "FTEs estimated via LinkedIn-based methodology: (1) LinkedIn People Search — count of current employees listing matching titles at athenahealth, then scaled for title variations and India profiles with lower LinkedIn penetration (India scale factor: 1.6x for customer ops roles). (2) Open-role extrapolation — open roles divided by estimated open-role ratio (10-14%, varies by function). Cross-referenced with TheOrg org chart data, 2017 Statista department breakdown (Service Ops = 53% of headcount, scaled to current ~8,500 total), and internal workshop documents (Jan 2026).",
+    "methodology_notes": {
+      "linkedin_people_search": "Search LinkedIn for 'Current company: athenahealth' with title keyword clusters. Count visible results, note that LinkedIn caps at ~1,000 visible results for non-recruiter accounts. India LinkedIn penetration for customer ops roles estimated at ~60%, so apply 1.6x multiplier to India-based role counts.",
+      "open_role_extrapolation": "athenahealth has ~425 open roles on LinkedIn (Feb 2026). Open-role ratio estimated at 10-14% depending on function (higher for Support which has higher turnover). Formula: estimated_ftes = open_roles / open_role_ratio.",
+      "historical_scaling": "2017 Statista: Service Operations = 2,711 FTEs out of 5,156 total (53%). Company grew from 5,156 to ~8,500 (65% growth). Proportional scaling suggests Service Ops now ~4,450 FTEs. Our 3 functions (PS + CS + Support) = 2,850, a subset of Service Ops focused on customer-facing operations.",
+      "theorg_cross_reference": "TheOrg shows 88 people under Chief Customer Officer, representing visible leadership/management. Typical span of control 8-12:1 at athenahealth's scale implies 700-1,050 FTEs under CCO for CS + Support. PS reports through other SVPs."
+    },
+    "last_updated": "2026-02"
+  },
+  "professional_services": {
+    "label": "Professional Services / Implementation",
+    "estimated_total_ftes": 850,
+    "estimation_note": "LinkedIn People Search: ~185 current employees with 'implementation,' 'onboarding project,' 'configuration,' or 'solution architect' in title at athenahealth. Scaled 1.6x for India (heavy offshore config team in Chennai/Pune) → ~296 visible × 2.9x coverage factor (LinkedIn captures ~35% of PS org due to mix of senior/junior and India penetration) = ~850. Cross-check: ~95 open PS-related roles on LinkedIn ÷ 11% open-role ratio = ~860. TheOrg confirms VP Implementation & Onboarding and VP Customer Training as separate orgs under CCO.",
+    "roles": {
+      "Implementation & Delivery Managers": {
+        "estimated_ftes": 200,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~72 profiles with 'Implementation Manager,' 'Engagement Manager,' 'Onboarding Project Lead,' or 'Onboarding Project Manager' at athenahealth. TheOrg confirms Onboarding Project Lead role and 4+ Onboarding Project Manager postings. India presence low (~12%) — minimal scaling needed. Estimated 72 visible / 0.36 LinkedIn coverage = ~200.",
+        "current_offshore_pct": 12
+      },
+      "Configuration / Technical Analysts": {
+        "estimated_ftes": 280,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~55 profiles with 'Configuration,' 'Technical Analyst,' 'Configuration Banking Associate (CBA),' or 'Foundational Build' at athenahealth. Heavy India presence confirmed by workshop doc (offshore team builds primary tables from QSG data). ~35 open config/analyst roles on LinkedIn. India scaling: 55 US-visible × 1.0 + estimated 120 India FTEs (1.6x scaling from ~75 India LinkedIn profiles) = ~175 visible. Coverage factor for junior config roles ~0.63 → 280.",
+        "current_offshore_pct": 45
+      },
+      "Solution Architects": {
+        "estimated_ftes": 75,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~28 profiles with 'Solution Architect,' 'Solution Design,' or 'Technical Solutions' at athenahealth. LinkedIn job posting for 'Solution Design Manager' confirms the role exists. Primarily US-based (minimal India). Coverage factor 0.37 → 75. Smaller team than typical SaaS due to athenahealth's cloud-native model reducing custom architecture needs.",
+        "current_offshore_pct": 5
+      },
+      "Training & Enablement Specialists": {
+        "estimated_ftes": 120,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~38 profiles with 'Training,' 'Enablement,' 'Coaching,' or 'EUT' at athenahealth. TheOrg confirms VP Customer Training & Voice of the Customer, Coaching & Training Senior Manager, and Manager of Foundational Training roles. Workshop doc confirms 1 FTE dedicated to content creation, 4 core EUT agendas. India presence moderate. 38 visible / 0.32 coverage = ~120.",
+        "current_offshore_pct": 28
+      },
+      "QA / Test Engineers": {
+        "estimated_ftes": 95,
+        "source": "linkedin_openroles",
+        "source_note": "LinkedIn open roles: ~12 QA/Test/UAT-related roles at athenahealth. Open-role ratio for QA in healthcare IT estimated at 12-14% (moderate turnover). 12 / 0.125 = ~96. Predominantly India-based (cost-efficient testing). Workshop doc references UAT as gated milestone before go-live. Cross-check: proportional to PS total (11% of 850 = 94).",
+        "current_offshore_pct": 55
+      },
+      "Practice Leads / Directors": {
+        "estimated_ftes": 70,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~45 profiles with 'Director,' 'Practice Lead,' 'Senior Manager,' or 'VP' in Implementation/PS org at athenahealth. TheOrg shows multiple Directors under PS. Discounting non-PS directors and adjusting for title inflation → ~70 PS-specific leadership roles. Entirely US-based.",
+        "current_offshore_pct": 0
+      }
+    }
+  },
+  "customer_success": {
+    "label": "Customer Success",
+    "estimated_total_ftes": 600,
+    "estimation_note": "LinkedIn People Search: ~105 profiles with 'Customer Success,' 'CSM,' 'Renewal,' or 'Onboarding' at athenahealth (excluding Support/PS roles). TheOrg shows 5 VPs/EDs under CCO for CS — typical VP span at athenahealth = 80-120 FTEs × 5 = 400-600 direct CS FTEs. Open roles: ~40 CS-related on LinkedIn ÷ 10% = ~400 (lower bound — CS has lower turnover). Settled at 600 including digital/scale CS and ops teams partially offshore.",
+    "roles": {
+      "Customer Success Managers": {
+        "estimated_ftes": 210,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~82 profiles with 'Customer Success Manager' or 'Senior Customer Success Manager' at athenahealth. TheOrg confirms multiple Senior CSM roles. LinkedIn posting confirms CSM manages $5-7M+ book of customers. Predominantly US-based with small India cohort for digital/SMB. 82 visible / 0.39 coverage = ~210.",
+        "current_offshore_pct": 8
+      },
+      "Renewal Managers": {
+        "estimated_ftes": 75,
+        "source": "linkedin_openroles",
+        "source_note": "LinkedIn open roles: ~8 renewal/retention-related roles. Open-role ratio for renewals ~10% (specialized role, lower turnover). 8 / 0.107 = ~75. athenahealth's subscription + percentage-of-collections model requires active renewal management across ~160K clinicians. Some India-based for SMB renewals.",
+        "current_offshore_pct": 20
+      },
+      "Onboarding Specialists": {
+        "estimated_ftes": 110,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~35 profiles with 'Onboarding' in CS (not PS implementation) at athenahealth. Includes 'Onboarding Success Manager' (confirmed open role for Specialty), 'Onboarding Associate,' 'Onboarding Specialist.' Workshop doc confirms distinct post-go-live onboarding support. India presence for digital onboarding. 35 visible / 0.32 coverage = ~110.",
+        "current_offshore_pct": 25
+      },
+      "Customer Health / Analytics Analysts": {
+        "estimated_ftes": 50,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~18 profiles with 'Analytics,' 'Health Score,' 'Customer Insights,' or 'Data Analyst' in CS org at athenahealth. Workshop doc notes lack of access to performance data at scale as pain point — suggests team is small relative to need. High India presence for data work. 18 visible / 0.36 coverage = ~50.",
+        "current_offshore_pct": 50
+      },
+      "Scale / Digital CS Reps": {
+        "estimated_ftes": 85,
+        "source": "linkedin_openroles",
+        "source_note": "LinkedIn open roles: ~10 'Customer Success Specialist' or 'Customer Success Associate' roles (small-group / SMB focus). LinkedIn posting confirms 'Customer Success Specialist - Small Group' role. Open-role ratio 12% (higher turnover in scale/digital CS). 10 / 0.118 = ~85. Heavy India presence for 1:many digital engagement.",
+        "current_offshore_pct": 40
+      },
+      "CS Operations / Strategy Analysts": {
+        "estimated_ftes": 55,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~20 profiles with 'CS Operations,' 'Customer Operations,' 'Strategy Analyst,' or 'Program Manager' in CS org at athenahealth. Smaller specialized team supporting tooling, process design, territory planning. 20 visible / 0.36 coverage = ~55.",
+        "current_offshore_pct": 35
+      }
+    }
+  },
+  "customer_support": {
+    "label": "Customer Support",
+    "estimated_total_ftes": 1400,
+    "estimation_note": "LinkedIn People Search: ~220 profiles with 'Support,' 'Support Engineer,' 'Support Specialist,' 'CSC,' or 'Help Desk' at athenahealth. Heavy India presence — Support is largest India function. India scaling (220 US-visible + estimated 480 India at 1.6x from ~300 India LinkedIn profiles) = ~700 visible. Coverage factor for support roles ~0.50 (high turnover, many junior roles with low LinkedIn penetration) → 1,400. Cross-check: ~160 open support roles on LinkedIn ÷ 11.5% open-role ratio = ~1,390. 2017 historical: Service Ops was 53% of headcount; scaled to 8,500 total = ~4,450 Service Ops, of which Support is ~32% = ~1,420.",
+    "roles": {
+      "Tier-1 Support Representatives": {
+        "estimated_ftes": 520,
+        "source": "linkedin_openroles",
+        "source_note": "LinkedIn open roles: ~65 L1 support / customer support specialist / support associate roles at athenahealth (largest open-role category in Support). Open-role ratio 12.5% (high turnover for L1). 65 / 0.125 = ~520. athenahealth claims 24/7 support with <2 min wait times — requires large L1 workforce. ~65% India-based for 24/7 coverage across Chennai and Bangalore offices.",
+        "current_offshore_pct": 65
+      },
+      "Tier-2 Technical Support Engineers": {
+        "estimated_ftes": 280,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~95 profiles with 'Support Engineer,' 'Technical Support,' 'Senior Support Engineer,' or 'Problem Management' at athenahealth. TheOrg confirms Senior Manager of Technical Support and Problem Management, and Senior Services Engineer roles. 95 visible / 0.34 coverage = ~280. Requires athenaOne product expertise.",
+        "current_offshore_pct": 38
+      },
+      "Support Operations / Workforce Mgmt": {
+        "estimated_ftes": 110,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~32 profiles with 'Support Operations,' 'Workforce Management,' 'Queue Management,' or 'Support Planning' at athenahealth. Required for 24/7 scheduling across US + India. 32 visible / 0.29 coverage = ~110.",
+        "current_offshore_pct": 48
+      },
+      "Knowledge Base Authors / Content Mgrs": {
+        "estimated_ftes": 85,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~25 profiles with 'Knowledge,' 'Content Manager,' 'Technical Writer,' or 'O-help' at athenahealth. Maintain help.athenahealth.com, Success Community content, release notes. Customer complaints about outdated KB articles suggest understaffing. 25 visible / 0.29 coverage = ~85.",
+        "current_offshore_pct": 35
+      },
+      "Escalation / Critical-Issue Managers": {
+        "estimated_ftes": 45,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~18 profiles with 'Escalation,' 'Critical Issue,' 'Incident Manager,' or 'Case Manager' at athenahealth. Director, Revenue Cycle Case & Escalation Management confirmed on careers site. Small, senior team. 18 visible / 0.40 coverage = ~45. Primarily US-based.",
+        "current_offshore_pct": 5
+      },
+      "Support QA / CSAT Analysts": {
+        "estimated_ftes": 75,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~22 profiles with 'Quality Analyst,' 'CSAT,' 'Quality Assurance' in Support org at athenahealth. athenahealth reports 95% CSAT for live support but third-party data shows gap — QA team monitors this. 22 visible / 0.29 coverage = ~75. Significant India presence.",
+        "current_offshore_pct": 45
+      },
+      "Premium / Designated Support Engineers": {
+        "estimated_ftes": 160,
+        "source": "linkedin_people",
+        "source_note": "LinkedIn People Search: ~58 profiles with 'Designated Support,' 'Premium Support,' 'Enterprise Support,' or 'Senior Services Engineer' at athenahealth. TheOrg confirms Senior Customer Support Engineer role. Dedicated support for large health systems with enhanced SLAs — growing segment as athenaOne for Hospitals expands. 58 visible / 0.36 coverage = ~160.",
+        "current_offshore_pct": 10
+      }
+    }
+  }
+}

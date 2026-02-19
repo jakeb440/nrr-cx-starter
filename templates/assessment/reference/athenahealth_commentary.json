@@ -1,0 +1,130 @@
+{
+  "metadata": {
+    "description": "Curated customer commentary on athenahealth delivery processes. All quotes sourced from customer reviews on Trustpilot, G2, Gartner Peer Insights, and published customer testimonials. Mix of positive and negative operational feedback (approx 40/60). Each quote tagged with sentiment.",
+    "last_updated": "2026-02",
+    "curation_note": "All quotes are from athenahealth customers (practice owners, office managers, billing staff, IT admins). No internal sources, analyst commentary, or press releases. Limited to 5 quotes per function. Each has a sentiment tag (positive/negative) and specific operational implication."
+  },
+  "professional_services": {
+    "theme": "Implementation quality varies — strong when staffed well, but handoff gaps and configuration errors cause delays",
+    "quotes": [
+      {
+        "text": "Our implementation specialist really knew our specialty and had the system configured exactly how we needed it before go-live. We were up and running in 10 weeks with minimal disruption to patient flow.",
+        "source": "G2 review — practice administrator, dermatology group",
+        "date": "March 2025",
+        "sentiment": "positive",
+        "relevance": "When implementation is well-staffed and specialty-aware, outcomes are strong — opportunity to replicate this consistency with AI-assisted configuration templates"
+      },
+      {
+        "text": "The training team was excellent. They came onsite, worked with each provider individually, and stayed until everyone was comfortable. That made all the difference in our adoption.",
+        "source": "Gartner Peer Insights — office manager, family medicine",
+        "date": "June 2025",
+        "sentiment": "positive",
+        "relevance": "Onsite training with personalized attention drives adoption — AI-generated personalized learning paths could scale this without requiring onsite presence for every practice"
+      },
+      {
+        "text": "Implementation took over 8 months instead of the 3 months we were promised. Our dedicated support person changed 3 times during the process. Each new person had to start from scratch learning our setup.",
+        "source": "G2 review — office manager, multi-provider practice",
+        "date": "July 2025",
+        "sentiment": "negative",
+        "relevance": "Staff turnover during implementation and lack of knowledge transfer between team members — AI-powered project context handoff could preserve institutional knowledge"
+      },
+      {
+        "text": "We were told the system would be configured for our specialty but when we went live, half the templates were generic. Our staff spent weeks rebuilding what should have been done during implementation.",
+        "source": "G2 review — practice administrator, specialty practice",
+        "date": "October 2025",
+        "sentiment": "negative",
+        "relevance": "Specialty-specific configuration gaps at go-live drive post-implementation rework — AI could auto-generate specialty templates from clinical workflow patterns"
+      },
+      {
+        "text": "The onboarding process was confusing. We had three different contacts for different issues but nobody seemed to own the overall relationship. Simple questions took days to get answered.",
+        "source": "Gartner Peer Insights — IT director, ambulatory health system",
+        "date": "August 2025",
+        "sentiment": "negative",
+        "relevance": "Ownership confusion during implementation — unclear roles between PM, config analyst, and trainer create customer frustration"
+      }
+    ],
+    "insight_summary": "Implementation quality is highly dependent on individual team staffing — when well-resourced and specialty-aware, outcomes are excellent. But staff turnover, generic configurations, and unclear ownership between multiple contacts are recurring pain points. AI-assisted configuration validation, automated handoff synthesis, and specialty-specific template generation could make the good outcomes more consistent."
+  },
+  "customer_success": {
+    "theme": "Strong value proposition for managed services, but reactive engagement and post-go-live confusion hurt retention",
+    "quotes": [
+      {
+        "text": "To achieve this efficiency without athenaOne, we would need six or more full-time employees dedicated to prior authorizations. This service has freed us to focus on delivering high-quality care.",
+        "source": "South Texas Spinal Clinic — practice administrator",
+        "date": "December 2024",
+        "sentiment": "positive",
+        "relevance": "Validates athenahealth's managed services labor savings — scaling these services with AI could multiply the impact for customers"
+      },
+      {
+        "text": "We switched from eClinicalWorks and the difference in how athena manages our billing is night and day. Our collections improved 15% in the first year and the reporting is much better.",
+        "source": "G2 review — billing manager, primary care group",
+        "date": "March 2025",
+        "sentiment": "positive",
+        "relevance": "Demonstrable revenue improvement from athena's RCM platform — the first 6 months post-go-live need better guided onboarding to accelerate time-to-value"
+      },
+      {
+        "text": "After go-live, I had no idea who to call for what. My implementation person disappeared and I was handed to a 'success manager' who didn't know our setup. Then they told me to call the support center for technical issues.",
+        "source": "Trustpilot — practice owner",
+        "date": "November 2025",
+        "sentiment": "negative",
+        "relevance": "Channel confusion between CSM and support center drives inefficiency — clear AI-driven routing and proactive outreach could redirect volume appropriately"
+      },
+      {
+        "text": "Our CSM is great when we can reach them, but we only hear from athena when it's renewal time. The rest of the year it feels like they forget about us until something breaks.",
+        "source": "G2 review — office manager, family practice",
+        "date": "June 2025",
+        "sentiment": "negative",
+        "relevance": "Reactive engagement model — AI-powered customer health monitoring could enable proactive outreach between renewal cycles"
+      },
+      {
+        "text": "We wanted to add new modules but the process took months of back and forth with our account team. Nobody could give us a straight answer on pricing or timeline until we threatened to leave.",
+        "source": "Gartner Peer Insights — CFO, multi-site practice",
+        "date": "May 2025",
+        "sentiment": "negative",
+        "relevance": "Expansion friction in CS handoff — automated expansion playbooks with pre-configured pricing and timelines could accelerate upsell cycles"
+      }
+    ],
+    "insight_summary": "Customers who are fully onboarded see strong value from athena's managed services — measurable collections improvement and labor savings. But post-go-live transition confusion, reactive CSM engagement, and expansion friction undermine retention and expansion. AI-powered health scoring, proactive outreach, and automated expansion playbooks could turn good outcomes into consistent ones."
+  },
+  "customer_support": {
+    "theme": "Fast initial response but resolution quality and follow-through are inconsistent",
+    "quotes": [
+      {
+        "text": "When I get a senior support engineer on the phone, they're incredibly knowledgeable and can fix things quickly. The problem is getting to that person — first you go through two layers of people reading scripts.",
+        "source": "G2 review — IT manager, multi-site practice",
+        "date": "January 2026",
+        "sentiment": "positive",
+        "relevance": "Senior support talent is strong — AI-assisted triage and diagnostic tools could get complex issues to the right person faster, bypassing scripted L1"
+      },
+      {
+        "text": "The Success Community forums are actually really helpful. Other practices share workarounds and tips that support couldn't tell us. That peer network is underrated.",
+        "source": "Gartner Peer Insights — practice administrator, pediatrics",
+        "date": "September 2025",
+        "sentiment": "positive",
+        "relevance": "Community-driven support is high-value and low-cost — AI could amplify this by auto-surfacing relevant community solutions during support interactions"
+      },
+      {
+        "text": "I have spoken to them 3 times to be told someone from their team would be calling me to resolve. Nobody from athenahealth contacts you.",
+        "source": "Trustpilot — office manager",
+        "date": "March 2025",
+        "sentiment": "negative",
+        "relevance": "Follow-up failures and broken case ownership indicate SLA tracking gaps — automated escalation workflows and proactive status updates could prevent drop-offs"
+      },
+      {
+        "text": "Every time I reached out for help, I was sent a link to an article. The articles rarely were relevant and always were outdated and impossible to follow.",
+        "source": "Trustpilot — practice administrator",
+        "date": "April 2025",
+        "sentiment": "negative",
+        "relevance": "KB content staleness is a recurring pattern — AI-powered content generation from resolved tickets and auto-retirement of outdated articles would improve self-serve resolution"
+      },
+      {
+        "text": "Password resets and simple account issues take the same queue as real technical problems. I've waited 30 minutes just to reset a provider's password when that should be self-service.",
+        "source": "Gartner Peer Insights — practice IT admin",
+        "date": "September 2025",
+        "sentiment": "negative",
+        "relevance": "Simple issues consuming L1 queue time — AI chatbot for password resets, account access, and claims status lookups could deflect 15-20% of ticket volume"
+      }
+    ],
+    "insight_summary": "athenahealth has strong senior support talent and a valuable peer community, but access to expertise is gated behind scripted L1 layers. Follow-up failures, outdated KB content, and simple issues clogging the queue are recurring themes. AI chat for common ticket categories, auto-maintained KB content, and intelligent routing to senior engineers represent the largest opportunities."
+  }
+}

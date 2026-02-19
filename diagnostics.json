@@ -2,55 +2,193 @@
   {
     "client": "databricks",
     "product": "enhanced",
-    "repo": "jakeb440/nrr-cx-databricks-enhanced",
     "url": "https://nrr-cx-databricks-enhanced.vercel.app",
     "created": "2026-02-09",
     "author": "jake",
     "status": "deployed",
     "nrr": "140%",
-    "sector": "Data Intelligence Platform / Lakehouse / AI/ML",
-    "description": "Full Enhanced diagnostic with maturity assessment, waterfall, value-at-stake, and 5 highest-impact actions."
+    "sector": "Data Intelligence Platform",
+    "description": "Full Enhanced diagnostic with maturity assessment, waterfall, value-at-stake."
+  },
+  {
+    "client": "asana",
+    "product": "enhanced",
+    "url": "https://nrr-cx-asana-enhanced.vercel.app",
+    "created": "2026-02-14",
+    "author": "jake",
+    "status": "deployed",
+    "nrr": "",
+    "sector": "Work Management",
+    "description": "Enhanced diagnostic with NRR maturity and value-at-stake."
+  },
+  {
+    "client": "lumen",
+    "product": "enhanced",
+    "url": "https://nrr-cx-lumen-enhanced.vercel.app",
+    "created": "2026-02-14",
+    "author": "jake",
+    "status": "deployed",
+    "nrr": "",
+    "sector": "Telecommunications / Enterprise Networking",
+    "description": "Enhanced diagnostic with NRR maturity and value-at-stake."
+  },
+  {
+    "client": "zscaler",
+    "product": "enhanced",
+    "url": "https://nrr-cx-zscaler-enhanced.vercel.app",
+    "created": "2026-02-14",
+    "author": "jake",
+    "status": "deployed",
+    "nrr": "",
+    "sector": "Cloud Security",
+    "description": "Enhanced diagnostic with NRR maturity and value-at-stake."
+  },
+  {
+    "client": "bmc",
+    "product": "enhanced",
+    "url": "https://nrr-cx-bmc-enhanced.vercel.app",
+    "created": "2026-02-13",
+    "author": "jake",
+    "status": "deployed",
+    "nrr": "",
+    "sector": "IT Service Management",
+    "description": "Enhanced diagnostic with NRR maturity and value-at-stake."
+  },
+  {
+    "client": "bmc-mainframe",
+    "product": "enhanced",
+    "url": "https://nrr-cx-bmc-mf-enhanced.vercel.app",
+    "created": "2026-02-13",
+    "author": "jake",
+    "status": "deployed",
+    "nrr": "",
+    "sector": "Mainframe Software",
+    "description": "Enhanced diagnostic for BMC mainframe product line."
+  },
+  {
+    "client": "oracle",
+    "product": "enhanced",
+    "url": "https://nrr-cx-oracle-enhanced.vercel.app",
+    "created": "2026-02-13",
+    "author": "jake",
+    "status": "deployed",
+    "nrr": "",
+    "sector": "Enterprise Software (ERP/Cloud)",
+    "description": "Enhanced diagnostic with NRR maturity and value-at-stake."
+  },
+  {
+    "client": "bill",
+    "product": "enhanced",
+    "url": "https://nrr-cx-bill-enhanced.vercel.app",
+    "created": "2026-02-13",
+    "author": "jake",
+    "status": "deployed",
+    "nrr": "",
+    "sector": "Financial Automation",
+    "description": "Enhanced diagnostic with NRR maturity and value-at-stake."
+  },
+  {
+    "client": "fis",
+    "product": "enhanced",
+    "url": "https://nrr-cx-fis-enhanced.vercel.app",
+    "created": "2026-02-13",
+    "author": "jake",
+    "status": "deployed",
+    "nrr": "",
+    "sector": "Financial Technology / Payments",
+    "description": "Enhanced diagnostic with NRR maturity and value-at-stake."
+  },
+  {
+    "client": "realpage",
+    "product": "enhanced",
+    "url": "https://nrr-cx-realpage-enhanced.vercel.app",
+    "created": "2026-02-13",
+    "author": "jake",
+    "status": "deployed",
+    "nrr": "",
+    "sector": "Real Estate Technology",
+    "description": "Enhanced diagnostic with NRR maturity and value-at-stake."
+  },
+  {
+    "client": "mimecast",
+    "product": "enhanced",
+    "url": "https://nrr-cx-mimecast-enhanced.vercel.app",
+    "created": "2026-02-12",
+    "author": "jake",
+    "status": "deployed",
+    "nrr": "",
+    "sector": "Email Security / Cybersecurity",
+    "description": "Enhanced diagnostic with NRR maturity and value-at-stake."
+  },
+  {
+    "client": "okta",
+    "product": "enhanced",
+    "url": "https://nrr-cx-okta-enhanced.vercel.app",
+    "created": "2026-02-12",
+    "author": "jake",
+    "status": "deployed",
+    "nrr": "106%",
+    "sector": "Identity & Access Management",
+    "description": "Enhanced diagnostic with NRR trend and Entra bundling analysis."
   },
   {
     "client": "uipath",
     "product": "enhanced",
-    "repo": "",
     "url": "https://dist-pi-ruddy-76.vercel.app",
     "created": "2026-02-11",
     "author": "jake",
     "status": "deployed",
     "nrr": "107%",
     "sector": "RPA / Intelligent Automation",
-    "description": "Enhanced diagnostic showing 38pp NRR compression (145% to 107%), Power Automate displacement, and path to 121%."
+    "description": "Enhanced diagnostic — 38pp NRR compression, Power Automate displacement."
+  },
+  {
+    "client": "intuit",
+    "product": "basic",
+    "url": "https://nrr-cx-intuit.vercel.app",
+    "created": "2026-02-10",
+    "author": "jake",
+    "status": "deployed",
+    "nrr": "",
+    "sector": "SMB Financial Software",
+    "description": "Basic diagnostic with NRR benchmark and journey map."
+  },
+  {
+    "client": "box",
+    "product": "basic",
+    "url": "https://nrr-cx-box-basic.vercel.app",
+    "created": "2026-02-15",
+    "author": "jake",
+    "status": "deployed",
+    "nrr": "",
+    "sector": "Content Management / Collaboration",
+    "description": "Basic diagnostic with NRR benchmark and journey map."
   },
   {
     "client": "okta",
     "product": "basic",
-    "repo": "",
     "url": "https://nrr-cx-okta.vercel.app",
     "created": "2026-02-09",
     "author": "jake",
     "status": "deployed",
     "nrr": "106%",
     "sector": "Identity & Access Management",
-    "description": "Basic diagnostic with NRR trend (120% to 106%), Microsoft Entra bundling risk, Auth0 CX crisis analysis."
+    "description": "Basic diagnostic with NRR trend and Microsoft Entra risk."
   },
   {
     "client": "mimecast",
     "product": "basic",
-    "repo": "",
     "url": "https://nrr-cx-mimecast.vercel.app",
     "created": "2026-02-08",
     "author": "jake",
     "status": "deployed",
     "nrr": "",
     "sector": "Email Security / Cybersecurity",
-    "description": "Basic diagnostic with peer benchmark, competitive context, and synthesis."
+    "description": "Basic diagnostic with peer benchmark and synthesis."
   },
   {
     "client": "datadog",
     "product": "basic",
-    "repo": "",
     "url": "https://nrr-cx-datadog.vercel.app",
     "created": "2026-02-08",
     "author": "jake",
@@ -62,61 +200,45 @@
   {
     "client": "xero",
     "product": "basic",
-    "repo": "",
     "url": "https://nrr-cx-xero.vercel.app",
     "created": "2026-02-09",
     "author": "jake",
     "status": "deployed",
     "nrr": "",
     "sector": "SMB Accounting",
-    "description": "Basic diagnostic with Melio acquisition analysis and payments moat."
+    "description": "Basic diagnostic with Melio acquisition and payments moat."
   },
   {
     "client": "ptc",
     "product": "basic",
-    "repo": "",
     "url": "https://nrr-cx-ptc.vercel.app",
     "created": "2026-02-09",
     "author": "jake",
     "status": "deployed",
     "nrr": "",
     "sector": "Engineering Software (CAD/PLM)",
-    "description": "Basic diagnostic with renewal-focused analysis. Peers: Autodesk, Ansys."
+    "description": "Basic diagnostic — renewal-focused. Peers: Autodesk, Ansys."
   },
   {
     "client": "oracle",
     "product": "agentic",
-    "repo": "maxfj433/Customer-Operations-Assessment",
     "url": "https://oracle-ops-assessment.vercel.app",
-    "created": "2026-02-15",
+    "created": "2026-02-18",
     "author": "jake",
     "status": "deployed",
     "nrr": "",
     "sector": "Enterprise Software (ERP/Cloud)",
-    "description": "Customer Operations Assessment — agentic AI readiness for CS, PS, and Support."
+    "description": "Customer Operations Assessment — agentic AI readiness."
   },
   {
     "client": "athenahealth",
     "product": "agentic",
-    "repo": "maxfj433/Customer-Operations-Assessment",
     "url": "https://athenahealth-ops-assessment.vercel.app",
-    "created": "2026-02-15",
+    "created": "2026-02-14",
     "author": "jake",
     "status": "deployed",
     "nrr": "",
     "sector": "Healthcare IT",
-    "description": "Customer Operations Assessment — agentic AI readiness for CS, PS, and Support."
-  },
-  {
-    "client": "overview",
-    "product": "agentic",
-    "repo": "",
-    "url": "https://agentic-customer-ops.vercel.app",
-    "created": "2026-02-10",
-    "author": "jake",
-    "status": "deployed",
-    "nrr": "",
-    "sector": "Enterprise Software (Cross-sector)",
-    "description": "Agentic Customer Operations Transformation research overview."
+    "description": "Customer Operations Assessment — agentic AI readiness."
   }
 ]

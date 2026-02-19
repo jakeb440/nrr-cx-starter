@@ -1,0 +1,151 @@
+{
+  "metadata": {
+    "company": "Salesforce",
+    "ticker": "CRM",
+    "total_employees": 72682,
+    "total_employees_source": "FY2025 10-K (Jan 2025)",
+    "india_employees": 13000,
+    "india_employees_source": "Economic Times, Oct 2024 — largest office outside US",
+    "ps_revenue_usd": 2200000000,
+    "ps_revenue_note": "FY2025 professional services & other ~$2.2B (~6% of total revenue)",
+    "methodology": "FTE estimates combine: (1) LinkedIn/job-board role volume signals, (2) revenue-proportional benchmarks, (3) public disclosures on team sizes. Estimates are order-of-magnitude; actual headcounts are not publicly disclosed at this granularity."
+  },
+  "professional_services": {
+    "estimated_total_ftes": 4800,
+    "estimation_note": "Based on PS revenue of ~$2.2B, Salesforce PS is known to be low-margin. Typical PS FTE costs at $130-180K loaded yield ~4,500-5,500 FTEs. Cross-check: ~6.5% of 72K total employees = ~4,700.",
+    "roles": {
+      "Implementation Project Managers": {
+        "estimated_ftes": 720,
+        "source": "job_indicators",
+        "source_note": "~560 open PM/Sr PM roles on LinkedIn (Feb 2025). Implied total ~700-750 given typical 12-15% open-role ratio.",
+        "current_offshore_pct": 18
+      },
+      "Configuration / Technical Analysts": {
+        "estimated_ftes": 1550,
+        "source": "job_indicators",
+        "source_note": "Largest PS cohort. ~1,200 Technical Analyst/Config roles visible on LinkedIn globally. Significant India presence (Hyderabad CoE).",
+        "current_offshore_pct": 48
+      },
+      "Solution Architects": {
+        "estimated_ftes": 480,
+        "source": "job_indicators",
+        "source_note": "~350 Solution Architect / Technical Architect roles on LinkedIn. Predominantly US/UK-based, client-facing.",
+        "current_offshore_pct": 8
+      },
+      "Engagement / Delivery Managers": {
+        "estimated_ftes": 340,
+        "source": "job_indicators",
+        "source_note": "~250 Engagement Manager / Delivery Lead roles visible. Almost entirely onshore and client-facing.",
+        "current_offshore_pct": 3
+      },
+      "Training & Enablement Specialists": {
+        "estimated_ftes": 380,
+        "source": "job_indicators",
+        "source_note": "Trailhead content team + field enablement. ~280 related roles on job boards. Growing digital content team in India.",
+        "current_offshore_pct": 30
+      },
+      "QA / Test Engineers": {
+        "estimated_ftes": 680,
+        "source": "job_indicators",
+        "source_note": "~500 QA/test roles across PS and product. Significant India/Philippines presence for regression testing.",
+        "current_offshore_pct": 58
+      },
+      "Practice Leads / Directors": {
+        "estimated_ftes": 250,
+        "source": "revenue_benchmark",
+        "source_note": "Senior leadership layer. Not heavily posted externally. Estimated from org-design benchmarks (~5% of PS function).",
+        "current_offshore_pct": 0
+      }
+    }
+  },
+  "customer_success": {
+    "estimated_total_ftes": 2800,
+    "estimation_note": "Salesforce CS organization restructured 2023-2024. Estimated ~3.8% of total headcount. CSM ratios at Salesforce are reported to be ~1:25 for enterprise, 1:80+ for commercial.",
+    "roles": {
+      "Customer Success Managers": {
+        "estimated_ftes": 1050,
+        "source": "job_indicators",
+        "source_note": "~800 CSM/Sr CSM roles on LinkedIn (high turnover role). 58% of CSMs industry-wide prepared to leave per ChurnZero 2025 report.",
+        "current_offshore_pct": 10
+      },
+      "Renewal Managers": {
+        "estimated_ftes": 420,
+        "source": "job_indicators",
+        "source_note": "~310 Renewal Manager roles visible. Salesforce renewals are notoriously complex given multi-product contracts.",
+        "current_offshore_pct": 25
+      },
+      "Onboarding Specialists": {
+        "estimated_ftes": 380,
+        "source": "job_indicators",
+        "source_note": "~290 Onboarding Specialist / Implementation Success roles. Growing role as Salesforce pushes 'quick start' packages.",
+        "current_offshore_pct": 30
+      },
+      "Customer Health / Analytics Analysts": {
+        "estimated_ftes": 250,
+        "source": "job_indicators",
+        "source_note": "~180 health/analytics roles. Salesforce uses Gainsight internally. Strong data team in India.",
+        "current_offshore_pct": 55
+      },
+      "Scale / Digital CS Reps": {
+        "estimated_ftes": 380,
+        "source": "job_indicators",
+        "source_note": "Growing digital-touch motion for SMB/commercial segment. ~280 Digital CS / Scale Advisor roles visible.",
+        "current_offshore_pct": 45
+      },
+      "CS Operations / Strategy Analysts": {
+        "estimated_ftes": 220,
+        "source": "job_indicators",
+        "source_note": "~160 CS Ops / Strategy Analyst roles. Centralized CS operations team supporting global org.",
+        "current_offshore_pct": 38
+      }
+    }
+  },
+  "customer_support": {
+    "estimated_total_ftes": 5200,
+    "estimation_note": "Salesforce offers Standard, Premier (20-30% of license fee), and Signature support tiers. ~7% of total headcount. Agentforce now handles 84% of help.salesforce.com queries (1M+ conversations since Oct 2024).",
+    "roles": {
+      "Tier-1 Support Representatives": {
+        "estimated_ftes": 2100,
+        "source": "job_indicators",
+        "source_note": "~1,600 Support Rep / Technical Support roles visible. Heavy India/Philippines presence. Agentforce projected to deflect $50M/yr in Tier-1 costs.",
+        "current_offshore_pct": 72
+      },
+      "Tier-2 Technical Support Engineers": {
+        "estimated_ftes": 1250,
+        "source": "job_indicators",
+        "source_note": "~950 Technical Support Engineer / Support Engineer roles on LinkedIn. Mix of US, India, and Dublin teams.",
+        "current_offshore_pct": 40
+      },
+      "Support Operations / Workforce Mgmt": {
+        "estimated_ftes": 350,
+        "source": "job_indicators",
+        "source_note": "~260 Support Ops / WFM roles. Includes queue management, SLA reporting, and scheduling functions.",
+        "current_offshore_pct": 52
+      },
+      "Knowledge Base Authors / Content Mgrs": {
+        "estimated_ftes": 280,
+        "source": "job_indicators",
+        "source_note": "~210 KB / Technical Writer roles. Feeds into Trailhead, Help articles, and now Agentforce training data.",
+        "current_offshore_pct": 38
+      },
+      "Escalation / Critical-Issue Managers": {
+        "estimated_ftes": 180,
+        "source": "revenue_benchmark",
+        "source_note": "Estimated from benchmark ratios. Not heavily visible on job boards as typically filled internally.",
+        "current_offshore_pct": 5
+      },
+      "Support QA / CSAT Analysts": {
+        "estimated_ftes": 240,
+        "source": "job_indicators",
+        "source_note": "~180 QA / CSAT Analyst roles. Growing as Salesforce invests in support quality metrics.",
+        "current_offshore_pct": 50
+      },
+      "Premium / Designated Support Engineers": {
+        "estimated_ftes": 600,
+        "source": "job_indicators",
+        "source_note": "Signature Success is a major revenue stream. ~450 Designated Support Engineer / TAM roles visible. Primarily onshore, client-facing.",
+        "current_offshore_pct": 12
+      }
+    }
+  }
+}

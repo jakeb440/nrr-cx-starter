@@ -1,0 +1,177 @@
+{
+  "metadata": {
+    "description": "Role-level benchmarks for enterprise software companies at $30-70B revenue scale with cloud + on-prem model. FTE_per_100M = typical FTEs per $100M annual revenue. Calibrated against a composite of enterprise software peers including SAP, Salesforce, Microsoft, ServiceNow, Workday. Sources: Technology & Services Benchmarking, SaaS Org Design studies, Gartner IT Key Metrics.",
+    "source": "Composite of industry benchmarks for enterprise software vertical",
+    "context": "Oracle has ~$53B revenue and ~164,000 total employees. Benchmarks reflect industry medians for enterprise software at scale — at $50B+ revenue, FTE-per-$100M ratios are lower than mid-market due to economies of scale, mature automation, and heavy partner leverage."
+  },
+  "professional_services": {
+    "label": "Professional Services / Oracle Consulting",
+    "typical_pct_of_total_headcount": [4.0, 8.0],
+    "roles": [
+      {
+        "role": "Practice Managers / Engagement Leads",
+        "short": "Practice Mgrs",
+        "description": "Lead implementation and consulting engagements; manage timelines, budgets, client stakeholders. Serve customer success role throughout delivery.",
+        "fte_per_100m": [1.8, 3.2],
+        "median_fte_per_100m": 2.45,
+        "typical_pct_of_function": [14, 20]
+      },
+      {
+        "role": "Delivery Engineers (Functional)",
+        "short": "Functional DEs",
+        "description": "Configure Fusion Apps, NetSuite, and on-prem applications to client requirements. Domain experts in ERP, HCM, CX, SCM modules.",
+        "fte_per_100m": [3.0, 5.8],
+        "median_fte_per_100m": 4.1,
+        "typical_pct_of_function": [28, 35]
+      },
+      {
+        "role": "Delivery Engineers (Technical)",
+        "short": "Technical DEs",
+        "description": "Build integrations, data migrations, OCI infrastructure, database upgrades, and custom extensions.",
+        "fte_per_100m": [2.2, 4.5],
+        "median_fte_per_100m": 3.05,
+        "typical_pct_of_function": [20, 28]
+      },
+      {
+        "role": "Solution Architects",
+        "short": "Solution Archs",
+        "description": "Design technical solutions pre- and post-sale; integration architecture, cloud migration strategy, infrastructure sizing.",
+        "fte_per_100m": [1.0, 2.2],
+        "median_fte_per_100m": 1.5,
+        "typical_pct_of_function": [8, 14]
+      },
+      {
+        "role": "Program / Project Managers",
+        "short": "Program Mgrs",
+        "description": "Manage large multi-module, multi-workstream implementations. PMO, status reporting, risk management.",
+        "fte_per_100m": [1.0, 2.0],
+        "median_fte_per_100m": 1.42,
+        "typical_pct_of_function": [8, 12]
+      },
+      {
+        "role": "PS Leadership / Regional Delivery Heads",
+        "short": "PS Leaders",
+        "description": "Senior leaders managing practice areas, regional delivery, methodology, team staffing. P&L responsibility.",
+        "fte_per_100m": [0.6, 1.3],
+        "median_fte_per_100m": 0.95,
+        "typical_pct_of_function": [4, 7]
+      }
+    ]
+  },
+  "customer_success": {
+    "label": "Customer Success",
+    "typical_pct_of_total_headcount": [1.5, 4.0],
+    "roles": [
+      {
+        "role": "Customer Success Managers",
+        "short": "CSMs",
+        "description": "Own post-deployment relationship for cloud customers; drive adoption, expansion, retention. Focus on Fusion Apps and NetSuite.",
+        "fte_per_100m": [1.1, 2.4],
+        "median_fte_per_100m": 1.72,
+        "typical_pct_of_function": [30, 40]
+      },
+      {
+        "role": "Service Delivery Managers (Paid Tier)",
+        "short": "SDMs",
+        "description": "Coordinate delivery for paid support customers (Premier, Mission Critical). Bridge between support and customer.",
+        "fte_per_100m": [0.8, 1.6],
+        "median_fte_per_100m": 1.12,
+        "typical_pct_of_function": [14, 20]
+      },
+      {
+        "role": "Technical Account Managers (TAMs)",
+        "short": "TAMs",
+        "description": "Designated technical relationship owner for enterprise accounts. Proactive monitoring, quarterly reviews, escalation management.",
+        "fte_per_100m": [0.8, 1.5],
+        "median_fte_per_100m": 1.1,
+        "typical_pct_of_function": [16, 24]
+      },
+      {
+        "role": "Renewal / Expansion Managers",
+        "short": "Renewal Mgrs",
+        "description": "Manage contract renewal pipeline for cloud subscriptions; negotiate terms, forecast churn, manage expansion opportunities.",
+        "fte_per_100m": [0.6, 1.2],
+        "median_fte_per_100m": 0.85,
+        "typical_pct_of_function": [12, 18]
+      },
+      {
+        "role": "CS Operations / Strategy Analysts",
+        "short": "CS Ops",
+        "description": "Tooling, process design, reporting, territory planning for CS organization. Gainsight/CRM admin.",
+        "fte_per_100m": [0.5, 1.0],
+        "median_fte_per_100m": 0.72,
+        "typical_pct_of_function": [6, 12]
+      }
+    ]
+  },
+  "customer_support": {
+    "label": "Customer Support",
+    "typical_pct_of_total_headcount": [2.5, 5.5],
+    "roles": [
+      {
+        "role": "L1 Support Engineers (Fusion/SaaS)",
+        "short": "L1 Fusion",
+        "description": "Handle inbound support for Fusion Apps and SaaS products: how-to, configuration questions, basic troubleshooting.",
+        "fte_per_100m": [1.5, 3.2],
+        "median_fte_per_100m": 2.28,
+        "typical_pct_of_function": [22, 30]
+      },
+      {
+        "role": "L1/L2 NOC Engineers (OCI)",
+        "short": "NOC Engineers",
+        "description": "Network Operations Center for OCI: infrastructure monitoring, incident detection, L1/L2 triage for cloud infrastructure.",
+        "fte_per_100m": [1.0, 2.2],
+        "median_fte_per_100m": 1.52,
+        "typical_pct_of_function": [14, 20]
+      },
+      {
+        "role": "L2 Frontend Support Engineers",
+        "short": "L2 Frontend",
+        "description": "Product-specific L2 for on-prem database, analytics, and legacy applications. Complex troubleshooting and configuration.",
+        "fte_per_100m": [0.9, 2.0],
+        "median_fte_per_100m": 1.45,
+        "typical_pct_of_function": [10, 16]
+      },
+      {
+        "role": "Advanced Support Engineers (ASE)",
+        "short": "ASEs",
+        "description": "Paid-tier L1 support for Premier and Mission Critical customers. Dedicated product expertise across Oracle stack.",
+        "fte_per_100m": [1.0, 1.9],
+        "median_fte_per_100m": 1.38,
+        "typical_pct_of_function": [12, 18]
+      },
+      {
+        "role": "Senior Advanced Support Engineers (Sr. ASE)",
+        "short": "Sr. ASEs",
+        "description": "Senior paid-tier support handling complex cross-product issues. Manage escalation flow for Mission Critical customers.",
+        "fte_per_100m": [0.6, 1.3],
+        "median_fte_per_100m": 0.9,
+        "typical_pct_of_function": [6, 10]
+      },
+      {
+        "role": "Support Operations / Workforce Mgmt",
+        "short": "Support Ops",
+        "description": "Scheduling, queue management, SLA tracking, workforce planning across multiple product support orgs.",
+        "fte_per_100m": [0.7, 1.4],
+        "median_fte_per_100m": 1.0,
+        "typical_pct_of_function": [6, 10]
+      },
+      {
+        "role": "Knowledge Base / Content Engineers",
+        "short": "KB Engineers",
+        "description": "Create and maintain My Oracle Support knowledge base, troubleshooting guides, product documentation.",
+        "fte_per_100m": [0.5, 1.1],
+        "median_fte_per_100m": 0.75,
+        "typical_pct_of_function": [4, 8]
+      },
+      {
+        "role": "Incident Management (OCI Critical)",
+        "short": "Incident Mgmt",
+        "description": "PMO for multi-company impact incidents on OCI. Coordinate cross-team response for critical cloud infrastructure events.",
+        "fte_per_100m": [0.2, 0.5],
+        "median_fte_per_100m": 0.3,
+        "typical_pct_of_function": [2, 5]
+      }
+    ]
+  }
+}

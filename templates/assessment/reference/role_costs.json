@@ -1,0 +1,32 @@
+{
+  "metadata": {
+    "description": "Fully-loaded annual cost per FTE by role (onshore US, offshore India). Includes base salary, benefits, taxes, equipment, facilities. Sources: Glassdoor, Levels.fyi, BLS, industry compensation surveys for healthcare IT. Loaded multiplier: 1.35-1.45x base.",
+    "last_updated": "2026-02",
+    "currency": "USD"
+  },
+  "professional_services": {
+    "Implementation & Delivery Managers": { "onshore_usd": 155000, "offshore_usd": 48000 },
+    "Configuration / Technical Analysts": { "onshore_usd": 120000, "offshore_usd": 38000 },
+    "Solution Architects": { "onshore_usd": 185000, "offshore_usd": 58000 },
+    "Training & Enablement Specialists": { "onshore_usd": 110000, "offshore_usd": 35000 },
+    "QA / Test Engineers": { "onshore_usd": 105000, "offshore_usd": 32000 },
+    "Practice Leads / Directors": { "onshore_usd": 220000, "offshore_usd": 70000 }
+  },
+  "customer_success": {
+    "Customer Success Managers": { "onshore_usd": 145000, "offshore_usd": 45000 },
+    "Renewal Managers": { "onshore_usd": 130000, "offshore_usd": 42000 },
+    "Onboarding Specialists": { "onshore_usd": 105000, "offshore_usd": 34000 },
+    "Customer Health / Analytics Analysts": { "onshore_usd": 115000, "offshore_usd": 38000 },
+    "Scale / Digital CS Reps": { "onshore_usd": 85000, "offshore_usd": 28000 },
+    "CS Operations / Strategy Analysts": { "onshore_usd": 110000, "offshore_usd": 36000 }
+  },
+  "customer_support": {
+    "Tier-1 Support Representatives": { "onshore_usd": 68000, "offshore_usd": 22000 },
+    "Tier-2 Technical Support Engineers": { "onshore_usd": 95000, "offshore_usd": 32000 },
+    "Support Operations / Workforce Mgmt": { "onshore_usd": 90000, "offshore_usd": 30000 },
+    "Knowledge Base Authors / Content Mgrs": { "onshore_usd": 88000, "offshore_usd": 28000 },
+    "Escalation / Critical-Issue Managers": { "onshore_usd": 140000, "offshore_usd": 45000 },
+    "Support QA / CSAT Analysts": { "onshore_usd": 85000, "offshore_usd": 28000 },
+    "Premium / Designated Support Engineers": { "onshore_usd": 115000, "offshore_usd": 38000 }
+  }
+}

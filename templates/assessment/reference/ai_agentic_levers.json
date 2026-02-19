@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "scope": "AI and agentic automation potential for customer functions",
+    "focus": "Software/tech companies, $500M+ revenue"
+  },
+  "professional_services": [
+    {
+      "area": "Implementation playbooks and runbooks",
+      "potential": "high",
+      "description": "Standard implementations, checklists, and repeatable steps can be guided or executed by agents with human oversight.",
+      "typical_scope_pct": "20–40% of standard delivery effort",
+      "examples": ["Kickoff checklists", "config wizards", "documentation generation", "status reporting"]
+    },
+    {
+      "area": "Project and resource scheduling",
+      "potential": "medium_high",
+      "description": "Scheduling, capacity planning, and status updates are good candidates for automation.",
+      "examples": ["Resource allocation suggestions", "timeline templates", "status syncs"]
+    },
+    {
+      "area": "Customer onboarding and training",
+      "potential": "high",
+      "description": "Guided self-serve onboarding and training reduce live FTE need.",
+      "typical_scope_pct": "15–30% of onboarding touchpoints",
+      "examples": ["In-app guidance", "chatbots for common questions", "video and interactive training"]
+    }
+  ],
+  "customer_success": [
+    {
+      "area": "Health scoring and risk detection",
+      "potential": "high",
+      "description": "Data-driven health and risk models with automated alerts and next-best-action suggestions.",
+      "examples": ["Usage-based health scores", "churn risk alerts", "recommended touchpoint timing"]
+    },
+    {
+      "area": "Routine touchpoints and outreach",
+      "potential": "high",
+      "description": "Template-driven outreach, renewal reminders, and follow-ups can be drafted or triggered by agents.",
+      "typical_scope_pct": "25–45% of low-touch CSM activities",
+      "examples": ["Renewal email sequences", "QBR prep drafts", "adoption tips and nudges"]
+    },
+    {
+      "area": "Internal knowledge and playbooks",
+      "potential": "medium_high",
+      "description": "RAG over playbooks and internal docs so CSMs get instant answers.",
+      "examples": ["Playbook lookup", "competitor battlecards", "escalation paths"]
+    }
+  ],
+  "customer_support": [
+    {
+      "area": "Tier-1 deflection and resolution",
+      "potential": "high",
+      "description": "Chatbots and deflective self-service for common, documentable issues.",
+      "typical_scope_pct": "30–50% of tier-1 volume where knowledge is codified",
+      "examples": ["FAQ and how-to resolution", "password and access flows", "status checks"]
+    },
+    {
+      "area": "Case triage and routing",
+      "potential": "high",
+      "description": "Intent classification and routing reduce handle time and improve consistency.",
+      "examples": ["Auto-categorization", "priority and queue assignment", "suggested responses"]
+    },
+    {
+      "area": "Knowledge base and agent assist",
+      "potential": "high",
+      "description": "Real-time suggestions and article surfacing for agents.",
+      "examples": ["Inline KB suggestions", "next-best-answer", "escalation reasoning"]
+    }
+  ]
+}

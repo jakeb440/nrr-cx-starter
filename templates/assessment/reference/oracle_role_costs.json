@@ -1,0 +1,32 @@
+{
+  "metadata": {
+    "description": "Fully-loaded annual cost per FTE by role (onshore US, offshore India) for Oracle. Includes base salary, benefits, taxes, equipment, facilities. Sources: Glassdoor, Levels.fyi, BLS, industry compensation surveys for enterprise software. Oracle pays at or above market for technical roles. Loaded multiplier: 1.35-1.45x base.",
+    "last_updated": "2026-02",
+    "currency": "USD"
+  },
+  "professional_services": {
+    "Practice Managers / Engagement Leads": { "onshore_usd": 175000, "offshore_usd": 52000 },
+    "Delivery Engineers (Functional)": { "onshore_usd": 140000, "offshore_usd": 42000 },
+    "Delivery Engineers (Technical)": { "onshore_usd": 155000, "offshore_usd": 48000 },
+    "Solution Architects": { "onshore_usd": 210000, "offshore_usd": 65000 },
+    "Program / Project Managers": { "onshore_usd": 160000, "offshore_usd": 50000 },
+    "PS Leadership / Regional Delivery Heads": { "onshore_usd": 260000, "offshore_usd": 80000 }
+  },
+  "customer_success": {
+    "Customer Success Managers": { "onshore_usd": 165000, "offshore_usd": 50000 },
+    "Service Delivery Managers (Paid Tier)": { "onshore_usd": 150000, "offshore_usd": 48000 },
+    "Technical Account Managers (TAMs)": { "onshore_usd": 175000, "offshore_usd": 55000 },
+    "Renewal / Expansion Managers": { "onshore_usd": 145000, "offshore_usd": 45000 },
+    "CS Operations / Strategy Analysts": { "onshore_usd": 125000, "offshore_usd": 40000 }
+  },
+  "customer_support": {
+    "L1 Support Engineers (Fusion/SaaS)": { "onshore_usd": 75000, "offshore_usd": 24000 },
+    "L1/L2 NOC Engineers (OCI)": { "onshore_usd": 85000, "offshore_usd": 28000 },
+    "L2 Frontend Support Engineers": { "onshore_usd": 100000, "offshore_usd": 34000 },
+    "Advanced Support Engineers (ASE)": { "onshore_usd": 130000, "offshore_usd": 42000 },
+    "Senior Advanced Support Engineers (Sr. ASE)": { "onshore_usd": 165000, "offshore_usd": 52000 },
+    "Support Operations / Workforce Mgmt": { "onshore_usd": 95000, "offshore_usd": 32000 },
+    "Knowledge Base / Content Engineers": { "onshore_usd": 92000, "offshore_usd": 30000 },
+    "Incident Management (OCI Critical)": { "onshore_usd": 155000, "offshore_usd": 48000 }
+  }
+}

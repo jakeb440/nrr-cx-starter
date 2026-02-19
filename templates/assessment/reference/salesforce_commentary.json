@@ -1,0 +1,109 @@
+{
+  "metadata": {
+    "description": "Curated customer and analyst commentary on Salesforce delivery processes. Sourced from Trustpilot, Gartner Peer Insights, G2, case studies, and industry reports. Focused on constructive feedback relevant to operational efficiency.",
+    "last_updated": "2025-02",
+    "curation_note": "Selected for relevance to customer operations optimization. Commentary focuses on delivery model, staffing, handoffs, and support experience — not billing or contract disputes."
+  },
+  "professional_services": {
+    "theme": "Implementation complexity drives large consulting teams and frequent rework",
+    "quotes": [
+      {
+        "text": "You need an implementation consultant to get the basic contact/company workflows automated, and as you scale users the costs balloon.",
+        "source": "Trustpilot review",
+        "date": "March 2025",
+        "relevance": "Indicates high reliance on consultants for standard setup — opportunity for AI-driven self-configuration"
+      },
+      {
+        "text": "Smaller consultancies have built entire business models around cleaning up after problematic Salesforce implementations.",
+        "source": "SalesforceBen industry analysis",
+        "date": "2024",
+        "relevance": "Suggests first-pass implementation quality issues that drive rework and excess FTE hours"
+      },
+      {
+        "text": "Training attendance was 92% but reps could not execute real workflows under pressure. The consultant configured and went live without verifying that reps could execute under real conditions.",
+        "source": "Talantir case study — 65-person sales org",
+        "date": "2024",
+        "relevance": "Training-to-execution gap suggests need for AI-driven adoption verification rather than manual validation"
+      },
+      {
+        "text": "Organizations struggle when trying to involve too many people without clear coordination. Relying on a single champion to drag everyone along fails.",
+        "source": "Oktana implementation guide",
+        "date": "2024",
+        "relevance": "Points to coordination overhead in large implementation teams — offshoring standardized work could free senior resources for coordination"
+      },
+      {
+        "text": "A client's system had accumulated new layers of functionality from different providers over years, resulting in low data quality, poor performance, and unclear documentation.",
+        "source": "TTMS case study",
+        "date": "2024",
+        "relevance": "Multi-vendor layering creates technical debt that drives ongoing PS FTE consumption"
+      }
+    ],
+    "insight_summary": "Salesforce implementations frequently require rework, with an entire consulting ecosystem built around remediation. High coordination overhead in large teams and a training-to-execution gap suggest opportunities for AI-assisted implementation and offshore standardized configuration work."
+  },
+  "customer_success": {
+    "theme": "CSM turnover and continuity gaps create re-onboarding cycles",
+    "quotes": [
+      {
+        "text": "Potentially great product, let down by absolutely incompetent support team. Sales are fantastic at getting new customers to drink the company Kool-Aid, but once you're onboarded — crickets. No follow-up, and no support whatsoever.",
+        "source": "Trustpilot review",
+        "date": "March 2025",
+        "relevance": "Post-sales handoff gap suggests insufficient CS coverage relative to new customer volume"
+      },
+      {
+        "text": "58% of CSMs are prepared to leave if offered their ideal role elsewhere, primarily due to lack of career clarity and perceived undervaluation compared to sales teams.",
+        "source": "ChurnZero CSM Confidential 2025 Report",
+        "date": "2025",
+        "relevance": "High CSM turnover drives customer disruption and re-onboarding costs. Digital CS motions could reduce per-CSM account load."
+      },
+      {
+        "text": "When CSMs leave, customers enter a vulnerable period without dedicated support. Churn risk goes unidentified, upsell opportunities are missed, and customer confidence can be shaken.",
+        "source": "Customer Success Collective",
+        "date": "2024",
+        "relevance": "CSM transitions are a primary churn risk — AI health monitoring could maintain continuity between transitions"
+      },
+      {
+        "text": "The irony of a customer service company being this bad. They let our renewal lapse — was always automatic — and now we are into the third month of trying to get it renewed.",
+        "source": "Trustpilot review",
+        "date": "April 2025",
+        "relevance": "Process failures in renewal management suggest opportunity for automated renewal workflows"
+      }
+    ],
+    "insight_summary": "High CSM turnover (58% ready to leave per industry data) creates costly re-onboarding cycles and churn risk during transitions. Post-sale handoff from sales to CS is a recurring weak point. AI-driven health monitoring and automated renewal workflows could significantly reduce the human cost of these gaps."
+  },
+  "customer_support": {
+    "theme": "Offshore quality perception gap and triage friction despite strong AI investment",
+    "quotes": [
+      {
+        "text": "Support in the US and EMEA is great, but their offshore teams are a different story. Their product knowledge is lacking, troubleshooting skills are minimal, and responses often feel automated.",
+        "source": "Trustpilot review",
+        "date": "May 2025",
+        "relevance": "Suggests offshore teams need better enablement and knowledge tooling — AI-assisted responses could close the quality gap"
+      },
+      {
+        "text": "When I emailed a renewal manager, he referred me to their website's chatbot. The chatbot referred me to a webpage that no longer existed. He replied that the chatbot was the only help he could offer me.",
+        "source": "Trustpilot review",
+        "date": "April 2025",
+        "relevance": "Chatbot-to-dead-link loop highlights need for better AI agent training and escalation paths"
+      },
+      {
+        "text": "Agentforce resolves over 84% of visitor issues on help.salesforce.com. Over 1 million customer conversations handled since October 2024, with a 65% reduction in response time.",
+        "source": "Salesforce.com (own disclosure)",
+        "date": "July 2025",
+        "relevance": "Salesforce is already its own proof case for Tier-1 AI deflection — $50M projected annual savings"
+      },
+      {
+        "text": "I have spoken to them 3 times to be told someone from their team would be calling me to resolve. Nobody from Salesforce contacts you.",
+        "source": "Trustpilot review",
+        "date": "March 2025",
+        "relevance": "Follow-up and case ownership failures suggest need for better automated SLA tracking and escalation"
+      },
+      {
+        "text": "Every time I reached out to Salesforce for help, I was sent a link to an article. The articles rarely were relevant and always were outdated and impossible to follow.",
+        "source": "Trustpilot review",
+        "date": "April 2025",
+        "relevance": "KB content quality and relevance issues — auto-generated and auto-updated KB from resolved tickets could address this"
+      }
+    ],
+    "insight_summary": "Salesforce's own Agentforce deployment (84% resolution rate, $50M projected savings) validates the Tier-1 AI deflection opportunity. However, offshore quality perception remains a concern, and knowledge base content staleness drives support friction. Closing the offshore enablement gap through AI-assisted responses and auto-maintained KB content represents the largest near-term opportunity."
+  }
+}

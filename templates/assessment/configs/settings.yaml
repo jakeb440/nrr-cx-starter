@@ -1,0 +1,32 @@
+# EXAMPLE CONFIGURATION - Automotive Industry
+# This configuration is set up for the automotive example.
+# When you generate your own agents, Cursor will update this file.
+
+models:
+  primary:
+    provider: openai_compatible
+    base_url: "https://openai.prod.ai-gateway.quantumblack.com/${AI_GATEWAY_INSTANCE_ID}/v1"
+    api_key: "${AI_GATEWAY_API_KEY}"
+    model: "gpt-5-chat-latest"
+    temperature: 0.2
+    max_tokens: 2048
+
+  routing:
+    provider: openai_compatible
+    base_url: "https://openai.prod.ai-gateway.quantumblack.com/${AI_GATEWAY_INSTANCE_ID}/v1"
+    api_key: "${AI_GATEWAY_API_KEY}"
+    model: "gpt-5-mini-2025-08-07"
+    temperature: 0.1
+    max_tokens: 50
+
+defaults:
+  catchall_model: "primary"
+  electricalarch_model: "primary"
+  customer_ops_optimizer_model: "primary"
+  routing_model: "routing"
+
+rag:
+  max_files: 100
+  max_chars_per_file: 200000
+  chunk_chars: 1200
+  chunk_overlap: 150

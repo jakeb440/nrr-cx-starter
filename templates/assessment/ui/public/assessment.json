@@ -1,0 +1,2163 @@
+{
+  "company": {
+    "name": "Oracle",
+    "ticker": null,
+    "ownership": "Public — NYSE: ORCL",
+    "industry": "Enterprise Software — Cloud Infrastructure (OCI), Cloud Applications (Fusion, NetSuite), Database, On-Prem",
+    "clinicians_on_platform": null,
+    "revenue_usd": 53000000000,
+    "employees": 164000,
+    "revenue_per_employee": 323171,
+    "india_employees": 45000,
+    "india_locations": [
+      "Bangalore",
+      "Hyderabad",
+      "Mumbai",
+      "Pune",
+      "Chennai",
+      "Noida"
+    ],
+    "us_locations": [
+      "Austin TX (HQ)",
+      "Redwood City CA",
+      "Seattle WA",
+      "Nashville TN",
+      "Burlington MA"
+    ]
+  },
+  "peer_financials": [
+    {
+      "name": "SAP",
+      "revenue_usd": 35000000000,
+      "employees": 107000,
+      "revenue_per_employee": 327103,
+      "note": "NYSE: SAP"
+    },
+    {
+      "name": "Salesforce",
+      "revenue_usd": 35000000000,
+      "employees": 73000,
+      "revenue_per_employee": 479452,
+      "note": "NYSE: CRM"
+    },
+    {
+      "name": "Microsoft (Cloud+AI)",
+      "revenue_usd": 105000000000,
+      "employees": 228000,
+      "revenue_per_employee": 460526,
+      "note": "NASDAQ: MSFT — Intelligent Cloud + Productivity segments"
+    },
+    {
+      "name": "ServiceNow",
+      "revenue_usd": 10500000000,
+      "employees": 24500,
+      "revenue_per_employee": 428571,
+      "note": "NYSE: NOW"
+    },
+    {
+      "name": "Workday",
+      "revenue_usd": 8000000000,
+      "employees": 19800,
+      "revenue_per_employee": 404040,
+      "note": "NASDAQ: WDAY"
+    },
+    {
+      "name": "Adobe",
+      "revenue_usd": 21500000000,
+      "employees": 30000,
+      "revenue_per_employee": 716667,
+      "note": "NASDAQ: ADBE"
+    }
+  ],
+  "functions": [
+    {
+      "function": "Professional Services / Oracle Consulting",
+      "function_key": "professional_services",
+      "typical_pct_of_headcount": [
+        4.0,
+        8.0
+      ],
+      "estimated_total_ftes": 8500,
+      "estimation_note": "Industry benchmarks indicate >10K FTEs in Oracle Consulting globally; adjusted to ~8,500 to reflect shift toward partner-led delivery (partner/Oracle ratio ~60/40 in NA) and headcount optimization. LinkedIn People Search: ~2,800 profiles with consulting/implementation/delivery titles at Oracle. India scaling (2,800 × 1.4x for India penetration) = ~3,920 visible. Coverage factor 0.46 (large enterprise, many titles not on LinkedIn) = ~8,500. Open roles cross-check: ~650 PS-related roles ÷ 8% = ~8,125.",
+      "roles": [
+        {
+          "role": "Practice Managers / Engagement Leads",
+          "short": "Practice Mgrs",
+          "description": "Lead implementation and consulting engagements; manage timelines, budgets, client stakeholders. Serve customer success role throughout delivery.",
+          "estimated_ftes": 1400,
+          "fte_source": "linkedin_people",
+          "fte_source_note": "LinkedIn People Search: ~520 profiles with 'Practice Manager,' 'Engagement Manager,' 'Delivery Manager,' or 'Project Director' in Oracle Consulting. Practice managers serve customer success roles throughout delivery. India presence moderate (~25%). 520 visible / 0.37 coverage = ~1,400.",
+          "current_offshore_pct": 25,
+          "benchmark_range": [
+            954.0,
+            1696.0
+          ],
+          "benchmark_median": 1298.5,
+          "pct_vs_benchmark": 7.8,
+          "productivity": {
+            "opportunity_ftes": 66.0,
+            "excess_above_median": 101.5,
+            "has_opportunity": true
+          },
+          "ai": {
+            "h1_automate": {
+              "tasks": "Status report generation, schedule updates, resource allocation templates, meeting-notes distribution, SOW template population",
+              "impact_pct": 14
+            },
+            "h2_ai_assisted": {
+              "tasks": "Risk identification from project data, scope-change impact analysis, auto-drafted SOWs, predictive timeline adjustments, partner performance scoring",
+              "impact_pct": 16
+            },
+            "h3_agentic": {
+              "tasks": "Autonomous project health monitoring with auto-escalation, self-adjusting resource plans, proactive client comms for at-risk milestones",
+              "impact_pct": 8
+            },
+            "total_impact_pct": 38,
+            "efficiency_pct_2026": 12.0,
+            "efficiency_pct_2027": 22.0,
+            "efficiency_pct_2028": 34.0,
+            "ai_adjustment_factor": 1.0,
+            "impact_ftes": 532.0
+          },
+          "offshoring": {
+            "rating": "Low",
+            "rationale": "Client-facing, cultural fluency and timezone overlap required. Admin and reporting can be nearshored but engagement management stays onshore.",
+            "current_offshore_pct": 25,
+            "benchmark_offshore_pct": 32,
+            "gap_pct": 7,
+            "gap_ftes": 98.0,
+            "notes": "Already at 25%. Incremental opportunity in reporting/admin only. Most of role is client-facing."
+          },
+          "costs": {
+            "onshore_usd": 175000,
+            "offshore_usd": 52000,
+            "blended_cost": 144250
+          }
+        },
+        {
+          "role": "Delivery Engineers (Functional)",
+          "short": "Functional DEs",
+          "description": "Configure Fusion Apps, NetSuite, and on-prem applications to client requirements. Domain experts in ERP, HCM, CX, SCM modules.",
+          "estimated_ftes": 2600,
+          "fte_source": "linkedin_people",
+          "fte_source_note": "LinkedIn People Search: ~780 profiles with 'Functional Consultant,' 'Applications Consultant,' 'ERP Consultant,' or 'HCM Consultant' at Oracle. Largest PS role — covers Fusion Apps, NetSuite, and on-prem configuration. Heavy India presence for standard implementations. 780 visible × 1.4x India scaling / 0.42 coverage = ~2,600.",
+          "current_offshore_pct": 52,
+          "benchmark_range": [
+            1590.0,
+            3074.0
+          ],
+          "benchmark_median": 2173.0,
+          "pct_vs_benchmark": 19.7,
+          "productivity": {
+            "opportunity_ftes": 277.6,
+            "excess_above_median": 427.0,
+            "has_opportunity": true
+          },
+          "ai": {
+            "h1_automate": {
+              "tasks": "Template-based Fusion configurations, regression test execution, data migration scripts, environment cloning",
+              "impact_pct": 20
+            },
+            "h2_ai_assisted": {
+              "tasks": "AI-generated Fusion/NetSuite config from requirements docs, smart field mapping, anomaly detection in migrated data, cross-module dependency validation",
+              "impact_pct": 20
+            },
+            "h3_agentic": {
+              "tasks": "Self-configuring Fusion environments from natural-language specs, autonomous test generation and execution, auto-remediation of config drift",
+              "impact_pct": 12
+            },
+            "total_impact_pct": 52,
+            "efficiency_pct_2026": 18.0,
+            "efficiency_pct_2027": 34.0,
+            "efficiency_pct_2028": 50.0,
+            "ai_adjustment_factor": 1.0,
+            "impact_ftes": 1352.0
+          },
+          "offshoring": {
+            "rating": "High",
+            "rationale": "Fusion/NetSuite configuration is spec-driven and well-documented. Standard implementations already heavily offshore. Complex/client-facing config onshore.",
+            "current_offshore_pct": 52,
+            "benchmark_offshore_pct": 65,
+            "gap_pct": 13,
+            "gap_ftes": 338.0,
+            "notes": "Already at 52%. Incremental opportunity in moving more standard Fusion config work offshore as tooling matures."
+          },
+          "costs": {
+            "onshore_usd": 140000,
+            "offshore_usd": 42000,
+            "blended_cost": 89040
+          }
+        },
+        {
+          "role": "Delivery Engineers (Technical)",
+          "short": "Technical DEs",
+          "description": "Build integrations, data migrations, OCI infrastructure, database upgrades, and custom extensions.",
+          "estimated_ftes": 2000,
+          "fte_source": "linkedin_people",
+          "fte_source_note": "LinkedIn People Search: ~610 profiles with 'Technical Consultant,' 'Integration Specialist,' 'Cloud Architect,' or 'Technical Delivery' at Oracle Consulting. Covers OCI migrations, database upgrades, integration builds. Very heavy India presence. 610 visible × 1.4x India / 0.43 coverage = ~2,000.",
+          "current_offshore_pct": 58,
+          "benchmark_range": [
+            1166.0,
+            2385.0
+          ],
+          "benchmark_median": 1616.5,
+          "pct_vs_benchmark": 23.7,
+          "productivity": {
+            "opportunity_ftes": 249.3,
+            "excess_above_median": 383.5,
+            "has_opportunity": true
+          },
+          "ai": {
+            "h1_automate": {
+              "tasks": "OCI infrastructure provisioning via IaC templates, integration boilerplate generation, database migration scripts, environment spin-up/teardown",
+              "impact_pct": 18
+            },
+            "h2_ai_assisted": {
+              "tasks": "AI-generated integration code from API specs, cloud migration assessment from on-prem configs, performance optimization recommendations",
+              "impact_pct": 18
+            },
+            "h3_agentic": {
+              "tasks": "Autonomous OCI environment provisioning, self-healing integrations, auto-scaling configuration based on workload patterns",
+              "impact_pct": 10
+            },
+            "total_impact_pct": 46,
+            "efficiency_pct_2026": 16.0,
+            "efficiency_pct_2027": 30.0,
+            "efficiency_pct_2028": 46.0,
+            "ai_adjustment_factor": 1.0,
+            "impact_ftes": 920.0
+          },
+          "offshoring": {
+            "rating": "High",
+            "rationale": "Integration builds, OCI provisioning, data migrations — technical and location-independent. Oracle India has deep technical talent pool.",
+            "current_offshore_pct": 58,
+            "benchmark_offshore_pct": 70,
+            "gap_pct": 12,
+            "gap_ftes": 240.0,
+            "notes": "Already at 58%. Incremental opportunity in OCI migration work and database upgrade automation."
+          },
+          "costs": {
+            "onshore_usd": 155000,
+            "offshore_usd": 48000,
+            "blended_cost": 92940
+          }
+        },
+        {
+          "role": "Solution Architects",
+          "short": "Solution Archs",
+          "description": "Design technical solutions pre- and post-sale; integration architecture, cloud migration strategy, infrastructure sizing.",
+          "estimated_ftes": 900,
+          "fte_source": "linkedin_people",
+          "fte_source_note": "LinkedIn People Search: ~380 profiles with 'Solution Architect,' 'Enterprise Architect,' or 'Cloud Architect' in pre-sales/consulting at Oracle. Solution Architects scope integrations and architecture pre-sale. Primarily US/EU-based. 380 visible / 0.42 coverage = ~900.",
+          "current_offshore_pct": 15,
+          "benchmark_range": [
+            530.0,
+            1166.0
+          ],
+          "benchmark_median": 795.0,
+          "pct_vs_benchmark": 13.2,
+          "productivity": {
+            "opportunity_ftes": 68.2,
+            "excess_above_median": 105.0,
+            "has_opportunity": true
+          },
+          "ai": {
+            "h1_automate": {
+              "tasks": "Architecture diagram generation, integration pattern docs, bill-of-materials creation, sizing calculators",
+              "impact_pct": 10
+            },
+            "h2_ai_assisted": {
+              "tasks": "Architecture option comparison from requirements, OCI vs on-prem cost modeling, API compatibility checks, migration complexity scoring",
+              "impact_pct": 14
+            },
+            "h3_agentic": {
+              "tasks": "End-to-end solution design drafts from discovery notes, autonomous technical feasibility assessments",
+              "impact_pct": 6
+            },
+            "total_impact_pct": 30,
+            "efficiency_pct_2026": 8.0,
+            "efficiency_pct_2027": 16.0,
+            "efficiency_pct_2028": 26.0,
+            "ai_adjustment_factor": 1.0,
+            "impact_ftes": 270.0
+          },
+          "offshoring": {
+            "rating": "Low",
+            "rationale": "Deep client engagement, discovery, strategic architecture decisions. Limited offshore potential.",
+            "current_offshore_pct": 15,
+            "benchmark_offshore_pct": 20,
+            "gap_pct": 5,
+            "gap_ftes": 45.0,
+            "notes": "Already at 15%. Minimal incremental — architecture documentation only."
+          },
+          "costs": {
+            "onshore_usd": 210000,
+            "offshore_usd": 65000,
+            "blended_cost": 188250
+          }
+        },
+        {
+          "role": "Program / Project Managers",
+          "short": "Program Mgrs",
+          "description": "Manage large multi-module, multi-workstream implementations. PMO, status reporting, risk management.",
+          "estimated_ftes": 800,
+          "fte_source": "linkedin_people",
+          "fte_source_note": "LinkedIn People Search: ~310 profiles with 'Program Manager,' 'Project Manager,' or 'PMO' in Oracle Consulting/Services. Manage large multi-module implementations. Mix of onshore (client-facing) and offshore (reporting/tracking). 310 visible / 0.39 coverage = ~800.",
+          "current_offshore_pct": 30,
+          "benchmark_range": [
+            530.0,
+            1060.0
+          ],
+          "benchmark_median": 752.6,
+          "pct_vs_benchmark": 6.3,
+          "productivity": {
+            "opportunity_ftes": 30.8,
+            "excess_above_median": 47.4,
+            "has_opportunity": true
+          },
+          "ai": {
+            "h1_automate": {
+              "tasks": "Status reporting, RAID log updates, timeline tracking, resource utilization dashboards, meeting scheduling",
+              "impact_pct": 16
+            },
+            "h2_ai_assisted": {
+              "tasks": "Predictive risk scoring, cross-workstream dependency analysis, auto-generated steering committee decks, resource demand forecasting",
+              "impact_pct": 16
+            },
+            "h3_agentic": {
+              "tasks": "Autonomous milestone tracking with proactive stakeholder alerts, self-adjusting project plans based on velocity",
+              "impact_pct": 8
+            },
+            "total_impact_pct": 40,
+            "efficiency_pct_2026": 14.0,
+            "efficiency_pct_2027": 25.0,
+            "efficiency_pct_2028": 38.0,
+            "ai_adjustment_factor": 1.0,
+            "impact_ftes": 320.0
+          },
+          "offshoring": {
+            "rating": "Medium",
+            "rationale": "Client-facing program management onshore; PMO tracking, reporting, risk log maintenance offshore.",
+            "current_offshore_pct": 30,
+            "benchmark_offshore_pct": 40,
+            "gap_pct": 10,
+            "gap_ftes": 80.0,
+            "notes": "Already at 30%. Incremental opportunity in moving more reporting/tracking work offshore."
+          },
+          "costs": {
+            "onshore_usd": 160000,
+            "offshore_usd": 50000,
+            "blended_cost": 127000
+          }
+        },
+        {
+          "role": "PS Leadership / Regional Delivery Heads",
+          "short": "PS Leaders",
+          "description": "Senior leaders managing practice areas, regional delivery, methodology, team staffing. P&L responsibility.",
+          "estimated_ftes": 450,
+          "fte_source": "linkedin_people",
+          "fte_source_note": "LinkedIn People Search: ~280 profiles with 'Director,' 'VP,' 'Senior Director,' or 'Regional Head' in Oracle Consulting. Each sales org has its own consulting lead with regional directors underneath. 280 visible / 0.62 coverage (senior roles well-represented on LinkedIn) = ~450.",
+          "current_offshore_pct": 5,
+          "benchmark_range": [
+            318.0,
+            689.0
+          ],
+          "benchmark_median": 503.5,
+          "pct_vs_benchmark": -10.6,
+          "productivity": {
+            "opportunity_ftes": 0.0,
+            "excess_above_median": -53.5,
+            "has_opportunity": false
+          },
+          "ai": {
+            "h1_automate": {
+              "tasks": "Utilization dashboards, pipeline reporting, P&L summaries, staffing reports",
+              "impact_pct": 10
+            },
+            "h2_ai_assisted": {
+              "tasks": "Talent-demand forecasting, partner performance analytics, methodology effectiveness analysis, competitive intelligence",
+              "impact_pct": 10
+            },
+            "h3_agentic": {
+              "tasks": "Limited — strategic leadership, P&L management, and partner relationships require human judgment",
+              "impact_pct": 3
+            },
+            "total_impact_pct": 23,
+            "efficiency_pct_2026": 5.1,
+            "efficiency_pct_2027": 10.2,
+            "efficiency_pct_2028": 15.3,
+            "ai_adjustment_factor": 0.85,
+            "impact_ftes": 88.0
+          },
+          "offshoring": {
+            "rating": "Not Recommended",
+            "rationale": "Strategic leadership, P&L ownership, client executive relationships, partner management.",
+            "current_offshore_pct": 5,
+            "benchmark_offshore_pct": 5,
+            "gap_pct": 0,
+            "gap_ftes": 0.0,
+            "notes": "At benchmark. No incremental opportunity."
+          },
+          "costs": {
+            "onshore_usd": 260000,
+            "offshore_usd": 80000,
+            "blended_cost": 251000
+          }
+        }
+      ],
+      "summary": {
+        "total_ai_addressable_ftes": 3482.0,
+        "total_offshore_gap_ftes": 801.0,
+        "total_productivity_ftes": 691.9
+      },
+      "commentary": {
+        "theme": "Deep product expertise when available, but inconsistent resourcing and heavy reliance on partners create variable delivery quality",
+        "quotes": [
+          {
+            "text": "Our Oracle Consulting team for the Fusion HCM rollout was exceptional. They had deep knowledge of the product and our industry, and the go-live was on time with minimal issues. The practice manager stayed engaged throughout.",
+            "source": "Gartner Peer Insights — VP HR Technology, manufacturing enterprise",
+            "date": "April 2025",
+            "sentiment": "positive",
+            "relevance": "When Oracle staffs its own consultants with product and domain expertise, delivery outcomes are strong — opportunity to replicate with AI-assisted resource matching and configuration templates"
+          },
+          {
+            "text": "The Fusion ERP implementation was a solid experience. Oracle's technical consultants knew the integration patterns cold and their testing methodology was rigorous. We went live with confidence.",
+            "source": "G2 review — IT director, retail enterprise",
+            "date": "January 2025",
+            "sentiment": "positive",
+            "relevance": "Technical delivery strength in integration and testing — AI could standardize this quality across all engagements, not just well-staffed ones"
+          },
+          {
+            "text": "We were promised Oracle's own consultants but ended up with a partner team that had never done a cloud migration before. Six months in, we had to restart the project with a different partner. The handoff was a nightmare.",
+            "source": "G2 review — CIO, mid-market financial services",
+            "date": "August 2025",
+            "sentiment": "negative",
+            "relevance": "Partner quality variance and poor handoff between Oracle and partner teams — AI-powered partner matching and delivery monitoring could prevent misalignment"
+          },
+          {
+            "text": "Configuration took twice as long as estimated because our Oracle team was simultaneously staffed on three other projects. We had to fight for their time every week. Simple configuration questions took days to get answered.",
+            "source": "TrustRadius — project manager, healthcare",
+            "date": "October 2025",
+            "sentiment": "negative",
+            "relevance": "Resource contention across concurrent projects — capacity planning and AI-assisted configuration could reduce delivery engineer utilization pressure"
+          },
+          {
+            "text": "The biggest pain point was the transition from on-prem to cloud. Oracle's teams for database and Fusion Apps didn't seem to coordinate. We had to be the middleware between their own organizations.",
+            "source": "Gartner Peer Insights — enterprise architect, energy company",
+            "date": "June 2025",
+            "sentiment": "negative",
+            "relevance": "Cross-product coordination gaps reflect Oracle's decentralized org structure — AI-powered project context sharing across product orgs could bridge siloes"
+          }
+        ],
+        "insight_summary": "Oracle Consulting has deep product expertise that delivers strong outcomes when well-staffed. But decentralized org structure creates coordination gaps across product lines, resource contention dilutes consultant availability, and partner quality is inconsistent. AI-assisted configuration, cross-product knowledge sharing, and intelligent resource allocation could make strong delivery outcomes more consistent."
+      }
+    },
+    {
+      "function": "Customer Success",
+      "function_key": "customer_success",
+      "typical_pct_of_headcount": [
+        1.5,
+        4.0
+      ],
+      "estimated_total_ftes": 3200,
+      "estimation_note": "Oracle's CS function is newer and growing, driven by cloud subscription model. Formal Customer Success roles exist for cloud renewals. LinkedIn People Search: ~850 profiles with 'Customer Success,' 'Renewal,' 'TAM,' or 'Service Delivery Manager' at Oracle. India scaling: 850 × 1.4x = ~1,190 visible. Coverage factor 0.37 = ~3,200. Oracle's EVP Customer Success Services oversees this organization.",
+      "roles": [
+        {
+          "role": "Customer Success Managers",
+          "short": "CSMs",
+          "description": "Own post-deployment relationship for cloud customers; drive adoption, expansion, retention. Focus on Fusion Apps and NetSuite.",
+          "estimated_ftes": 1100,
+          "fte_source": "linkedin_people",
+          "fte_source_note": "LinkedIn People Search: ~420 profiles with 'Customer Success Manager,' 'Senior CSM,' or 'Cloud Customer Success' at Oracle. Primarily covering Fusion Apps and NetSuite cloud customers. Growing rapidly as Oracle shifts to subscription model. Predominantly US/EU-based. 420 visible / 0.38 coverage = ~1,100.",
+          "current_offshore_pct": 12,
+          "benchmark_range": [
+            583.0,
+            1272.0
+          ],
+          "benchmark_median": 911.6,
+          "pct_vs_benchmark": 20.7,
+          "productivity": {
+            "opportunity_ftes": 122.5,
+            "excess_above_median": 188.4,
+            "has_opportunity": true
+          },
+          "ai": {
+            "h1_automate": {
+              "tasks": "Recurring check-in scheduling, usage report generation, renewal date alerts, standard onboarding emails, QBR deck pre-population",
+              "impact_pct": 12
+            },
+            "h2_ai_assisted": {
+              "tasks": "Proactive churn-risk alerts, next-best-action suggestions, AI-drafted EBR decks, sentiment scoring from calls, feature adoption recommendations",
+              "impact_pct": 18
+            },
+            "h3_agentic": {
+              "tasks": "Autonomous low-touch account management for healthy cloud accounts, auto-triggered expansion plays, self-service health dashboards",
+              "impact_pct": 10
+            },
+            "total_impact_pct": 40,
+            "efficiency_pct_2026": 12.0,
+            "efficiency_pct_2027": 24.0,
+            "efficiency_pct_2028": 38.0,
+            "ai_adjustment_factor": 1.0,
+            "impact_ftes": 440.0
+          },
+          "offshoring": {
+            "rating": "Low",
+            "rationale": "Relationship-driven; cultural and timezone alignment critical for enterprise accounts. Some mid-market/digital CS roles nearshore potential.",
+            "current_offshore_pct": 12,
+            "benchmark_offshore_pct": 18,
+            "gap_pct": 6,
+            "gap_ftes": 66.0,
+            "notes": "Currently at 12%. Small incremental opportunity for mid-market digital CS motions."
+          },
+          "costs": {
+            "onshore_usd": 165000,
+            "offshore_usd": 50000,
+            "blended_cost": 151200
+          }
+        },
+        {
+          "role": "Service Delivery Managers (Paid Tier)",
+          "short": "SDMs",
+          "description": "Coordinate delivery for paid support customers (Premier, Mission Critical). Bridge between support and customer.",
+          "estimated_ftes": 550,
+          "fte_source": "linkedin_people",
+          "fte_source_note": "LinkedIn People Search: ~195 profiles with 'Service Delivery Manager,' 'SDM,' or 'Customer Service Manager' in Oracle support/services. Manage paid Premier and Mission Critical tier customers; SDMs coordinate with ASEs and TAMs. 195 visible / 0.35 coverage = ~550.",
+          "current_offshore_pct": 20,
+          "benchmark_range": [
+            424.0,
+            848.0
+          ],
+          "benchmark_median": 593.6,
+          "pct_vs_benchmark": -7.3,
+          "productivity": {
+            "opportunity_ftes": 0.0,
+            "excess_above_median": -43.6,
+            "has_opportunity": false
+          },
+          "ai": {
+            "h1_automate": {
+              "tasks": "SLA tracking reports, service review decks, incident summaries, scheduled health checks, proactive monitoring alerts",
+              "impact_pct": 12
+            },
+            "h2_ai_assisted": {
+              "tasks": "Predictive SLA breach detection, auto-generated service improvement plans, cross-product impact analysis for planned changes",
+              "impact_pct": 14
+            },
+            "h3_agentic": {
+              "tasks": "Autonomous service health monitoring with auto-remediation recommendations, proactive outreach for detected anomalies",
+              "impact_pct": 8
+            },
+            "total_impact_pct": 34,
+            "efficiency_pct_2026": 10.0,
+            "efficiency_pct_2027": 20.0,
+            "efficiency_pct_2028": 32.0,
+            "ai_adjustment_factor": 1.0,
+            "impact_ftes": 187.0
+          },
+          "offshoring": {
+            "rating": "Low",
+            "rationale": "Paid-tier customers expect dedicated, same-timezone service coordination. Premium relationship role.",
+            "current_offshore_pct": 20,
+            "benchmark_offshore_pct": 25,
+            "gap_pct": 5,
+            "gap_ftes": 27.5,
+            "notes": "Currently at 20%. Minimal incremental — reporting/coordination admin only."
+          },
+          "costs": {
+            "onshore_usd": 150000,
+            "offshore_usd": 48000,
+            "blended_cost": 129600
+          }
+        },
+        {
+          "role": "Technical Account Managers (TAMs)",
+          "short": "TAMs",
+          "description": "Designated technical relationship owner for enterprise accounts. Proactive monitoring, quarterly reviews, escalation management.",
+          "estimated_ftes": 650,
+          "fte_source": "linkedin_people",
+          "fte_source_note": "LinkedIn People Search: ~245 profiles with 'Technical Account Manager' or 'TAM' at Oracle. TAMs manage customer relationships and handle escalations for premier/mission critical tier. Dedicated to large enterprise accounts. 245 visible / 0.38 coverage = ~650.",
+          "current_offshore_pct": 10,
+          "benchmark_range": [
+            424.0,
+            795.0
+          ],
+          "benchmark_median": 583.0,
+          "pct_vs_benchmark": 11.5,
+          "productivity": {
+            "opportunity_ftes": 43.6,
+            "excess_above_median": 67.0,
+            "has_opportunity": true
+          },
+          "ai": {
+            "h1_automate": {
+              "tasks": "Environment audit reports, upgrade readiness assessments, patch status tracking, scheduled health checks",
+              "impact_pct": 12
+            },
+            "h2_ai_assisted": {
+              "tasks": "Predictive issue detection from telemetry, personalized optimization recommendations, AI-drafted account reviews, cross-product dependency alerts",
+              "impact_pct": 14
+            },
+            "h3_agentic": {
+              "tasks": "Autonomous environment monitoring with self-healing for known issues, proactive outreach on detected anomalies",
+              "impact_pct": 6
+            },
+            "total_impact_pct": 32,
+            "efficiency_pct_2026": 10.0,
+            "efficiency_pct_2027": 20.0,
+            "efficiency_pct_2028": 30.0,
+            "ai_adjustment_factor": 1.0,
+            "impact_ftes": 208.0
+          },
+          "offshoring": {
+            "rating": "Low",
+            "rationale": "Designated technical relationship owner for enterprise accounts. Customers pay premium for dedicated TAM access.",
+            "current_offshore_pct": 10,
+            "benchmark_offshore_pct": 15,
+            "gap_pct": 5,
+            "gap_ftes": 32.5,
+            "notes": "Currently at 10%. Small incremental in monitoring/reporting but core role is relationship-based."
+          },
+          "costs": {
+            "onshore_usd": 175000,
+            "offshore_usd": 55000,
+            "blended_cost": 163000
+          }
+        },
+        {
+          "role": "Renewal / Expansion Managers",
+          "short": "Renewal Mgrs",
+          "description": "Manage contract renewal pipeline for cloud subscriptions; negotiate terms, forecast churn, manage expansion opportunities.",
+          "estimated_ftes": 480,
+          "fte_source": "linkedin_openroles",
+          "fte_source_note": "LinkedIn open roles: ~45 renewal/retention/expansion roles at Oracle. Open-role ratio 9.5% (specialized role). 45 / 0.095 = ~475. Oracle's cloud shift makes renewals critical — $20B+ cloud revenue requires active renewal management. Some India presence for mid-market renewals.",
+          "current_offshore_pct": 18,
+          "benchmark_range": [
+            318.0,
+            636.0
+          ],
+          "benchmark_median": 450.5,
+          "pct_vs_benchmark": 6.5,
+          "productivity": {
+            "opportunity_ftes": 19.2,
+            "excess_above_median": 29.5,
+            "has_opportunity": true
+          },
+          "ai": {
+            "h1_automate": {
+              "tasks": "Renewal quote generation, contract template population, reminder cadences, CRM pipeline updates, pricing calculator",
+              "impact_pct": 18
+            },
+            "h2_ai_assisted": {
+              "tasks": "Churn propensity scoring, optimal discount recommendations, competitive intel alerts, multi-year deal structuring, expansion opportunity identification",
+              "impact_pct": 16
+            },
+            "h3_agentic": {
+              "tasks": "Autonomous renewal execution for low-risk standard cloud renewals, auto-negotiation within guardrails for long-tail accounts",
+              "impact_pct": 10
+            },
+            "total_impact_pct": 44,
+            "efficiency_pct_2026": 16.0,
+            "efficiency_pct_2027": 28.0,
+            "efficiency_pct_2028": 42.0,
+            "ai_adjustment_factor": 1.0,
+            "impact_ftes": 211.2
+          },
+          "offshoring": {
+            "rating": "Medium",
+            "rationale": "Long-tail cloud renewals increasingly transactional; enterprise renewals onshore. India team handles mid-market renewal processing.",
+            "current_offshore_pct": 18,
+            "benchmark_offshore_pct": 30,
+            "gap_pct": 12,
+            "gap_ftes": 57.6,
+            "notes": "Currently at 18%. Incremental opportunity in moving more long-tail transactional renewals offshore."
+          },
+          "costs": {
+            "onshore_usd": 145000,
+            "offshore_usd": 45000,
+            "blended_cost": 127000
+          }
+        },
+        {
+          "role": "CS Operations / Strategy Analysts",
+          "short": "CS Ops",
+          "description": "Tooling, process design, reporting, territory planning for CS organization. Gainsight/CRM admin.",
+          "estimated_ftes": 350,
+          "fte_source": "linkedin_people",
+          "fte_source_note": "LinkedIn People Search: ~125 profiles with 'CS Operations,' 'Customer Operations,' 'Success Operations,' or 'Strategy Analyst' in CS org at Oracle. Tooling, territory planning, reporting, Gainsight/Salesforce admin. 125 visible / 0.36 coverage = ~350.",
+          "current_offshore_pct": 40,
+          "benchmark_range": [
+            265.0,
+            530.0
+          ],
+          "benchmark_median": 381.6,
+          "pct_vs_benchmark": -8.3,
+          "productivity": {
+            "opportunity_ftes": 0.0,
+            "excess_above_median": -31.6,
+            "has_opportunity": false
+          },
+          "ai": {
+            "h1_automate": {
+              "tasks": "Territory assignment rules, quota calculations, admin tasks, standard reporting, tool provisioning",
+              "impact_pct": 14
+            },
+            "h2_ai_assisted": {
+              "tasks": "Capacity planning models, process bottleneck identification, tool ROI analysis, territory optimization",
+              "impact_pct": 14
+            },
+            "h3_agentic": {
+              "tasks": "Self-optimizing territory models, autonomous playbook effectiveness testing, auto-generated strategic recommendations",
+              "impact_pct": 8
+            },
+            "total_impact_pct": 36,
+            "efficiency_pct_2026": 14.0,
+            "efficiency_pct_2027": 24.0,
+            "efficiency_pct_2028": 36.0,
+            "ai_adjustment_factor": 1.0,
+            "impact_ftes": 126.0
+          },
+          "offshoring": {
+            "rating": "High",
+            "rationale": "Tool admin, reporting, territory calculations — largely location-independent data work.",
+            "current_offshore_pct": 40,
+            "benchmark_offshore_pct": 55,
+            "gap_pct": 15,
+            "gap_ftes": 52.5,
+            "notes": "Currently at 40%. Incremental opportunity in Gainsight admin, reporting automation, territory modeling."
+          },
+          "costs": {
+            "onshore_usd": 125000,
+            "offshore_usd": 40000,
+            "blended_cost": 91000
+          }
+        }
+      ],
+      "summary": {
+        "total_ai_addressable_ftes": 1172.2,
+        "total_offshore_gap_ftes": 236.1,
+        "total_productivity_ftes": 185.3
+      },
+      "commentary": {
+        "theme": "Growing cloud CS motion shows promise, but coverage gaps in legacy accounts and inconsistent engagement between TAMs, SDMs, and CSMs",
+        "quotes": [
+          {
+            "text": "Since we moved to Fusion Cloud, our TAM has been proactive about quarterly reviews and keeps us informed about new features before they roll out. That level of engagement has genuinely improved our adoption.",
+            "source": "Gartner Peer Insights — IT manager, manufacturing",
+            "date": "March 2025",
+            "sentiment": "positive",
+            "relevance": "Proactive TAM engagement on cloud products drives adoption — AI-powered feature recommendations could scale this to accounts without dedicated TAMs"
+          },
+          {
+            "text": "Our CSM helped us optimize our NetSuite instance in ways we hadn't considered. They ran a usage analysis and showed us three modules we were paying for but barely using. Saved us $200K on our renewal.",
+            "source": "G2 review — CFO, mid-market SaaS company",
+            "date": "May 2025",
+            "sentiment": "positive",
+            "relevance": "Value-driven CSM engagement on NetSuite — AI-powered usage analytics could automate this optimization at scale for all customers"
+          },
+          {
+            "text": "We have a TAM, a CSM, and a Service Delivery Manager. None of them seem to talk to each other. I get three separate check-in emails about the same issue. When I escalate, nobody knows who owns the resolution.",
+            "source": "TrustRadius — IT director, financial services",
+            "date": "July 2025",
+            "sentiment": "negative",
+            "relevance": "Role overlap and lack of coordination between TAM/CSM/SDM creates customer confusion — unified account view and AI-powered workflow orchestration could streamline"
+          },
+          {
+            "text": "Our on-prem database support has been great for years, but since Oracle started pushing us to cloud, the renewal conversations feel more like sales pitches than success planning. We lost our dedicated contact.",
+            "source": "Gartner Peer Insights — DBA manager, government agency",
+            "date": "September 2025",
+            "sentiment": "negative",
+            "relevance": "On-prem to cloud transition disrupts existing relationships — legacy account CS coverage gap as focus shifts to cloud customers"
+          },
+          {
+            "text": "We're a mid-size customer and we basically don't have a success manager. Everything goes through the support portal. When renewal time comes, someone we've never spoken to calls asking us to sign. There's no relationship.",
+            "source": "G2 review — operations director, logistics company",
+            "date": "November 2025",
+            "sentiment": "negative",
+            "relevance": "Long-tail customer coverage gap — digital CS and automated engagement plays could provide coverage where dedicated CSMs aren't economical"
+          }
+        ],
+        "insight_summary": "Oracle's cloud CS motion (TAMs, CSMs, SDMs) delivers real value when engaged — proactive feature guidance and usage optimization drive measurable outcomes. But role overlap creates confusion, legacy/on-prem accounts lose coverage during cloud transition, and mid-market customers often have no success relationship at all. AI-powered account orchestration, automated engagement for the long tail, and unified customer context across TAM/CSM/SDM would address the biggest gaps."
+      }
+    },
+    {
+      "function": "Customer Support",
+      "function_key": "customer_support",
+      "typical_pct_of_headcount": [
+        2.5,
+        5.5
+      ],
+      "estimated_total_ftes": 5800,
+      "estimation_note": "Industry benchmarks indicate ~3,200 frontline support roles across Fusion Apps (~1,500), OCI (~1,000), and On-Prem (~700). Adding paid-tier support (ASEs, Sr. ASEs), support ops, KB, QA, and incident management brings total to ~5,800. LinkedIn People Search: ~1,850 profiles with support-related titles at Oracle. India scaling (1,850 × 1.4x) = ~2,590 visible. Coverage factor 0.45 (high turnover, many junior roles) = ~5,800. Open roles cross-check: ~520 support roles ÷ 9% = ~5,780.",
+      "roles": [
+        {
+          "role": "L1 Support Engineers (Fusion/SaaS)",
+          "short": "L1 Fusion",
+          "description": "Handle inbound support for Fusion Apps and SaaS products: how-to, configuration questions, basic troubleshooting.",
+          "estimated_ftes": 1500,
+          "fte_source": "linkedin_people",
+          "fte_source_note": "LinkedIn People Search: ~380 profiles with 'Support Analyst,' 'Support Engineer I,' 'Customer Support,' or 'Application Support' for Fusion/SaaS products at Oracle. Industry sizing indicates ~1,500 support roles in Fusion Apps org. Heavily offshore — India and Romania delivery centers provide 24/7 coverage. 380 visible × 1.4x India / 0.35 coverage = ~1,520.",
+          "current_offshore_pct": 68,
+          "benchmark_range": [
+            795.0,
+            1696.0
+          ],
+          "benchmark_median": 1208.4,
+          "pct_vs_benchmark": 24.1,
+          "productivity": {
+            "opportunity_ftes": 189.5,
+            "excess_above_median": 291.6,
+            "has_opportunity": true
+          },
+          "ai": {
+            "h1_automate": {
+              "tasks": "Password resets, account lockouts, known-issue auto-responses, FAQ deflection via chatbot, basic Fusion how-to from My Oracle Support",
+              "impact_pct": 26
+            },
+            "h2_ai_assisted": {
+              "tasks": "Suggested resolutions from knowledge base, sentiment-based priority routing, auto-drafted responses, real-time translation for global support",
+              "impact_pct": 20
+            },
+            "h3_agentic": {
+              "tasks": "Autonomous case resolution for known-pattern Fusion issues, AI agent handling full L1 conversations, auto-escalation with context summary",
+              "impact_pct": 16
+            },
+            "total_impact_pct": 62,
+            "efficiency_pct_2026": 24.0,
+            "efficiency_pct_2027": 42.0,
+            "efficiency_pct_2028": 60.0,
+            "ai_adjustment_factor": 1.0,
+            "impact_ftes": 930.0
+          },
+          "offshoring": {
+            "rating": "High",
+            "rationale": "High-volume, process-driven. Oracle already heavily offshore for 24/7 Fusion support coverage.",
+            "current_offshore_pct": 68,
+            "benchmark_offshore_pct": 78,
+            "gap_pct": 10,
+            "gap_ftes": 150.0,
+            "notes": "Already at 68%. Incremental opportunity to move remaining US L1 for standard Fusion issues."
+          },
+          "costs": {
+            "onshore_usd": 75000,
+            "offshore_usd": 24000,
+            "blended_cost": 40320
+          }
+        },
+        {
+          "role": "L1/L2 NOC Engineers (OCI)",
+          "short": "NOC Engineers",
+          "description": "Network Operations Center for OCI: infrastructure monitoring, incident detection, L1/L2 triage for cloud infrastructure.",
+          "estimated_ftes": 1000,
+          "fte_source": "linkedin_people",
+          "fte_source_note": "LinkedIn People Search: ~290 profiles with 'NOC,' 'Network Operations,' 'Cloud Operations,' or 'Site Reliability' in OCI support at Oracle. Industry structure and public role definitions indicate ~1,000 support roles in OCI with NOC acting as L1/L2. 24/7 operations center model. 290 visible × 1.4x India / 0.41 coverage = ~990.",
+          "current_offshore_pct": 62,
+          "benchmark_range": [
+            530.0,
+            1166.0
+          ],
+          "benchmark_median": 805.6,
+          "pct_vs_benchmark": 24.1,
+          "productivity": {
+            "opportunity_ftes": 126.4,
+            "excess_above_median": 194.4,
+            "has_opportunity": true
+          },
+          "ai": {
+            "h1_automate": {
+              "tasks": "Automated monitoring alerts, standard runbook execution, known-incident auto-response, infrastructure health dashboards",
+              "impact_pct": 22
+            },
+            "h2_ai_assisted": {
+              "tasks": "Anomaly detection in cloud telemetry, predictive failure identification, root-cause suggestion from log analysis, capacity planning recommendations",
+              "impact_pct": 18
+            },
+            "h3_agentic": {
+              "tasks": "Autonomous incident detection and remediation for known failure patterns, self-healing infrastructure, proactive scaling",
+              "impact_pct": 14
+            },
+            "total_impact_pct": 54,
+            "efficiency_pct_2026": 20.0,
+            "efficiency_pct_2027": 36.0,
+            "efficiency_pct_2028": 52.0,
+            "ai_adjustment_factor": 1.0,
+            "impact_ftes": 540.0
+          },
+          "offshoring": {
+            "rating": "High",
+            "rationale": "24/7 infrastructure monitoring is ideal for follow-the-sun offshore model. OCI NOC already heavily offshore.",
+            "current_offshore_pct": 62,
+            "benchmark_offshore_pct": 75,
+            "gap_pct": 13,
+            "gap_ftes": 130.0,
+            "notes": "Already at 62%. Incremental opportunity in expanding India/Romania NOC capacity."
+          },
+          "costs": {
+            "onshore_usd": 85000,
+            "offshore_usd": 28000,
+            "blended_cost": 49660
+          }
+        },
+        {
+          "role": "L2 Frontend Support Engineers",
+          "short": "L2 Frontend",
+          "description": "Product-specific L2 for on-prem database, analytics, and legacy applications. Complex troubleshooting and configuration.",
+          "estimated_ftes": 700,
+          "fte_source": "linkedin_people",
+          "fte_source_note": "LinkedIn People Search: ~220 profiles with 'Support Engineer II,' 'Senior Support Engineer,' or 'Product Support Engineer' at Oracle (non-ASE, non-OCI). Product-specific L2 for On-Prem database, analytics, and architecture. Industry structure and public role definitions indicate ~700 support roles under On-Prem. 220 visible × 1.4x India / 0.44 coverage = ~700.",
+          "current_offshore_pct": 48,
+          "benchmark_range": [
+            477.0,
+            1060.0
+          ],
+          "benchmark_median": 768.5,
+          "pct_vs_benchmark": -8.9,
+          "productivity": {
+            "opportunity_ftes": 0.0,
+            "excess_above_median": -68.5,
+            "has_opportunity": false
+          },
+          "ai": {
+            "h1_automate": {
+              "tasks": "Log collection, environment snapshot capture, standard diagnostic script execution, on-prem health checks",
+              "impact_pct": 12
+            },
+            "h2_ai_assisted": {
+              "tasks": "Root-cause suggestion from log analysis, similar-case retrieval, auto-generated reproduction steps, fix recommendation ranking",
+              "impact_pct": 16
+            },
+            "h3_agentic": {
+              "tasks": "Autonomous log analysis and diagnosis for known database/analytics failure modes, auto-patching for documented fixes",
+              "impact_pct": 10
+            },
+            "total_impact_pct": 38,
+            "efficiency_pct_2026": 10.0,
+            "efficiency_pct_2027": 22.0,
+            "efficiency_pct_2028": 36.0,
+            "ai_adjustment_factor": 1.0,
+            "impact_ftes": 266.0
+          },
+          "offshoring": {
+            "rating": "Medium",
+            "rationale": "On-prem product support requires deep expertise; standard issues offshore with mature KB but complex legacy issues need US-based veterans.",
+            "current_offshore_pct": 48,
+            "benchmark_offshore_pct": 58,
+            "gap_pct": 10,
+            "gap_ftes": 70.0,
+            "notes": "Already at 48%. Incremental as on-prem knowledge is documented and transferred."
+          },
+          "costs": {
+            "onshore_usd": 100000,
+            "offshore_usd": 34000,
+            "blended_cost": 68320
+          }
+        },
+        {
+          "role": "Advanced Support Engineers (ASE)",
+          "short": "ASEs",
+          "description": "Paid-tier L1 support for Premier and Mission Critical customers. Dedicated product expertise across Oracle stack.",
+          "estimated_ftes": 800,
+          "fte_source": "linkedin_people",
+          "fte_source_note": "LinkedIn People Search: ~310 profiles with 'Advanced Support Engineer' or 'ASE' at Oracle. Industry structure and public role definitions indicate ASEs act as L1 support for paid-tier customers, offering dedicated expertise. Available for Premier and Mission Critical tier customers. Mix of US and India. 310 visible / 0.39 coverage = ~800.",
+          "current_offshore_pct": 35,
+          "benchmark_range": [
+            530.0,
+            1007.0
+          ],
+          "benchmark_median": 731.4,
+          "pct_vs_benchmark": 9.4,
+          "productivity": {
+            "opportunity_ftes": 44.6,
+            "excess_above_median": 68.6,
+            "has_opportunity": true
+          },
+          "ai": {
+            "h1_automate": {
+              "tasks": "Proactive monitoring alerts for paid-tier accounts, scheduled environment audits, automated patch status checks",
+              "impact_pct": 14
+            },
+            "h2_ai_assisted": {
+              "tasks": "AI-powered knowledge retrieval across Oracle product stack, predictive issue detection from account telemetry, auto-drafted customer updates",
+              "impact_pct": 16
+            },
+            "h3_agentic": {
+              "tasks": "Autonomous monitoring and self-healing for known issues on paid-tier accounts, proactive outreach for detected anomalies",
+              "impact_pct": 8
+            },
+            "total_impact_pct": 38,
+            "efficiency_pct_2026": 12.0,
+            "efficiency_pct_2027": 24.0,
+            "efficiency_pct_2028": 38.0,
+            "ai_adjustment_factor": 1.0,
+            "impact_ftes": 304.0
+          },
+          "offshoring": {
+            "rating": "Medium",
+            "rationale": "Paid-tier customers have varying expectations. Standard product support offshore; premium relationship touchpoints onshore.",
+            "current_offshore_pct": 35,
+            "benchmark_offshore_pct": 45,
+            "gap_pct": 10,
+            "gap_ftes": 80.0,
+            "notes": "Already at 35%. Incremental opportunity in standardizing ASE workflows to enable more offshore delivery."
+          },
+          "costs": {
+            "onshore_usd": 130000,
+            "offshore_usd": 42000,
+            "blended_cost": 99200
+          }
+        },
+        {
+          "role": "Senior Advanced Support Engineers (Sr. ASE)",
+          "short": "Sr. ASEs",
+          "description": "Senior paid-tier support handling complex cross-product issues. Manage escalation flow for Mission Critical customers.",
+          "estimated_ftes": 400,
+          "fte_source": "linkedin_people",
+          "fte_source_note": "LinkedIn People Search: ~165 profiles with 'Senior Advanced Support Engineer' or 'Sr. ASE' at Oracle. Senior tier of paid support — handle complex cross-product issues for Mission Critical customers. Industry structure and public role definitions indicate they manage escalation flow. Primarily US/EU-based. 165 visible / 0.41 coverage = ~400.",
+          "current_offshore_pct": 18,
+          "benchmark_range": [
+            318.0,
+            689.0
+          ],
+          "benchmark_median": 477.0,
+          "pct_vs_benchmark": -16.1,
+          "productivity": {
+            "opportunity_ftes": 0.0,
+            "excess_above_median": -77.0,
+            "has_opportunity": false
+          },
+          "ai": {
+            "h1_automate": {
+              "tasks": "Cross-product diagnostic script execution, escalation documentation, post-incident report templates",
+              "impact_pct": 10
+            },
+            "h2_ai_assisted": {
+              "tasks": "Cross-product root-cause analysis, similar-incident retrieval across product lines, AI-assisted impact radius estimation",
+              "impact_pct": 12
+            },
+            "h3_agentic": {
+              "tasks": "Limited — complex cross-product issues require deep human judgment and customer relationship management",
+              "impact_pct": 5
+            },
+            "total_impact_pct": 27,
+            "efficiency_pct_2026": 6.8,
+            "efficiency_pct_2027": 13.6,
+            "efficiency_pct_2028": 22.1,
+            "ai_adjustment_factor": 0.85,
+            "impact_ftes": 91.8
+          },
+          "offshoring": {
+            "rating": "Low",
+            "rationale": "Mission Critical customers expect senior, same-timezone, cross-product expertise. Premium relationship role.",
+            "current_offshore_pct": 18,
+            "benchmark_offshore_pct": 24,
+            "gap_pct": 6,
+            "gap_ftes": 24.0,
+            "notes": "Already at 18%. Minimal incremental — documentation and follow-up admin only."
+          },
+          "costs": {
+            "onshore_usd": 165000,
+            "offshore_usd": 52000,
+            "blended_cost": 144660
+          }
+        },
+        {
+          "role": "Support Operations / Workforce Mgmt",
+          "short": "Support Ops",
+          "description": "Scheduling, queue management, SLA tracking, workforce planning across multiple product support orgs.",
+          "estimated_ftes": 500,
+          "fte_source": "linkedin_people",
+          "fte_source_note": "LinkedIn People Search: ~155 profiles with 'Support Operations,' 'Workforce Management,' 'Queue Management,' or 'Support Planning' at Oracle. Required for 24/7 scheduling across multiple product support orgs (Fusion, OCI, On-Prem). 155 visible × 1.4x India / 0.43 coverage = ~500.",
+          "current_offshore_pct": 55,
+          "benchmark_range": [
+            371.0,
+            742.0
+          ],
+          "benchmark_median": 530.0,
+          "pct_vs_benchmark": -5.7,
+          "productivity": {
+            "opportunity_ftes": 0.0,
+            "excess_above_median": -30.0,
+            "has_opportunity": false
+          },
+          "ai": {
+            "h1_automate": {
+              "tasks": "Schedule generation across product support orgs, SLA breach alerts, queue rebalancing rules, standard operational reports",
+              "impact_pct": 20
+            },
+            "h2_ai_assisted": {
+              "tasks": "Cross-product demand forecasting from ticket trends, optimal staffing models, real-time workload balancing recommendations",
+              "impact_pct": 16
+            },
+            "h3_agentic": {
+              "tasks": "Self-adjusting workforce schedules based on real-time demand across Fusion/OCI/On-Prem, autonomous queue optimization",
+              "impact_pct": 10
+            },
+            "total_impact_pct": 46,
+            "efficiency_pct_2026": 18.0,
+            "efficiency_pct_2027": 32.0,
+            "efficiency_pct_2028": 46.0,
+            "ai_adjustment_factor": 1.0,
+            "impact_ftes": 230.0
+          },
+          "offshoring": {
+            "rating": "High",
+            "rationale": "Scheduling, queue management, reporting — location-independent operational work.",
+            "current_offshore_pct": 55,
+            "benchmark_offshore_pct": 68,
+            "gap_pct": 13,
+            "gap_ftes": 65.0,
+            "notes": "Currently at 55%. Incremental opportunity in centralizing WFM for all product support orgs in India."
+          },
+          "costs": {
+            "onshore_usd": 95000,
+            "offshore_usd": 32000,
+            "blended_cost": 60350
+          }
+        },
+        {
+          "role": "Knowledge Base / Content Engineers",
+          "short": "KB Engineers",
+          "description": "Create and maintain My Oracle Support knowledge base, troubleshooting guides, product documentation.",
+          "estimated_ftes": 350,
+          "fte_source": "linkedin_people",
+          "fte_source_note": "LinkedIn People Search: ~105 profiles with 'Knowledge Engineer,' 'Technical Writer,' 'Content Manager,' or 'Documentation' in support org at Oracle. Maintain My Oracle Support knowledge base. Industry structure and public role definitions indicate knowledge database available through My Oracle Support portal. 105 visible × 1.4x India / 0.42 coverage = ~350.",
+          "current_offshore_pct": 52,
+          "benchmark_range": [
+            265.0,
+            583.0
+          ],
+          "benchmark_median": 397.5,
+          "pct_vs_benchmark": -11.9,
+          "productivity": {
+            "opportunity_ftes": 0.0,
+            "excess_above_median": -47.5,
+            "has_opportunity": false
+          },
+          "ai": {
+            "h1_automate": {
+              "tasks": "Article template generation, link checking, content expiry alerts, search analytics reports for My Oracle Support",
+              "impact_pct": 16
+            },
+            "h2_ai_assisted": {
+              "tasks": "Auto-drafted articles from resolved tickets, content gap identification, cloud migration content updates, multi-language translation",
+              "impact_pct": 22
+            },
+            "h3_agentic": {
+              "tasks": "Autonomous My Oracle Support maintenance: auto-update from product changes, auto-retire outdated content, auto-generate from ticket clusters",
+              "impact_pct": 14
+            },
+            "total_impact_pct": 52,
+            "efficiency_pct_2026": 15.3,
+            "efficiency_pct_2027": 28.9,
+            "efficiency_pct_2028": 42.5,
+            "ai_adjustment_factor": 0.85,
+            "impact_ftes": 154.7
+          },
+          "offshoring": {
+            "rating": "High",
+            "rationale": "Technical writing and KB maintenance offshores well. My Oracle Support content creation can be centralized offshore.",
+            "current_offshore_pct": 52,
+            "benchmark_offshore_pct": 65,
+            "gap_pct": 13,
+            "gap_ftes": 45.5,
+            "notes": "Currently at 52%. Incremental opportunity in centralizing content creation across product lines in India."
+          },
+          "costs": {
+            "onshore_usd": 92000,
+            "offshore_usd": 30000,
+            "blended_cost": 59760
+          }
+        },
+        {
+          "role": "Incident Management (OCI Critical)",
+          "short": "Incident Mgmt",
+          "description": "PMO for multi-company impact incidents on OCI. Coordinate cross-team response for critical cloud infrastructure events.",
+          "estimated_ftes": 180,
+          "fte_source": "linkedin_people",
+          "fte_source_note": "LinkedIn People Search: ~75 profiles with 'Incident Manager,' 'Incident Commander,' or 'Critical Incident' at Oracle. Industry structure and public role definitions indicate only OCI has a dedicated incident management team acting as PMO for multi-company impact incidents. Small, senior team. 75 visible / 0.42 coverage = ~180.",
+          "current_offshore_pct": 8,
+          "benchmark_range": [
+            106.0,
+            265.0
+          ],
+          "benchmark_median": 159.0,
+          "pct_vs_benchmark": 13.2,
+          "productivity": {
+            "opportunity_ftes": 13.7,
+            "excess_above_median": 21.0,
+            "has_opportunity": true
+          },
+          "ai": {
+            "h1_automate": {
+              "tasks": "Incident notification chains, status page updates, war room scheduling, post-incident report templates",
+              "impact_pct": 12
+            },
+            "h2_ai_assisted": {
+              "tasks": "Impact radius estimation from telemetry, similar-incident retrieval, auto-drafted customer comms, root-cause pattern matching across OCI services",
+              "impact_pct": 10
+            },
+            "h3_agentic": {
+              "tasks": "Limited — OCI critical incident management requires human judgment, executive communication, and cross-team coordination",
+              "impact_pct": 4
+            },
+            "total_impact_pct": 26,
+            "efficiency_pct_2026": 8.0,
+            "efficiency_pct_2027": 16.0,
+            "efficiency_pct_2028": 24.0,
+            "ai_adjustment_factor": 1.0,
+            "impact_ftes": 46.8
+          },
+          "offshoring": {
+            "rating": "Not Recommended",
+            "rationale": "OCI critical incident management requires executive comms, cross-team coordination, customer-facing crisis management.",
+            "current_offshore_pct": 8,
+            "benchmark_offshore_pct": 10,
+            "gap_pct": 2,
+            "gap_ftes": 3.6,
+            "notes": "At 8%. Near benchmark. Crisis management stays onshore/follow-the-sun senior staff."
+          },
+          "costs": {
+            "onshore_usd": 155000,
+            "offshore_usd": 48000,
+            "blended_cost": 146440
+          }
+        }
+      ],
+      "summary": {
+        "total_ai_addressable_ftes": 2563.3,
+        "total_offshore_gap_ftes": 568.1,
+        "total_productivity_ftes": 374.2
+      },
+      "commentary": {
+        "theme": "Strong technical depth at L2/L3 but slow triage, cross-product handoff friction, and knowledge base gaps frustrate customers",
+        "quotes": [
+          {
+            "text": "When we get escalated to an L3 developer, the technical depth is outstanding. They understand the codebase and can trace issues to root cause faster than anyone. The challenge is getting to that level of support.",
+            "source": "G2 review — senior DBA, telecommunications",
+            "date": "February 2025",
+            "sentiment": "positive",
+            "relevance": "L3/developer support talent is world-class — AI triage and diagnostic tools could get complex issues to the right expert faster"
+          },
+          {
+            "text": "My Oracle Support has improved a lot. The new search is better and I can usually find documentation for common issues. The community forums are also helpful for niche problems.",
+            "source": "Gartner Peer Insights — cloud architect, technology company",
+            "date": "April 2025",
+            "sentiment": "positive",
+            "relevance": "My Oracle Support self-serve improving — AI-powered search and auto-generated content could accelerate this momentum"
+          },
+          {
+            "text": "I opened a severity 1 ticket for a production database issue and it sat in triage for 4 hours before being routed to the wrong product team. By the time the correct team picked it up, we'd been down for 6 hours. Unacceptable.",
+            "source": "TrustRadius — DBA manager, banking",
+            "date": "June 2025",
+            "sentiment": "negative",
+            "relevance": "Triage delays and misrouting for critical issues — AI-powered intent classification and automated routing could eliminate manual triage lag"
+          },
+          {
+            "text": "Our issue spans Fusion Apps and OCI but neither support team wants to own it. We've been bounced between three teams for two weeks. The 'collaboration ticket' system they talk about doesn't seem to work in practice.",
+            "source": "G2 review — enterprise architect, insurance company",
+            "date": "August 2025",
+            "sentiment": "negative",
+            "relevance": "Cross-product support handoff is a structural problem tied to decentralized support orgs — AI-powered cross-product case synthesis could bridge organizational siloes"
+          },
+          {
+            "text": "The knowledge base articles are often outdated or reference on-prem versions of products we've already migrated to cloud. I end up searching forums and Stack Overflow instead of My Oracle Support.",
+            "source": "Gartner Peer Insights — cloud engineer, healthcare",
+            "date": "October 2025",
+            "sentiment": "negative",
+            "relevance": "KB staleness especially for cloud-migrated products — AI auto-generation and retirement of content could keep the knowledge base current with product evolution"
+          }
+        ],
+        "insight_summary": "Oracle's L3 developer support is a genuine competitive advantage — deep codebase knowledge enables fast root-cause resolution. My Oracle Support self-serve is improving. But triage delays for critical issues, cross-product handoff friction between decentralized support orgs, and outdated knowledge base content (especially for cloud-migrated products) are persistent pain points. AI-powered routing, cross-product case synthesis, and automated KB maintenance represent the largest opportunities."
+      }
+    }
+  ],
+  "summary": {
+    "total_customer_ops_ftes": 17500,
+    "total_ai_addressable_ftes": 7218,
+    "total_offshore_gap_ftes": 1605,
+    "total_productivity_ftes": 1251,
+    "ai_pct_of_total": 41.2,
+    "offshore_gap_pct_of_total": 9.2,
+    "productivity_pct_of_total": 7.2
+  },
+  "dollar_impact": {
+    "2026": {
+      "productivity": 91930206,
+      "ai": 216528349,
+      "offshoring": 73716850,
+      "total": 382175405
+    },
+    "2027": {
+      "productivity": 122573608,
+      "ai": 409760889,
+      "offshoring": 147433700,
+      "total": 679768197
+    },
+    "2028": {
+      "productivity": 122573608,
+      "ai": 624809589,
+      "offshoring": 147433700,
+      "total": 894816897
+    }
+  },
+  "roadmap": {
+    "years": {
+      "2026": {
+        "productivity": [
+          {
+            "role": "Delivery Engineers (Functional)",
+            "function": "Professional Services / Oracle Consulting",
+            "function_key": "professional_services",
+            "lever": "Productivity",
+            "year": 2026,
+            "impact_ftes": 277.6,
+            "description": "Rationalize 277.6 FTEs (19.7% above median benchmark)"
+          },
+          {
+            "role": "Delivery Engineers (Technical)",
+            "function": "Professional Services / Oracle Consulting",
+            "function_key": "professional_services",
+            "lever": "Productivity",
+            "year": 2026,
+            "impact_ftes": 249.3,
+            "description": "Rationalize 249.3 FTEs (23.7% above median benchmark)"
+          },
+          {
+            "role": "L1 Support Engineers (Fusion/SaaS)",
+            "function": "Customer Support",
+            "function_key": "customer_support",
+            "lever": "Productivity",
+            "year": 2026,
+            "impact_ftes": 189.5,
+            "description": "Rationalize 189.5 FTEs (24.1% above median benchmark)"
+          },
+          {
+            "role": "L1/L2 NOC Engineers (OCI)",
+            "function": "Customer Support",
+            "function_key": "customer_support",
+            "lever": "Productivity",
+            "year": 2026,
+            "impact_ftes": 126.4,
+            "description": "Rationalize 126.4 FTEs (24.1% above median benchmark)"
+          },
+          {
+            "role": "Customer Success Managers",
+            "function": "Customer Success",
+            "function_key": "customer_success",
+            "lever": "Productivity",
+            "year": 2026,
+            "impact_ftes": 122.5,
+            "description": "Rationalize 122.5 FTEs (20.7% above median benchmark)"
+          },
+          {
+            "role": "Solution Architects",
+            "function": "Professional Services / Oracle Consulting",
+            "function_key": "professional_services",
+            "lever": "Productivity",
+            "year": 2026,
+            "impact_ftes": 68.2,
+            "description": "Rationalize 68.2 FTEs (13.2% above median benchmark)"
+          },
+          {
+            "role": "Practice Managers / Engagement Leads",
+            "function": "Professional Services / Oracle Consulting",
+            "function_key": "professional_services",
+            "lever": "Productivity",
+            "year": 2026,
+            "impact_ftes": 66.0,
+            "description": "Rationalize 66.0 FTEs (7.8% above median benchmark)"
+          },
+          {
+            "role": "Advanced Support Engineers (ASE)",
+            "function": "Customer Support",
+            "function_key": "customer_support",
+            "lever": "Productivity",
+            "year": 2026,
+            "impact_ftes": 44.6,
+            "description": "Rationalize 44.6 FTEs (9.4% above median benchmark)"
+          },
+          {
+            "role": "Technical Account Managers (TAMs)",
+            "function": "Customer Success",
+            "function_key": "customer_success",
+            "lever": "Productivity",
+            "year": 2026,
+            "impact_ftes": 43.6,
+            "description": "Rationalize 43.6 FTEs (11.5% above median benchmark)"
+          },
+          {
+            "role": "Program / Project Managers",
+            "function": "Professional Services / Oracle Consulting",
+            "function_key": "professional_services",
+            "lever": "Productivity",
+            "year": 2026,
+            "impact_ftes": 30.8,
+            "description": "Rationalize 30.8 FTEs (6.3% above median benchmark)"
+          },
+          {
+            "role": "Renewal / Expansion Managers",
+            "function": "Customer Success",
+            "function_key": "customer_success",
+            "lever": "Productivity",
+            "year": 2026,
+            "impact_ftes": 19.2,
+            "description": "Rationalize 19.2 FTEs (6.5% above median benchmark)"
+          },
+          {
+            "role": "Incident Management (OCI Critical)",
+            "function": "Customer Support",
+            "function_key": "customer_support",
+            "lever": "Productivity",
+            "year": 2026,
+            "impact_ftes": 13.7,
+            "description": "Rationalize 13.7 FTEs (13.2% above median benchmark)"
+          }
+        ],
+        "offshoring": [
+          {
+            "role": "Delivery Engineers (Functional)",
+            "function": "Professional Services / Oracle Consulting",
+            "function_key": "professional_services",
+            "lever": "Offshoring",
+            "year": 2026,
+            "impact_ftes": 338.0,
+            "description": "Move 338.0 FTEs offshore (52% -> 65%)"
+          },
+          {
+            "role": "Delivery Engineers (Technical)",
+            "function": "Professional Services / Oracle Consulting",
+            "function_key": "professional_services",
+            "lever": "Offshoring",
+            "year": 2026,
+            "impact_ftes": 240.0,
+            "description": "Move 240.0 FTEs offshore (58% -> 70%)"
+          },
+          {
+            "role": "L1 Support Engineers (Fusion/SaaS)",
+            "function": "Customer Support",
+            "function_key": "customer_support",
+            "lever": "Offshoring",
+            "year": 2026,
+            "impact_ftes": 150.0,
+            "description": "Move 150.0 FTEs offshore (68% -> 78%)"
+          },
+          {
+            "role": "L1/L2 NOC Engineers (OCI)",
+            "function": "Customer Support",
+            "function_key": "customer_support",
+            "lever": "Offshoring",
+            "year": 2026,
+            "impact_ftes": 130.0,
+            "description": "Move 130.0 FTEs offshore (62% -> 75%)"
+          },
+          {
+            "role": "Practice Managers / Engagement Leads",
+            "function": "Professional Services / Oracle Consulting",
+            "function_key": "professional_services",
+            "lever": "Offshoring",
+            "year": 2026,
+            "impact_ftes": 98.0,
+            "description": "Move 98.0 FTEs offshore (25% -> 32%)"
+          },
+          {
+            "role": "Program / Project Managers",
+            "function": "Professional Services / Oracle Consulting",
+            "function_key": "professional_services",
+            "lever": "Offshoring",
+            "year": 2026,
+            "impact_ftes": 80.0,
+            "description": "Move 80.0 FTEs offshore (30% -> 40%)"
+          },
+          {
+            "role": "Advanced Support Engineers (ASE)",
+            "function": "Customer Support",
+            "function_key": "customer_support",
+            "lever": "Offshoring",
+            "year": 2026,
+            "impact_ftes": 80.0,
+            "description": "Move 80.0 FTEs offshore (35% -> 45%)"
+          },
+          {
+            "role": "L2 Frontend Support Engineers",
+            "function": "Customer Support",
+            "function_key": "customer_support",
+            "lever": "Offshoring",
+            "year": 2026,
+            "impact_ftes": 70.0,
+            "description": "Move 70.0 FTEs offshore (48% -> 58%)"
+          },
+          {
+            "role": "Customer Success Managers",
+            "function": "Customer Success",
+            "function_key": "customer_success",
+            "lever": "Offshoring",
+            "year": 2026,
+            "impact_ftes": 66.0,
+            "description": "Move 66.0 FTEs offshore (12% -> 18%)"
+          },
+          {
+            "role": "Support Operations / Workforce Mgmt",
+            "function": "Customer Support",
+            "function_key": "customer_support",
+            "lever": "Offshoring",
+            "year": 2026,
+            "impact_ftes": 65.0,
+            "description": "Move 65.0 FTEs offshore (55% -> 68%)"
+          },
+          {
+            "role": "Renewal / Expansion Managers",
+            "function": "Customer Success",
+            "function_key": "customer_success",
+            "lever": "Offshoring",
+            "year": 2026,
+            "impact_ftes": 57.6,
+            "description": "Move 57.6 FTEs offshore (18% -> 30%)"
+          },
+          {
+            "role": "CS Operations / Strategy Analysts",
+            "function": "Customer Success",
+            "function_key": "customer_success",
+            "lever": "Offshoring",
+            "year": 2026,
+            "impact_ftes": 52.5,
+            "description": "Move 52.5 FTEs offshore (40% -> 55%)"
+          },
+          {
+            "role": "Knowledge Base / Content Engineers",
+            "function": "Customer Support",
+            "function_key": "customer_support",
+            "lever": "Offshoring",
+            "year": 2026,
+            "impact_ftes": 45.5,
+            "description": "Move 45.5 FTEs offshore (52% -> 65%)"
+          },
+          {
+            "role": "Solution Architects",
+            "function": "Professional Services / Oracle Consulting",
+            "function_key": "professional_services",
+            "lever": "Offshoring",
+            "year": 2026,
+            "impact_ftes": 45.0,
+            "description": "Move 45.0 FTEs offshore (15% -> 20%)"
+          },
+          {
+            "role": "Technical Account Managers (TAMs)",
+            "function": "Customer Success",
+            "function_key": "customer_success",
+            "lever": "Offshoring",
+            "year": 2026,
+            "impact_ftes": 32.5,
+            "description": "Move 32.5 FTEs offshore (10% -> 15%)"
+          },
+          {
+            "role": "Service Delivery Managers (Paid Tier)",
+            "function": "Customer Success",
+            "function_key": "customer_success",
+            "lever": "Offshoring",
+            "year": 2026,
+            "impact_ftes": 27.5,
+            "description": "Move 27.5 FTEs offshore (20% -> 25%)"
+          },
+          {
+            "role": "Senior Advanced Support Engineers (Sr. ASE)",
+            "function": "Customer Support",
+            "function_key": "customer_support",
+            "lever": "Offshoring",
+            "year": 2026,
+            "impact_ftes": 24.0,
+            "description": "Move 24.0 FTEs offshore (18% -> 24%)"
+          },
+          {
+            "role": "Incident Management (OCI Critical)",
+            "function": "Customer Support",
+            "function_key": "customer_support",
+            "lever": "Offshoring",
+            "year": 2026,
+            "impact_ftes": 3.6,
+            "description": "Move 3.6 FTEs offshore (8% -> 10%)"
+          }
+        ],
+        "ai": [
+          {
+            "id": "orc-ai-ticket-routing",
+            "name": "AI-powered cross-product ticket routing & triage",
+            "description": "Intent classification at ticket creation auto-categorizes by product line (Fusion, OCI, On-Prem, NetSuite), severity, and customer tier. Routes to the correct product-specific support queue, eliminating manual triage delays and cross-product misrouting — one of Oracle's biggest support pain points.",
+            "mechanism": "NLP classifier reads My Oracle Support ticket subject + description, identifies product line, assigns severity and queue. Cross-product detector flags multi-product issues and creates linked collaboration tickets automatically.",
+            "year": 2026,
+            "half": "H1",
+            "category": "Quick Win",
+            "horizon": "H1 Automate",
+            "impacted_roles": [
+              "L1 Support Engineers (Fusion/SaaS)",
+              "L1/L2 NOC Engineers (OCI)",
+              "L2 Frontend Support Engineers"
+            ],
+            "impacted_functions": [
+              "customer_support"
+            ],
+            "estimated_ticket_deflection_pct": 15,
+            "estimated_fte_impact": 280
+          },
+          {
+            "id": "orc-ai-fusion-config-validation",
+            "name": "AI-powered Fusion configuration validation & auto-mapping",
+            "description": "Auto-generate Fusion Apps configuration from requirements documents. Validates field mappings, cross-module dependencies, and data migration scripts. Eliminates manual re-keying and catches configuration drift before go-live.",
+            "mechanism": "AI reads requirements specs, maps fields to Fusion table structure, generates configuration scripts, validates against business rules. Auto-generates UAT test cases matching the generated config.",
+            "year": 2026,
+            "half": "H2",
+            "category": "Near-term",
+            "horizon": "H2 AI-Assisted",
+            "impacted_roles": [
+              "Delivery Engineers (Functional)",
+              "Delivery Engineers (Technical)"
+            ],
+            "impacted_functions": [
+              "professional_services"
+            ],
+            "estimated_ticket_deflection_pct": null,
+            "estimated_fte_impact": 350
+          },
+          {
+            "id": "orc-ai-noc-incident-triage",
+            "name": "Automated OCI NOC incident detection & triage",
+            "description": "AI monitors OCI infrastructure telemetry in real-time, auto-detects anomalies and known failure patterns, and triggers automated runbooks for standard incidents. Reduces NOC engineer manual monitoring load and accelerates mean-time-to-detect.",
+            "mechanism": "Anomaly detection engine monitors cloud telemetry across compute, network, and storage. Known-pattern matcher triggers automated runbooks. Novel anomalies auto-escalated with diagnostic context to L2 engineers.",
+            "year": 2026,
+            "half": "H2",
+            "category": "Near-term",
+            "horizon": "H2 AI-Assisted",
+            "impacted_roles": [
+              "L1/L2 NOC Engineers (OCI)"
+            ],
+            "impacted_functions": [
+              "customer_support"
+            ],
+            "estimated_ticket_deflection_pct": 20,
+            "estimated_fte_impact": 150
+          },
+          {
+            "id": "orc-ai-handoff-synthesizer",
+            "name": "AI-powered sales-to-consulting handoff & project scoping",
+            "description": "AI extracts contract data, scope details, and customer expectations from sales artifacts. Auto-populates project plans, flags misaligned timelines, generates kick-off prep materials. Addresses handoff gaps between Oracle's decentralized sales orgs and consulting teams.",
+            "mechanism": "NLP processes sales proposals, contracts, discovery notes. Outputs structured handoff package with gaps flagged for practice manager review. Auto-generates complexity score and resource allocation recommendations.",
+            "year": 2026,
+            "half": "H2",
+            "category": "Near-term",
+            "horizon": "H2 AI-Assisted",
+            "impacted_roles": [
+              "Practice Managers / Engagement Leads",
+              "Program / Project Managers"
+            ],
+            "impacted_functions": [
+              "professional_services"
+            ],
+            "estimated_ticket_deflection_pct": null,
+            "estimated_fte_impact": 120
+          },
+          {
+            "id": "orc-ai-csm-engagement-plays",
+            "name": "Agentic CSM engagement plays for cloud customers",
+            "description": "AI monitors cloud usage signals — detecting drops in module adoption, declining login frequency, or feature abandonment — and auto-triggers personalized engagement campaigns. Runs churn and adoption plays backed by health scoring for Fusion and NetSuite customers. Provides coverage for mid-market accounts that lack dedicated CSMs.",
+            "mechanism": "Event-driven engine monitors usage telemetry across Fusion/NetSuite modules. Health scoring model classifies accounts by risk tier. Play engine matches risk signals to pre-built playbooks and auto-executes personalized outreach.",
+            "year": 2026,
+            "half": "H2",
+            "category": "Near-term",
+            "horizon": "H2 AI-Assisted",
+            "impacted_roles": [
+              "Customer Success Managers",
+              "CS Operations / Strategy Analysts"
+            ],
+            "impacted_functions": [
+              "customer_success"
+            ],
+            "estimated_ticket_deflection_pct": null,
+            "estimated_fte_impact": 120
+          }
+        ]
+      },
+      "2027": {
+        "productivity": [],
+        "offshoring": [],
+        "ai": [
+          {
+            "id": "orc-ai-fusion-how-to-agent",
+            "name": "AI conversational agent for Fusion/NetSuite how-to",
+            "description": "Full conversational AI agent handles 'how do I' questions about Fusion Apps and NetSuite workflows: ERP configuration, HCM setup, report building, workflow automation. Covers ~20-25% of L1 volume. Escalates complex issues to L2 with full context.",
+            "mechanism": "RAG over My Oracle Support documentation, resolved tickets, and product docs. Walks user through multi-step workflows with screenshots. Escalates to human when confidence low.",
+            "year": 2027,
+            "half": "H1",
+            "category": "Medium-term",
+            "horizon": "H2 AI-Assisted",
+            "impacted_roles": [
+              "L1 Support Engineers (Fusion/SaaS)",
+              "Advanced Support Engineers (ASE)"
+            ],
+            "impacted_functions": [
+              "customer_support"
+            ],
+            "estimated_ticket_deflection_pct": 22,
+            "estimated_fte_impact": 220
+          },
+          {
+            "id": "orc-ai-cloud-migration-accelerator",
+            "name": "AI-powered cloud migration assessment & automation",
+            "description": "AI analyzes on-prem Oracle environments (database, middleware, applications) and auto-generates cloud migration plans for OCI. Identifies dependencies, estimates complexity, generates IaC templates, and validates migration readiness. Reduces migration scoping from weeks to days.",
+            "mechanism": "Discovery agent scans on-prem environment, catalogs components and dependencies. Migration planner generates OCI architecture recommendations, IaC templates, and testing checklists. Complexity scorer estimates effort and risk.",
+            "year": 2027,
+            "half": "H1",
+            "category": "Medium-term",
+            "horizon": "H2 AI-Assisted",
+            "impacted_roles": [
+              "Delivery Engineers (Technical)",
+              "Solution Architects"
+            ],
+            "impacted_functions": [
+              "professional_services"
+            ],
+            "estimated_ticket_deflection_pct": null,
+            "estimated_fte_impact": 180
+          },
+          {
+            "id": "orc-ai-renewal-automation",
+            "name": "AI-powered cloud renewal automation & contract generation",
+            "description": "Automates end-to-end renewal process for long-tail cloud subscriptions: AI generates renewal quotes based on current contract terms, usage patterns, and pricing rules. Auto-populates contract templates, manages reminder cadences, and provides optimal discount recommendations within guardrails.",
+            "mechanism": "Renewal engine ingests contract data, usage metrics, and health scores. Auto-generates quotes with recommended pricing tiers. Contract template module populates terms and routes for approval. Discount optimizer recommends retention offers within guardrails.",
+            "year": 2027,
+            "half": "H1",
+            "category": "Medium-term",
+            "horizon": "H2 AI-Assisted",
+            "impacted_roles": [
+              "Renewal / Expansion Managers",
+              "Service Delivery Managers (Paid Tier)"
+            ],
+            "impacted_functions": [
+              "customer_success"
+            ],
+            "estimated_ticket_deflection_pct": null,
+            "estimated_fte_impact": 90
+          },
+          {
+            "id": "orc-ai-kb-auto-generation",
+            "name": "AI auto-generation of My Oracle Support content",
+            "description": "AI monitors resolved support tickets, clusters common patterns, and auto-drafts knowledge base articles for My Oracle Support. Auto-retires outdated content — especially for cloud-migrated products where on-prem documentation is stale. Keeps KB current with product evolution.",
+            "mechanism": "NLP clusters resolved tickets by topic, generates draft articles, routes for human review, publishes to My Oracle Support. Auto-flags stale articles referencing deprecated on-prem versions.",
+            "year": 2027,
+            "half": "H2",
+            "category": "Medium-term",
+            "horizon": "H2 AI-Assisted",
+            "impacted_roles": [
+              "Knowledge Base / Content Engineers",
+              "Support Operations / Workforce Mgmt"
+            ],
+            "impacted_functions": [
+              "customer_support"
+            ],
+            "estimated_ticket_deflection_pct": 10,
+            "estimated_fte_impact": 65
+          },
+          {
+            "id": "orc-ai-cross-product-synthesis",
+            "name": "AI cross-product case synthesis & collaboration",
+            "description": "AI detects when a support issue spans multiple Oracle product lines (Fusion + OCI, Database + Analytics) and auto-synthesizes context across tickets. Creates unified case views that bridge Oracle's decentralized support orgs, eliminating the customer bouncing between teams.",
+            "mechanism": "Cross-product detection engine analyzes ticket content for multi-product signals. Auto-creates linked collaboration tickets with synthesized context. Unified dashboard shows all related tickets across product orgs for the assigned engineer.",
+            "year": 2027,
+            "half": "H2",
+            "category": "Medium-term",
+            "horizon": "H2 AI-Assisted",
+            "impacted_roles": [
+              "Senior Advanced Support Engineers (Sr. ASE)",
+              "Incident Management (OCI Critical)"
+            ],
+            "impacted_functions": [
+              "customer_support"
+            ],
+            "estimated_ticket_deflection_pct": null,
+            "estimated_fte_impact": 45
+          },
+          {
+            "id": "orc-ai-tam-proactive-monitoring",
+            "name": "AI-powered proactive account monitoring for TAMs",
+            "description": "AI monitors environment telemetry, usage patterns, and support ticket velocity for paid-tier accounts. Auto-generates proactive health reports, detects emerging issues before customers report them, and prepares quarterly business review materials. Shifts TAM work from reactive firefighting to proactive value delivery.",
+            "mechanism": "Monitoring engine ingests environment telemetry, usage data, and ticket patterns. Anomaly detector surfaces emerging issues. QBR generator auto-produces account health decks with recommendations. Alert system triggers proactive outreach on detected anomalies.",
+            "year": 2027,
+            "half": "H2",
+            "category": "Medium-term",
+            "horizon": "H2 AI-Assisted",
+            "impacted_roles": [
+              "Technical Account Managers (TAMs)"
+            ],
+            "impacted_functions": [
+              "customer_success"
+            ],
+            "estimated_ticket_deflection_pct": null,
+            "estimated_fte_impact": 65
+          }
+        ]
+      },
+      "2028": {
+        "productivity": [],
+        "offshoring": [],
+        "ai": [
+          {
+            "id": "orc-ai-autonomous-l1",
+            "name": "Autonomous AI agent for L1 Fusion/SaaS resolution",
+            "description": "Full autonomous resolution of standard L1 Fusion and SaaS cases: configuration how-to, user access, report setup, workflow troubleshooting. Human oversight for data integrity and security issues only. Replaces the majority of live L1 interactions.",
+            "mechanism": "Agentic AI with tool use: reads customer context, queries Fusion/NetSuite via API, performs configuration actions, generates resolution summary. Auto-escalates if outside scope.",
+            "year": 2028,
+            "half": "H1",
+            "category": "Transformation",
+            "horizon": "H3 Agentic",
+            "impacted_roles": [
+              "L1 Support Engineers (Fusion/SaaS)"
+            ],
+            "impacted_functions": [
+              "customer_support"
+            ],
+            "estimated_ticket_deflection_pct": 18,
+            "estimated_fte_impact": 320
+          },
+          {
+            "id": "orc-ai-self-serve-cloud-onboarding",
+            "name": "Self-serve cloud onboarding with AI guidance",
+            "description": "AI-guided self-serve implementation for standard Fusion Cloud deployments: auto-configured environment, interactive setup wizard, real-time sandboxes, autonomous milestone tracking. Reduces dependence on Oracle Consulting for standard implementations.",
+            "mechanism": "Agentic AI walks customer through setup steps, auto-configures based on industry and size, creates sandbox environment, verifies readiness, and triggers go-live when ready.",
+            "year": 2028,
+            "half": "H1",
+            "category": "Transformation",
+            "horizon": "H3 Agentic",
+            "impacted_roles": [
+              "Delivery Engineers (Functional)",
+              "Practice Managers / Engagement Leads"
+            ],
+            "impacted_functions": [
+              "professional_services"
+            ],
+            "estimated_ticket_deflection_pct": null,
+            "estimated_fte_impact": 250
+          },
+          {
+            "id": "orc-ai-autonomous-cs",
+            "name": "Agentic customer success — autonomous cloud account management",
+            "description": "AI agents take end-to-end actions for cloud accounts: autonomous health monitoring, proactive intervention execution, expansion opportunity identification, and QBR preparation — with human CSMs retaining relationship ownership for enterprise accounts. For the long tail of cloud subscriptions, a fully autonomous model manages the entire lifecycle.",
+            "mechanism": "Agentic system monitors account health signals continuously. For enterprise accounts, AI executes playbooks and prepares CSM briefings. For long-tail accounts, fully autonomous agent manages lifecycle end-to-end: triggers usage optimization, orchestrates renewals, intervenes on churn signals.",
+            "year": 2028,
+            "half": "H2",
+            "category": "Transformation",
+            "horizon": "H3 Agentic",
+            "impacted_roles": [
+              "Customer Success Managers",
+              "Renewal / Expansion Managers"
+            ],
+            "impacted_functions": [
+              "customer_success"
+            ],
+            "estimated_ticket_deflection_pct": null,
+            "estimated_fte_impact": 150
+          },
+          {
+            "id": "orc-ai-autonomous-noc",
+            "name": "Autonomous OCI infrastructure self-healing",
+            "description": "Autonomous AI for OCI infrastructure: self-healing for known failure patterns, proactive scaling based on workload predictions, autonomous incident remediation for standard issues. Human oversight for novel incidents and multi-service cascading failures only.",
+            "mechanism": "Agentic system with infrastructure tool use: monitors telemetry, detects anomalies, executes automated remediation runbooks, triggers scaling actions. Auto-escalates novel patterns to incident management with full diagnostic context.",
+            "year": 2028,
+            "half": "H2",
+            "category": "Transformation",
+            "horizon": "H3 Agentic",
+            "impacted_roles": [
+              "L1/L2 NOC Engineers (OCI)"
+            ],
+            "impacted_functions": [
+              "customer_support"
+            ],
+            "estimated_ticket_deflection_pct": 15,
+            "estimated_fte_impact": 180
+          }
+        ]
+      }
+    },
+    "ai_use_cases": [
+      {
+        "id": "orc-ai-ticket-routing",
+        "name": "AI-powered cross-product ticket routing & triage",
+        "description": "Intent classification at ticket creation auto-categorizes by product line (Fusion, OCI, On-Prem, NetSuite), severity, and customer tier. Routes to the correct product-specific support queue, eliminating manual triage delays and cross-product misrouting — one of Oracle's biggest support pain points.",
+        "mechanism": "NLP classifier reads My Oracle Support ticket subject + description, identifies product line, assigns severity and queue. Cross-product detector flags multi-product issues and creates linked collaboration tickets automatically.",
+        "year": 2026,
+        "half": "H1",
+        "category": "Quick Win",
+        "horizon": "H1 Automate",
+        "impacted_roles": [
+          "L1 Support Engineers (Fusion/SaaS)",
+          "L1/L2 NOC Engineers (OCI)",
+          "L2 Frontend Support Engineers"
+        ],
+        "impacted_functions": [
+          "customer_support"
+        ],
+        "estimated_ticket_deflection_pct": 15,
+        "estimated_fte_impact": 280
+      },
+      {
+        "id": "orc-ai-fusion-config-validation",
+        "name": "AI-powered Fusion configuration validation & auto-mapping",
+        "description": "Auto-generate Fusion Apps configuration from requirements documents. Validates field mappings, cross-module dependencies, and data migration scripts. Eliminates manual re-keying and catches configuration drift before go-live.",
+        "mechanism": "AI reads requirements specs, maps fields to Fusion table structure, generates configuration scripts, validates against business rules. Auto-generates UAT test cases matching the generated config.",
+        "year": 2026,
+        "half": "H2",
+        "category": "Near-term",
+        "horizon": "H2 AI-Assisted",
+        "impacted_roles": [
+          "Delivery Engineers (Functional)",
+          "Delivery Engineers (Technical)"
+        ],
+        "impacted_functions": [
+          "professional_services"
+        ],
+        "estimated_ticket_deflection_pct": null,
+        "estimated_fte_impact": 350
+      },
+      {
+        "id": "orc-ai-noc-incident-triage",
+        "name": "Automated OCI NOC incident detection & triage",
+        "description": "AI monitors OCI infrastructure telemetry in real-time, auto-detects anomalies and known failure patterns, and triggers automated runbooks for standard incidents. Reduces NOC engineer manual monitoring load and accelerates mean-time-to-detect.",
+        "mechanism": "Anomaly detection engine monitors cloud telemetry across compute, network, and storage. Known-pattern matcher triggers automated runbooks. Novel anomalies auto-escalated with diagnostic context to L2 engineers.",
+        "year": 2026,
+        "half": "H2",
+        "category": "Near-term",
+        "horizon": "H2 AI-Assisted",
+        "impacted_roles": [
+          "L1/L2 NOC Engineers (OCI)"
+        ],
+        "impacted_functions": [
+          "customer_support"
+        ],
+        "estimated_ticket_deflection_pct": 20,
+        "estimated_fte_impact": 150
+      },
+      {
+        "id": "orc-ai-handoff-synthesizer",
+        "name": "AI-powered sales-to-consulting handoff & project scoping",
+        "description": "AI extracts contract data, scope details, and customer expectations from sales artifacts. Auto-populates project plans, flags misaligned timelines, generates kick-off prep materials. Addresses handoff gaps between Oracle's decentralized sales orgs and consulting teams.",
+        "mechanism": "NLP processes sales proposals, contracts, discovery notes. Outputs structured handoff package with gaps flagged for practice manager review. Auto-generates complexity score and resource allocation recommendations.",
+        "year": 2026,
+        "half": "H2",
+        "category": "Near-term",
+        "horizon": "H2 AI-Assisted",
+        "impacted_roles": [
+          "Practice Managers / Engagement Leads",
+          "Program / Project Managers"
+        ],
+        "impacted_functions": [
+          "professional_services"
+        ],
+        "estimated_ticket_deflection_pct": null,
+        "estimated_fte_impact": 120
+      },
+      {
+        "id": "orc-ai-csm-engagement-plays",
+        "name": "Agentic CSM engagement plays for cloud customers",
+        "description": "AI monitors cloud usage signals — detecting drops in module adoption, declining login frequency, or feature abandonment — and auto-triggers personalized engagement campaigns. Runs churn and adoption plays backed by health scoring for Fusion and NetSuite customers. Provides coverage for mid-market accounts that lack dedicated CSMs.",
+        "mechanism": "Event-driven engine monitors usage telemetry across Fusion/NetSuite modules. Health scoring model classifies accounts by risk tier. Play engine matches risk signals to pre-built playbooks and auto-executes personalized outreach.",
+        "year": 2026,
+        "half": "H2",
+        "category": "Near-term",
+        "horizon": "H2 AI-Assisted",
+        "impacted_roles": [
+          "Customer Success Managers",
+          "CS Operations / Strategy Analysts"
+        ],
+        "impacted_functions": [
+          "customer_success"
+        ],
+        "estimated_ticket_deflection_pct": null,
+        "estimated_fte_impact": 120
+      },
+      {
+        "id": "orc-ai-fusion-how-to-agent",
+        "name": "AI conversational agent for Fusion/NetSuite how-to",
+        "description": "Full conversational AI agent handles 'how do I' questions about Fusion Apps and NetSuite workflows: ERP configuration, HCM setup, report building, workflow automation. Covers ~20-25% of L1 volume. Escalates complex issues to L2 with full context.",
+        "mechanism": "RAG over My Oracle Support documentation, resolved tickets, and product docs. Walks user through multi-step workflows with screenshots. Escalates to human when confidence low.",
+        "year": 2027,
+        "half": "H1",
+        "category": "Medium-term",
+        "horizon": "H2 AI-Assisted",
+        "impacted_roles": [
+          "L1 Support Engineers (Fusion/SaaS)",
+          "Advanced Support Engineers (ASE)"
+        ],
+        "impacted_functions": [
+          "customer_support"
+        ],
+        "estimated_ticket_deflection_pct": 22,
+        "estimated_fte_impact": 220
+      },
+      {
+        "id": "orc-ai-cloud-migration-accelerator",
+        "name": "AI-powered cloud migration assessment & automation",
+        "description": "AI analyzes on-prem Oracle environments (database, middleware, applications) and auto-generates cloud migration plans for OCI. Identifies dependencies, estimates complexity, generates IaC templates, and validates migration readiness. Reduces migration scoping from weeks to days.",
+        "mechanism": "Discovery agent scans on-prem environment, catalogs components and dependencies. Migration planner generates OCI architecture recommendations, IaC templates, and testing checklists. Complexity scorer estimates effort and risk.",
+        "year": 2027,
+        "half": "H1",
+        "category": "Medium-term",
+        "horizon": "H2 AI-Assisted",
+        "impacted_roles": [
+          "Delivery Engineers (Technical)",
+          "Solution Architects"
+        ],
+        "impacted_functions": [
+          "professional_services"
+        ],
+        "estimated_ticket_deflection_pct": null,
+        "estimated_fte_impact": 180
+      },
+      {
+        "id": "orc-ai-renewal-automation",
+        "name": "AI-powered cloud renewal automation & contract generation",
+        "description": "Automates end-to-end renewal process for long-tail cloud subscriptions: AI generates renewal quotes based on current contract terms, usage patterns, and pricing rules. Auto-populates contract templates, manages reminder cadences, and provides optimal discount recommendations within guardrails.",
+        "mechanism": "Renewal engine ingests contract data, usage metrics, and health scores. Auto-generates quotes with recommended pricing tiers. Contract template module populates terms and routes for approval. Discount optimizer recommends retention offers within guardrails.",
+        "year": 2027,
+        "half": "H1",
+        "category": "Medium-term",
+        "horizon": "H2 AI-Assisted",
+        "impacted_roles": [
+          "Renewal / Expansion Managers",
+          "Service Delivery Managers (Paid Tier)"
+        ],
+        "impacted_functions": [
+          "customer_success"
+        ],
+        "estimated_ticket_deflection_pct": null,
+        "estimated_fte_impact": 90
+      },
+      {
+        "id": "orc-ai-kb-auto-generation",
+        "name": "AI auto-generation of My Oracle Support content",
+        "description": "AI monitors resolved support tickets, clusters common patterns, and auto-drafts knowledge base articles for My Oracle Support. Auto-retires outdated content — especially for cloud-migrated products where on-prem documentation is stale. Keeps KB current with product evolution.",
+        "mechanism": "NLP clusters resolved tickets by topic, generates draft articles, routes for human review, publishes to My Oracle Support. Auto-flags stale articles referencing deprecated on-prem versions.",
+        "year": 2027,
+        "half": "H2",
+        "category": "Medium-term",
+        "horizon": "H2 AI-Assisted",
+        "impacted_roles": [
+          "Knowledge Base / Content Engineers",
+          "Support Operations / Workforce Mgmt"
+        ],
+        "impacted_functions": [
+          "customer_support"
+        ],
+        "estimated_ticket_deflection_pct": 10,
+        "estimated_fte_impact": 65
+      },
+      {
+        "id": "orc-ai-cross-product-synthesis",
+        "name": "AI cross-product case synthesis & collaboration",
+        "description": "AI detects when a support issue spans multiple Oracle product lines (Fusion + OCI, Database + Analytics) and auto-synthesizes context across tickets. Creates unified case views that bridge Oracle's decentralized support orgs, eliminating the customer bouncing between teams.",
+        "mechanism": "Cross-product detection engine analyzes ticket content for multi-product signals. Auto-creates linked collaboration tickets with synthesized context. Unified dashboard shows all related tickets across product orgs for the assigned engineer.",
+        "year": 2027,
+        "half": "H2",
+        "category": "Medium-term",
+        "horizon": "H2 AI-Assisted",
+        "impacted_roles": [
+          "Senior Advanced Support Engineers (Sr. ASE)",
+          "Incident Management (OCI Critical)"
+        ],
+        "impacted_functions": [
+          "customer_support"
+        ],
+        "estimated_ticket_deflection_pct": null,
+        "estimated_fte_impact": 45
+      },
+      {
+        "id": "orc-ai-tam-proactive-monitoring",
+        "name": "AI-powered proactive account monitoring for TAMs",
+        "description": "AI monitors environment telemetry, usage patterns, and support ticket velocity for paid-tier accounts. Auto-generates proactive health reports, detects emerging issues before customers report them, and prepares quarterly business review materials. Shifts TAM work from reactive firefighting to proactive value delivery.",
+        "mechanism": "Monitoring engine ingests environment telemetry, usage data, and ticket patterns. Anomaly detector surfaces emerging issues. QBR generator auto-produces account health decks with recommendations. Alert system triggers proactive outreach on detected anomalies.",
+        "year": 2027,
+        "half": "H2",
+        "category": "Medium-term",
+        "horizon": "H2 AI-Assisted",
+        "impacted_roles": [
+          "Technical Account Managers (TAMs)"
+        ],
+        "impacted_functions": [
+          "customer_success"
+        ],
+        "estimated_ticket_deflection_pct": null,
+        "estimated_fte_impact": 65
+      },
+      {
+        "id": "orc-ai-autonomous-l1",
+        "name": "Autonomous AI agent for L1 Fusion/SaaS resolution",
+        "description": "Full autonomous resolution of standard L1 Fusion and SaaS cases: configuration how-to, user access, report setup, workflow troubleshooting. Human oversight for data integrity and security issues only. Replaces the majority of live L1 interactions.",
+        "mechanism": "Agentic AI with tool use: reads customer context, queries Fusion/NetSuite via API, performs configuration actions, generates resolution summary. Auto-escalates if outside scope.",
+        "year": 2028,
+        "half": "H1",
+        "category": "Transformation",
+        "horizon": "H3 Agentic",
+        "impacted_roles": [
+          "L1 Support Engineers (Fusion/SaaS)"
+        ],
+        "impacted_functions": [
+          "customer_support"
+        ],
+        "estimated_ticket_deflection_pct": 18,
+        "estimated_fte_impact": 320
+      },
+      {
+        "id": "orc-ai-self-serve-cloud-onboarding",
+        "name": "Self-serve cloud onboarding with AI guidance",
+        "description": "AI-guided self-serve implementation for standard Fusion Cloud deployments: auto-configured environment, interactive setup wizard, real-time sandboxes, autonomous milestone tracking. Reduces dependence on Oracle Consulting for standard implementations.",
+        "mechanism": "Agentic AI walks customer through setup steps, auto-configures based on industry and size, creates sandbox environment, verifies readiness, and triggers go-live when ready.",
+        "year": 2028,
+        "half": "H1",
+        "category": "Transformation",
+        "horizon": "H3 Agentic",
+        "impacted_roles": [
+          "Delivery Engineers (Functional)",
+          "Practice Managers / Engagement Leads"
+        ],
+        "impacted_functions": [
+          "professional_services"
+        ],
+        "estimated_ticket_deflection_pct": null,
+        "estimated_fte_impact": 250
+      },
+      {
+        "id": "orc-ai-autonomous-cs",
+        "name": "Agentic customer success — autonomous cloud account management",
+        "description": "AI agents take end-to-end actions for cloud accounts: autonomous health monitoring, proactive intervention execution, expansion opportunity identification, and QBR preparation — with human CSMs retaining relationship ownership for enterprise accounts. For the long tail of cloud subscriptions, a fully autonomous model manages the entire lifecycle.",
+        "mechanism": "Agentic system monitors account health signals continuously. For enterprise accounts, AI executes playbooks and prepares CSM briefings. For long-tail accounts, fully autonomous agent manages lifecycle end-to-end: triggers usage optimization, orchestrates renewals, intervenes on churn signals.",
+        "year": 2028,
+        "half": "H2",
+        "category": "Transformation",
+        "horizon": "H3 Agentic",
+        "impacted_roles": [
+          "Customer Success Managers",
+          "Renewal / Expansion Managers"
+        ],
+        "impacted_functions": [
+          "customer_success"
+        ],
+        "estimated_ticket_deflection_pct": null,
+        "estimated_fte_impact": 150
+      },
+      {
+        "id": "orc-ai-autonomous-noc",
+        "name": "Autonomous OCI infrastructure self-healing",
+        "description": "Autonomous AI for OCI infrastructure: self-healing for known failure patterns, proactive scaling based on workload predictions, autonomous incident remediation for standard issues. Human oversight for novel incidents and multi-service cascading failures only.",
+        "mechanism": "Agentic system with infrastructure tool use: monitors telemetry, detects anomalies, executes automated remediation runbooks, triggers scaling actions. Auto-escalates novel patterns to incident management with full diagnostic context.",
+        "year": 2028,
+        "half": "H2",
+        "category": "Transformation",
+        "horizon": "H3 Agentic",
+        "impacted_roles": [
+          "L1/L2 NOC Engineers (OCI)"
+        ],
+        "impacted_functions": [
+          "customer_support"
+        ],
+        "estimated_ticket_deflection_pct": 15,
+        "estimated_fte_impact": 180
+      }
+    ]
+  }
+}

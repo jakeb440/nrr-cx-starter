@@ -1,0 +1,61 @@
+{
+  "metadata": {
+    "scope": "Software and tech companies, revenue > $500M",
+    "currency": "USD",
+    "notes": "Ranges are indicative; use as peer benchmarks, not strict norms."
+  },
+  "revenue_bands": [
+    { "min_revenue_m": 500, "max_revenue_m": 1000, "label": "$500M–$1B" },
+    { "min_revenue_m": 1000, "max_revenue_m": 2500, "label": "$1B–$2.5B" },
+    { "min_revenue_m": 2500, "max_revenue_m": 5000, "label": "$2.5B–$5B" },
+    { "min_revenue_m": 5000, "max_revenue_m": null, "label": "$5B+" }
+  ],
+  "professional_services": {
+    "description": "Implementation, onboarding, consulting, delivery. Excludes R&D and G&A.",
+    "ftes_per_100m_revenue": { "p25": 3, "p50": 5, "p75": 8 },
+    "role_mix_typical_pct": {
+      "delivery_consultants": { "min": 50, "max": 70 },
+      "project_managers": { "min": 10, "max": 18 },
+      "solution_architects": { "min": 8, "max": 15 },
+      "practice_leadership_overhead": { "min": 5, "max": 12 }
+    },
+    "span_of_control": "Delivery managers: 6–10 FTE per manager; practice leads: 15–25 FTE.",
+    "red_flags": [
+      "PS headcount > 10 FTE per $100M revenue without clear high-touch model",
+      "PM ratio > 1:4 vs delivery",
+      "More than 15% in pure overhead (non-billable leadership)"
+    ]
+  },
+  "customer_success": {
+    "description": "Adoption, renewals, expansion, health scores, touchpoints.",
+    "ftes_per_100m_revenue": { "p25": 2, "p50": 4, "p75": 6 },
+    "role_mix_typical_pct": {
+      "csms": { "min": 55, "max": 75 },
+      "cs_managers": { "min": 12, "max": 20 },
+      "operations_specialists": { "min": 5, "max": 12 },
+      "leadership": { "min": 5, "max": 10 }
+    },
+    "customers_per_csm": { "p25": 25, "p50": 40, "p75": 60 },
+    "red_flags": [
+      "CSM count > 6 FTE per $100M revenue without enterprise-heavy segment",
+      "Customers per CSM < 15 (unless named/strategic only)",
+      "Manager span < 5 CSMs"
+    ]
+  },
+  "customer_support": {
+    "description": "Tickets, L1/L2/L3, self-service, escalations.",
+    "ftes_per_100m_revenue": { "p25": 2, "p50": 4, "p75": 7 },
+    "role_mix_typical_pct": {
+      "tier1_agents": { "min": 45, "max": 60 },
+      "tier2_3": { "min": 25, "max": 40 },
+      "team_leads_supervisors": { "min": 8, "max": 15 },
+      "knowledge_operations": { "min": 3, "max": 8 }
+    },
+    "tickets_per_agent_month_typical": { "min": 80, "max": 150 },
+    "red_flags": [
+      "Support FTE > 8 per $100M revenue without high-volume SMB or consumer mix",
+      "Tier-1 share < 40% (possible over-escalation or under-investment in deflection)",
+      "Very low tickets per agent (< 50) without clear complexity justification"
+    ]
+  }
+}
