@@ -38,7 +38,7 @@ export default function Home() {
             value={String(diagnosticCount)}
             label="Diagnostics Generated"
           />
-          <StatCard icon={Zap} value="~20min" label="To Deploy" />
+          <StatCard icon={Zap} value="15–60min" label="To Deploy" />
         </div>
       </section>
 
