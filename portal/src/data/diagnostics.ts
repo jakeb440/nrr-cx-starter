@@ -10,7 +10,10 @@ export interface Diagnostic {
   description: string;
 }
 
-export const diagnostics: Diagnostic[] = [
+export const GITHUB_DIAGNOSTICS_URL =
+  "https://raw.githubusercontent.com/jakeb440/nrr-cx-starter/main/diagnostics.json";
+
+export const fallbackDiagnostics: Diagnostic[] = [
   {
     client: "Databricks",
     product: "enhanced",

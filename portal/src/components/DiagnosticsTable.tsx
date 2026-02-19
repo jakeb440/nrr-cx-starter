@@ -1,8 +1,12 @@
 "use client";
 
-import { useState } from "react";
-import { ExternalLink, CheckCircle, Clock } from "lucide-react";
-import { diagnostics, type Diagnostic } from "@/data/diagnostics";
+import { useState, useEffect } from "react";
+import { ExternalLink, CheckCircle, Clock, RefreshCw } from "lucide-react";
+import {
+  GITHUB_DIAGNOSTICS_URL,
+  fallbackDiagnostics,
+  type Diagnostic,
+} from "@/data/diagnostics";
 
 type FilterTab = "all" | "basic" | "enhanced" | "agentic";
 
@@ -51,6 +55,26 @@ function StatusBadge({ status }: { status: string }) {
 
 export default function DiagnosticsTable() {
   const [activeTab, setActiveTab] = useState<FilterTab>("all");
+  const [diagnostics, setDiagnostics] =
+    useState<Diagnostic[]>(fallbackDiagnostics);
+  const [isLive, setIsLive] = useState(false);
+
+  useEffect(() => {
+    fetch(GITHUB_DIAGNOSTICS_URL)
+      .then((res) => {
+        if (!res.ok) throw new Error("fetch failed");
+        return res.json();
+      })
+      .then((data: Diagnostic[]) => {
+        if (Array.isArray(data) && data.length > 0) {
+          setDiagnostics(data);
+          setIsLive(true);
+        }
+      })
+      .catch(() => {
+        setIsLive(false);
+      });
+  }, []);
 
   const sorted = [...diagnostics].sort(
     (a, b) => new Date(b.created).getTime() - new Date(a.created).getTime()
@@ -63,21 +87,26 @@ export default function DiagnosticsTable() {
 
   return (
     <div>
-      {/* Filter tabs */}
-      <div className="mb-6 flex gap-1 rounded-lg border border-slate-700/60 bg-slate-800/30 p-1 w-fit">
-        {TABS.map((tab) => (
-          <button
-            key={tab.key}
-            onClick={() => setActiveTab(tab.key)}
-            className={`rounded-md px-4 py-1.5 text-sm font-medium transition-colors ${
-              activeTab === tab.key
-                ? "bg-slate-700 text-white shadow-sm"
-                : "text-slate-400 hover:text-slate-200"
-            }`}
-          >
-            {tab.label}
-          </button>
-        ))}
+      <div className="mb-6 flex items-center justify-between">
+        <div className="flex gap-1 rounded-lg border border-slate-700/60 bg-slate-800/30 p-1">
+          {TABS.map((tab) => (
+            <button
+              key={tab.key}
+              onClick={() => setActiveTab(tab.key)}
+              className={`rounded-md px-4 py-1.5 text-sm font-medium transition-colors ${
+                activeTab === tab.key
+                  ? "bg-slate-700 text-white shadow-sm"
+                  : "text-slate-400 hover:text-slate-200"
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+        <div className="flex items-center gap-1.5 text-xs text-slate-500">
+          <RefreshCw className="h-3 w-3" />
+          {isLive ? "Live from GitHub" : "Cached data"}
+        </div>
       </div>
 
       {/* Desktop table */}
@@ -119,7 +148,7 @@ export default function DiagnosticsTable() {
                 </td>
                 <td className="px-5 py-3.5">
                   <span
-                    className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-semibold capitalize ${BADGE_STYLES[d.product].bg} ${BADGE_STYLES[d.product].text}`}
+                    className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-semibold capitalize ${BADGE_STYLES[d.product]?.bg ?? ""} ${BADGE_STYLES[d.product]?.text ?? "text-slate-400"}`}
                   >
                     {d.product}
                   </span>
@@ -165,7 +194,7 @@ export default function DiagnosticsTable() {
                 {d.client}
               </span>
               <span
-                className={`rounded-full px-2.5 py-0.5 text-xs font-semibold capitalize ${BADGE_STYLES[d.product].bg} ${BADGE_STYLES[d.product].text}`}
+                className={`rounded-full px-2.5 py-0.5 text-xs font-semibold capitalize ${BADGE_STYLES[d.product]?.bg ?? ""} ${BADGE_STYLES[d.product]?.text ?? "text-slate-400"}`}
               >
                 {d.product}
               </span>

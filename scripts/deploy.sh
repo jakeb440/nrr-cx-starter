@@ -2,12 +2,17 @@
 # Usage: ./scripts/deploy.sh <client> <product>
 # Example: ./scripts/deploy.sh oracle enhanced
 #
-# Builds and deploys a diagnostic to Vercel, then updates diagnostics.json.
+# Builds and deploys a diagnostic to Vercel, then updates the central
+# diagnostics.json in the nrr-cx-starter GitHub repo so the portal
+# automatically shows the new entry.
 
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+
+GITHUB_REPO="jakeb440/nrr-cx-starter"
+REGISTRY_PATH="diagnostics.json"
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -41,7 +46,6 @@ if [[ "$PRODUCT" != "basic" && "$PRODUCT" != "enhanced" && "$PRODUCT" != "agenti
   exit 1
 fi
 
-# Construct directory name
 if [[ "$PRODUCT" == "agentic" ]]; then
   NAME="agentic-cx-${CLIENT}"
 else
@@ -50,7 +54,6 @@ fi
 
 OUTPUT_DIR="$ROOT_DIR/output/$NAME"
 
-# Validate the output directory exists
 if [[ ! -d "$OUTPUT_DIR" ]]; then
   echo -e "${RED}Error:${RESET} Output directory not found: output/$NAME/"
   echo "  Run new-diagnostic.sh first:"
@@ -66,20 +69,17 @@ fi
 echo -e "${CYAN}Building ${BOLD}$NAME${RESET}${CYAN}...${RESET}"
 echo ""
 
-# Install dependencies
-echo -e "${BOLD}[1/3]${RESET} Installing dependencies..."
+echo -e "${BOLD}[1/4]${RESET} Installing dependencies..."
 (cd "$OUTPUT_DIR" && npm install)
 echo -e "${GREEN}✓${RESET} Dependencies installed"
 echo ""
 
-# Build the static export
-echo -e "${BOLD}[2/3]${RESET} Building static export..."
+echo -e "${BOLD}[2/4]${RESET} Building static export..."
 (cd "$OUTPUT_DIR" && npm run build)
 echo -e "${GREEN}✓${RESET} Build complete (output in out/)"
 echo ""
 
-# Deploy to Vercel
-echo -e "${BOLD}[3/3]${RESET} Deploying to Vercel..."
+echo -e "${BOLD}[3/4]${RESET} Deploying to Vercel..."
 echo ""
 
 DEPLOYED_URL=""
@@ -101,7 +101,6 @@ else
   echo "  cd $OUTPUT_DIR && npx vercel --prod"
 fi
 
-# Prompt for URL if we didn't capture it
 if [[ -z "$DEPLOYED_URL" ]]; then
   echo ""
   read -rp "$(echo -e "${CYAN}Enter the deployed URL${RESET} (or press Enter to skip): ")" DEPLOYED_URL
@@ -113,54 +112,114 @@ if [[ -z "$DEPLOYED_URL" ]]; then
   exit 0
 fi
 
-# Update diagnostics.json
-REGISTRY="$ROOT_DIR/diagnostics.json"
-TODAY=$(date +%Y-%m-%d)
+# ── Step 4: Update central diagnostics.json via GitHub API ──
 
 echo ""
-echo -e "Updating ${BOLD}diagnostics.json${RESET}..."
+echo -e "${BOLD}[4/4]${RESET} Updating central diagnostics registry..."
 
-# Prompt for optional fields
 read -rp "$(echo -e "${CYAN}NRR value${RESET} (e.g. 115%, or Enter to skip): ")" NRR_VALUE
 read -rp "$(echo -e "${CYAN}Sector${RESET} (e.g. Cloud Infrastructure, or Enter to skip): ")" SECTOR
 read -rp "$(echo -e "${CYAN}Short description${RESET} (or Enter to skip): ")" DESCRIPTION
-read -rp "$(echo -e "${CYAN}GitHub repo${RESET} (e.g. jakeb440/$NAME, or Enter to skip): ")" REPO
 
 NRR_VALUE="${NRR_VALUE:-}"
 SECTOR="${SECTOR:-}"
 DESCRIPTION="${DESCRIPTION:-}"
-REPO="${REPO:-}"
+TODAY=$(date +%Y-%m-%d)
+AUTHOR=$(whoami)
 
-NEW_ENTRY=$(cat <<EOF
+# Also update local diagnostics.json
+REGISTRY="$ROOT_DIR/diagnostics.json"
+NEW_ENTRY=$(cat <<ENTRYEOF
 {
   "client": "$CLIENT",
   "product": "$PRODUCT",
-  "repo": "$REPO",
+  "repo": "",
   "url": "$DEPLOYED_URL",
   "created": "$TODAY",
-  "author": "$(whoami)",
+  "author": "$AUTHOR",
   "status": "deployed",
   "nrr": "$NRR_VALUE",
   "sector": "$SECTOR",
   "description": "$DESCRIPTION"
 }
-EOF
+ENTRYEOF
 )
 
-if command -v jq &>/dev/null; then
-  jq --argjson entry "$NEW_ENTRY" '. += [$entry]' "$REGISTRY" > "$REGISTRY.tmp"
-  mv "$REGISTRY.tmp" "$REGISTRY"
-else
-  # Fallback: simple JSON array append without jq
-  # Remove trailing ] and whitespace, append new entry
-  sed -i.bak '$ s/]$//' "$REGISTRY"
-  echo "  ,$NEW_ENTRY" >> "$REGISTRY"
-  echo "]" >> "$REGISTRY"
-  rm -f "$REGISTRY.bak"
+if [[ -f "$REGISTRY" ]]; then
+  if command -v jq &>/dev/null; then
+    jq --argjson entry "$NEW_ENTRY" '. += [$entry]' "$REGISTRY" > "$REGISTRY.tmp"
+    mv "$REGISTRY.tmp" "$REGISTRY"
+  else
+    sed -i.bak '$ s/]$//' "$REGISTRY"
+    echo "  ,$NEW_ENTRY" >> "$REGISTRY"
+    echo "]" >> "$REGISTRY"
+    rm -f "$REGISTRY.bak"
+  fi
+  echo -e "${GREEN}✓${RESET} Updated local diagnostics.json"
 fi
 
-echo -e "${GREEN}✓${RESET} Added ${BOLD}$NAME${RESET} to diagnostics.json"
+# Push to GitHub repo via API so the portal picks it up automatically
+GH_TOKEN=""
+
+if command -v git &>/dev/null; then
+  GH_TOKEN=$(git credential-osxkeychain get <<CREDEOF 2>/dev/null | grep "^password=" | cut -d= -f2
+protocol=https
+host=github.com
+CREDEOF
+  ) || true
+fi
+
+if [[ -z "$GH_TOKEN" ]]; then
+  echo -e "${YELLOW}No GitHub token found.${RESET} Skipping remote registry update."
+  echo "  The portal will not show this diagnostic until diagnostics.json is updated in the repo."
+  echo "  Push manually: cd $ROOT_DIR && git add diagnostics.json && git commit -m 'Add $NAME' && git push"
+else
+  echo "Pushing to ${GITHUB_REPO}..."
+
+  # Fetch current file content and SHA
+  RESPONSE=$(curl -s -H "Authorization: token $GH_TOKEN" \
+    "https://api.github.com/repos/${GITHUB_REPO}/contents/${REGISTRY_PATH}")
+
+  FILE_SHA=$(echo "$RESPONSE" | python3 -c "import sys,json; print(json.load(sys.stdin).get('sha',''))" 2>/dev/null || echo "")
+  CURRENT_CONTENT=$(echo "$RESPONSE" | python3 -c "
+import sys,json,base64
+data = json.load(sys.stdin)
+print(base64.b64decode(data.get('content','')).decode('utf-8'))
+" 2>/dev/null || echo "[]")
+
+  # Add the new entry
+  UPDATED_CONTENT=$(echo "$CURRENT_CONTENT" | python3 -c "
+import sys, json
+current = json.load(sys.stdin)
+new_entry = json.loads('''$NEW_ENTRY''')
+current.append(new_entry)
+print(json.dumps(current, indent=2))
+")
+
+  ENCODED=$(echo "$UPDATED_CONTENT" | python3 -c "import sys,base64; print(base64.b64encode(sys.stdin.buffer.read()).decode())")
+
+  UPDATE_RESULT=$(curl -s -X PUT \
+    -H "Authorization: token $GH_TOKEN" \
+    -H "Content-Type: application/json" \
+    "https://api.github.com/repos/${GITHUB_REPO}/contents/${REGISTRY_PATH}" \
+    -d "{
+      \"message\": \"feat: add ${NAME} to diagnostics registry\",
+      \"content\": \"${ENCODED}\",
+      \"sha\": \"${FILE_SHA}\"
+    }")
+
+  COMMIT_SHA=$(echo "$UPDATE_RESULT" | python3 -c "import sys,json; print(json.load(sys.stdin).get('commit',{}).get('sha','ERROR'))" 2>/dev/null || echo "ERROR")
+
+  if [[ "$COMMIT_SHA" != "ERROR" && -n "$COMMIT_SHA" ]]; then
+    echo -e "${GREEN}✓${RESET} Pushed to GitHub (commit: ${COMMIT_SHA:0:7})"
+    echo -e "${GREEN}✓${RESET} Portal will show the new diagnostic automatically"
+  else
+    echo -e "${YELLOW}Failed to push to GitHub.${RESET} Update manually."
+    echo "  cd $ROOT_DIR && git add diagnostics.json && git commit -m 'Add $NAME' && git push"
+  fi
+fi
+
 echo ""
 echo -e "${GREEN}${BOLD}Deploy complete!${RESET}"
 echo -e "  URL:      ${BOLD}$DEPLOYED_URL${RESET}"
-echo -e "  Registry: diagnostics.json updated"
+echo -e "  Portal:   ${BOLD}https://portal-agentic-customer.vercel.app${RESET}"

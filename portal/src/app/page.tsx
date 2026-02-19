@@ -9,10 +9,10 @@ import {
 import ProductCard from "@/components/ProductCard";
 import DiagnosticsTable from "@/components/DiagnosticsTable";
 import GettingStarted from "@/components/GettingStarted";
-import { diagnostics } from "@/data/diagnostics";
+import { fallbackDiagnostics } from "@/data/diagnostics";
 
 export default function Home() {
-  const diagnosticCount = diagnostics.length;
+  const diagnosticCount = fallbackDiagnostics.length;
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
