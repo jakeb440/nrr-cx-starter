@@ -72,7 +72,7 @@ export default function Home() {
             icon={Bot}
             title="Customer Operations Assessment"
             description="Agentic AI readiness assessment for Customer Success, Professional Services, and Support. Role-by-role impact and transformation roadmap."
-            time="~15–30 min"
+            time="~1 hour"
             exampleUrl="https://oracle-ops-assessment.vercel.app/"
             accentColor="#a855f7"
             badgeBg="rgba(168, 85, 247, 0.15)"
