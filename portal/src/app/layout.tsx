@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "CX Diagnostics — Product Catalog",
+  title: "Agentic Customer Operations — Diagnostic Products",
   description:
-    "Three diagnostic products you can generate for any client. Choose a product, open Cursor, and build.",
+    "Three diagnostic products for agentic customer operations. Generate NRR diagnostics and transformation teardowns for any client.",
 };
 
 export default function RootLayout({

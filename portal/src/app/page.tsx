@@ -20,15 +20,15 @@ export default function Home() {
       <section className="mb-20 text-center">
         <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3 py-1 text-xs font-medium text-indigo-300">
           <Activity className="h-3 w-3" />
-          CX Diagnostics Platform
+          Agentic Customer Operations
         </div>
 
         <h1 className="mb-4 text-4xl font-bold tracking-tight text-white sm:text-5xl">
-          CX Diagnostics
+          Agentic Customer Operations
         </h1>
         <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-slate-400">
-          Three diagnostic products you can generate for any client. Choose a
-          product, open Cursor, and build.
+          Three diagnostic products for customer operations transformation.
+          Generate for any client using Cursor.
         </p>
 
         <div className="mx-auto grid max-w-xl grid-cols-3 gap-4">
@@ -52,8 +52,8 @@ export default function Home() {
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           <ProductCard
             icon={BarChart3}
-            title="NRR CX Basic"
-            description="NRR benchmark vs peers, customer journey map with pain points, diagnostic synthesis with top strengths and risks."
+            title="NRR Diagnostic (Basic)"
+            description="NRR benchmark vs peers, customer journey map with pain points, diagnostic synthesis with top strengths and risks to NRR."
             time="~2–4 hours"
             exampleUrl="https://nrr-cx-okta.vercel.app/"
             accentColor="#10b981"
@@ -61,19 +61,19 @@ export default function Home() {
           />
           <ProductCard
             icon={TrendingUp}
-            title="NRR CX Enhanced"
+            title="NRR Diagnostic (Enhanced)"
             description="Full deep-dive: NRR benchmark, maturity assessment, waterfall analysis, value-at-stake scenarios, highest-impact actions."
-            time="~1–2 days"
+            time="~4–8 hours"
             exampleUrl="https://nrr-cx-databricks-enhanced.vercel.app/"
             accentColor="#3b82f6"
             badgeBg="rgba(59, 130, 246, 0.15)"
           />
           <ProductCard
             icon={Bot}
-            title="Agentic CX Teardown"
-            description="How agentic AI transforms Customer Success, Professional Services, and Support. Role-by-role impact analysis."
-            time="~1–2 days"
-            exampleUrl="https://n-eight-zeta.vercel.app/"
+            title="Agentic Customer Ops Teardown"
+            description="How agentic AI transforms Customer Success, Professional Services, and Support. Role-by-role impact, capability framework."
+            time="~2–4 hours"
+            exampleUrl="https://agentic-customer-ops.vercel.app/"
             accentColor="#a855f7"
             badgeBg="rgba(168, 85, 247, 0.15)"
           />
@@ -100,7 +100,8 @@ export default function Home() {
 
       {/* ─── Footer ─── */}
       <footer className="border-t border-slate-800 pt-8 text-center text-xs text-slate-500">
-        CX Diagnostics &middot; Built with Cursor &middot; Deployed on Vercel
+        Agentic Customer Operations &middot; Built with Cursor &middot;
+        Deployed on Vercel
       </footer>
     </main>
   );
