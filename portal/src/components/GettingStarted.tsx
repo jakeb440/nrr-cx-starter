@@ -39,9 +39,9 @@ const STEPS: Step[] = [
     number: 3,
     icon: MessageSquare,
     title: "Tell Cursor what to build",
-    description: "Describe the diagnostic you want in plain English.",
+    description: "Describe the diagnostic you want in plain English. Inform with your hypotheses, sector, or client intelligence.",
     details:
-      'Type a prompt like "Generate an NRR CX basic for Oracle" or "Generate an NRR CX enhanced for CrowdStrike." Cursor reads the generation rules, gathers public data, and builds a complete Next.js app. This takes 3-10 minutes.',
+      'Type a prompt like "Generate an NRR CX basic for Oracle" or "Generate an NRR CX enhanced for CrowdStrike." Share any hypotheses, sector context, or client intelligence you have — the more specific you are, the better the output. Cursor reads the generation rules, gathers public data, and builds a complete Next.js app. This takes 3-10 minutes.',
   },
   {
     number: 4,
