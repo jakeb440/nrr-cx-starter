@@ -8,12 +8,13 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  ReferenceLine,
+  Cell,
   ResponsiveContainer,
+  ReferenceLine,
   LineChart,
   Line,
 } from "recharts";
-import { TrendingUp, Info, ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import type { NRRData, PeerDataPoint } from "@/lib/types";
 import { cn, formatNumber } from "@/lib/utils";
 
@@ -22,18 +23,48 @@ interface NRRBenchmarkProps {
   companyName: string;
 }
 
-/** Peer benchmark chart with quartile bands, trend line, and methodology notes */
+function quartileColor(nrr: number, q1: number, q4: number, median: number): string {
+  if (nrr >= q1) return "#10b981";
+  if (nrr >= median) return "#3b82f6";
+  if (nrr >= q4) return "#f59e0b";
+  return "#ef4444";
+}
+
+function QuartileBadge({ label }: { label: string }) {
+  const colorMap: Record<string, string> = {
+    Q1: "bg-emerald-100 text-emerald-800",
+    Q2: "bg-blue-100 text-blue-800",
+    Q3: "bg-amber-100 text-amber-800",
+    Q4: "bg-red-100 text-red-800",
+  };
+  return (
+    <span
+      className={cn(
+        "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold",
+        colorMap[label] ?? "bg-slate-100 text-slate-800"
+      )}
+    >
+      {label}
+    </span>
+  );
+}
+
 export function NRRBenchmark({ nrr, companyName }: NRRBenchmarkProps) {
-  const [showMethodology, setShowMethodology] = useState(false);
+  const [notesOpen, setNotesOpen] = useState(false);
 
   const sortedPeers = [...nrr.peerData].sort((a, b) => b.nrr - a.nrr);
+  const { topQuartile, bottomQuartile, median } = nrr.peers;
 
-  const barData = sortedPeers.map((peer) => ({
-    name: peer.company,
-    nrr: peer.nrr,
-    isTarget: peer.isTarget,
-    isEstimated: peer.isEstimated,
-    fill: peer.isTarget ? "#6366f1" : "#94a3b8",
+  const chartData = sortedPeers.map((p: PeerDataPoint) => ({
+    name: p.company,
+    nrr: p.nrr,
+    isTarget: p.isTarget,
+    isEstimated: p.isEstimated ?? false,
+    period: p.period,
+    fill: p.isTarget
+      ? "#6366f1"
+      : quartileColor(p.nrr, topQuartile, bottomQuartile, median),
+    opacity: p.isEstimated ? 0.6 : 1,
   }));
 
   const trendData = nrr.history.map((h) => ({
@@ -43,14 +74,8 @@ export function NRRBenchmark({ nrr, companyName }: NRRBenchmarkProps) {
 
   return (
     <section className="bg-white rounded-xl border border-border shadow-sm">
-      {/* Section header */}
       <div className="px-6 py-5 border-b border-border">
-        <div className="flex items-center gap-2">
-          <TrendingUp className="w-5 h-5 text-primary" />
-          <h2 className="text-lg font-semibold text-text">
-            NRR Peer Benchmark
-          </h2>
-        </div>
+        <h2 className="text-lg font-semibold text-text">NRR Peer Benchmark</h2>
         <p className="text-sm text-text-secondary mt-1">
           {companyName} vs. {nrr.peers.count} peers · Median{" "}
           {formatNumber(nrr.peers.median, 0)}% · Range {nrr.peers.range}
@@ -58,87 +83,119 @@ export function NRRBenchmark({ nrr, companyName }: NRRBenchmarkProps) {
       </div>
 
       <div className="p-6 space-y-6">
-        {/* KPI strip */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <KPICard
-            label="Current NRR"
-            value={`${formatNumber(nrr.current, 0)}%`}
-            sub={nrr.currentPeriod}
-            accent
-          />
-          <KPICard
-            label="Peer Median"
-            value={`${formatNumber(nrr.peers.median, 0)}%`}
-            sub={`${nrr.peers.count} companies`}
-          />
-          <KPICard
-            label="Top Quartile"
-            value={`≥${formatNumber(nrr.peers.topQuartile, 0)}%`}
-          />
-          <KPICard
-            label="Quartile Rank"
-            value={nrr.quartile}
-            sub={quartileDescription(nrr.quartile)}
-          />
-        </div>
-
-        {/* Peer bar chart */}
-        <div>
-          <h3 className="text-sm font-medium text-text-secondary mb-3">
-            NRR by Company
-          </h3>
-          <div className="h-72">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={barData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-                <XAxis
-                  dataKey="name"
-                  tick={{ fontSize: 11, fill: "#64748b" }}
-                  interval={0}
-                  angle={-35}
-                  textAnchor="end"
-                  height={60}
-                />
-                <YAxis
-                  tick={{ fontSize: 11, fill: "#64748b" }}
-                  domain={["dataMin - 5", "dataMax + 5"]}
-                  tickFormatter={(v: number) => `${v}%`}
-                />
-                <Tooltip
-                  formatter={(value: number) => [`${value}%`, "NRR"]}
-                  contentStyle={{
-                    borderRadius: 8,
-                    border: "1px solid #e2e8f0",
-                    fontSize: 13,
-                  }}
-                />
-                <ReferenceLine
-                  y={nrr.peers.median}
-                  stroke="#6366f1"
-                  strokeDasharray="4 4"
-                  label={{
-                    value: `Median ${formatNumber(nrr.peers.median, 0)}%`,
-                    position: "right",
-                    fontSize: 11,
-                    fill: "#6366f1",
-                  }}
-                />
-                <Bar
-                  dataKey="nrr"
-                  radius={[4, 4, 0, 0]}
-                  fill="#94a3b8"
-                  isAnimationActive={false}
-                >
-                  {barData.map((entry, i) => (
-                    <rect key={i} fill={entry.fill} />
-                  ))}
-                </Bar>
-              </BarChart>
-            </ResponsiveContainer>
+        {/* NRR hero + quartile badge */}
+        <div className="flex flex-wrap items-baseline gap-4">
+          <div>
+            <span className="text-4xl font-bold text-primary">
+              {nrr.current}%
+            </span>
+            <span className="ml-2 text-sm text-text-secondary">
+              ({nrr.currentPeriod})
+            </span>
           </div>
+          <QuartileBadge label={nrr.quartile} />
         </div>
 
-        {/* Trend chart (if history available) */}
+        {/* 5-stat card row */}
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-5">
+          <StatCard label="Peers" value={String(nrr.peers.count)} />
+          <StatCard label="Median" value={`${formatNumber(nrr.peers.median)}%`} />
+          <StatCard label="Top quartile (Q1)" value={`≥ ${formatNumber(nrr.peers.topQuartile)}%`} />
+          <StatCard label="Bottom quartile (Q4)" value={`≤ ${formatNumber(nrr.peers.bottomQuartile)}%`} />
+          <StatCard label="Range" value={nrr.peers.range} />
+        </div>
+
+        {/* Horizontal bar chart with quartile coloring */}
+        <div className="rounded-xl border border-border p-4">
+          <div className="mb-4 flex flex-wrap items-center gap-4 text-xs text-text-secondary">
+            <span className="font-medium text-text">Quartile:</span>
+            {[
+              { label: "Q1", color: "bg-emerald-500" },
+              { label: "Q2", color: "bg-blue-500" },
+              { label: "Q3", color: "bg-amber-500" },
+              { label: "Q4", color: "bg-red-500" },
+            ].map((q) => (
+              <span key={q.label} className="flex items-center gap-1.5">
+                <span className={cn("h-3 w-3 rounded-sm", q.color)} />
+                {q.label}
+              </span>
+            ))}
+            <span className="ml-4 border-l border-border pl-4 font-medium text-text">
+              Period opacity:
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="h-3 w-3 rounded-sm bg-text-muted" />
+              Reported
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="h-3 w-3 rounded-sm bg-text-muted/60" />
+              Estimated / implied
+            </span>
+          </div>
+
+          <ResponsiveContainer width="100%" height={Math.max(280, sortedPeers.length * 48)}>
+            <BarChart
+              data={chartData}
+              layout="vertical"
+              margin={{ top: 0, right: 40, left: 0, bottom: 0 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" horizontal={false} />
+              <XAxis
+                type="number"
+                domain={[
+                  (dataMin: number) => Math.floor(dataMin / 5) * 5 - 5,
+                  (dataMax: number) => Math.ceil(dataMax / 5) * 5 + 5,
+                ]}
+                tickFormatter={(v: number) => `${v}%`}
+                tick={{ fontSize: 12, fill: "#94a3b8" }}
+              />
+              <YAxis
+                type="category"
+                dataKey="name"
+                width={120}
+                tick={{ fontSize: 12, fill: "#334155" }}
+              />
+              <Tooltip
+                cursor={{ fill: "#f1f5f9" }}
+                content={({ active, payload }) => {
+                  if (!active || !payload?.[0]) return null;
+                  const d = payload[0].payload;
+                  return (
+                    <div className="rounded-lg border border-border bg-white px-3 py-2 text-sm shadow-lg">
+                      <p className="font-semibold text-text">{d.name}</p>
+                      <p className="text-text-secondary">
+                        NRR: <span className="font-medium">{d.nrr}%</span>
+                      </p>
+                      <p className="text-text-muted">{d.period}</p>
+                      {d.isEstimated && (
+                        <p className="text-xs italic text-warning">Estimated / implied</p>
+                      )}
+                    </div>
+                  );
+                }}
+              />
+              <ReferenceLine
+                x={nrr.peers.median}
+                stroke="#94a3b8"
+                strokeDasharray="4 4"
+                label={{ value: "Median", position: "top", fontSize: 11, fill: "#94a3b8" }}
+              />
+              <Bar dataKey="nrr" radius={[0, 4, 4, 0]} barSize={24}>
+                {chartData.map((entry, index) => (
+                  <Cell
+                    key={`cell-${index}`}
+                    fill={entry.fill}
+                    fillOpacity={entry.opacity}
+                    stroke={entry.isTarget ? "#4f46e5" : "none"}
+                    strokeWidth={entry.isTarget ? 2 : 0}
+                  />
+                ))}
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+
+        {/* NRR Trend */}
         {trendData.length > 1 && (
           <div>
             <h3 className="text-sm font-medium text-text-secondary mb-3">
@@ -148,10 +205,7 @@ export function NRRBenchmark({ nrr, companyName }: NRRBenchmarkProps) {
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={trendData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-                  <XAxis
-                    dataKey="period"
-                    tick={{ fontSize: 11, fill: "#64748b" }}
-                  />
+                  <XAxis dataKey="period" tick={{ fontSize: 11, fill: "#64748b" }} />
                   <YAxis
                     tick={{ fontSize: 11, fill: "#64748b" }}
                     domain={["dataMin - 3", "dataMax + 3"]}
@@ -159,11 +213,7 @@ export function NRRBenchmark({ nrr, companyName }: NRRBenchmarkProps) {
                   />
                   <Tooltip
                     formatter={(value: number) => [`${value}%`, "NRR"]}
-                    contentStyle={{
-                      borderRadius: 8,
-                      border: "1px solid #e2e8f0",
-                      fontSize: 13,
-                    }}
+                    contentStyle={{ borderRadius: 8, border: "1px solid #e2e8f0", fontSize: 13 }}
                   />
                   <Line
                     type="monotone"
@@ -179,27 +229,27 @@ export function NRRBenchmark({ nrr, companyName }: NRRBenchmarkProps) {
           </div>
         )}
 
-        {/* Methodology notes (collapsible) */}
+        {/* Methodology notes */}
         {nrr.methodologyNotes.length > 0 && (
           <div className="border-t border-border pt-4">
             <button
-              onClick={() => setShowMethodology(!showMethodology)}
-              className="flex items-center gap-2 text-sm font-medium text-text-secondary hover:text-text transition-colors"
+              onClick={() => setNotesOpen(!notesOpen)}
+              className="flex w-full items-center justify-between text-left"
             >
-              <Info className="w-4 h-4" />
-              NRR Methodology Notes
-              {showMethodology ? (
-                <ChevronUp className="w-4 h-4" />
+              <span className="text-sm font-semibold text-text-secondary">
+                NRR Methodology Notes
+              </span>
+              {notesOpen ? (
+                <ChevronUp className="h-4 w-4 text-text-muted" />
               ) : (
-                <ChevronDown className="w-4 h-4" />
+                <ChevronDown className="h-4 w-4 text-text-muted" />
               )}
             </button>
-            {showMethodology && (
-              <ul className="mt-3 space-y-1.5 text-sm text-text-secondary">
+            {notesOpen && (
+              <ul className="mt-3 space-y-2">
                 {nrr.methodologyNotes.map((note, i) => (
-                  <li key={i} className="flex gap-2">
-                    <span className="text-text-muted shrink-0">•</span>
-                    <span>{note}</span>
+                  <li key={i} className="text-sm text-text-secondary">
+                    {note}
                   </li>
                 ))}
               </ul>
@@ -211,45 +261,11 @@ export function NRRBenchmark({ nrr, companyName }: NRRBenchmarkProps) {
   );
 }
 
-interface KPICardProps {
-  label: string;
-  value: string;
-  sub?: string;
-  accent?: boolean;
-}
-
-function KPICard({ label, value, sub, accent }: KPICardProps) {
+function StatCard({ label, value }: { label: string; value: string }) {
   return (
-    <div
-      className={cn(
-        "rounded-lg border p-4",
-        accent
-          ? "border-primary/20 bg-primary/5"
-          : "border-border bg-surface-alt"
-      )}
-    >
-      <p className="text-xs font-medium text-text-muted uppercase tracking-wide">
-        {label}
-      </p>
-      <p
-        className={cn(
-          "text-2xl font-bold mt-1",
-          accent ? "text-primary" : "text-text"
-        )}
-      >
-        {value}
-      </p>
-      {sub && <p className="text-xs text-text-secondary mt-0.5">{sub}</p>}
+    <div className="rounded-lg border border-border bg-surface-alt px-4 py-3">
+      <p className="text-xs font-medium text-text-muted">{label}</p>
+      <p className="mt-1 text-lg font-semibold text-text">{value}</p>
     </div>
   );
-}
-
-function quartileDescription(q: string): string {
-  const map: Record<string, string> = {
-    Q1: "Top quartile",
-    Q2: "Above median",
-    Q3: "Below median",
-    Q4: "Bottom quartile",
-  };
-  return map[q] ?? "";
 }

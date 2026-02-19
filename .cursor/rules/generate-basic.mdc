@@ -6,35 +6,40 @@ When the user asks to generate an NRR CX Basic diagnostic, follow this process.
 
 The Basic diagnostic has these sections (reference: https://nrr-cx-okta.vercel.app/):
 
-1. **NRR Benchmark** — Client NRR vs 5-7 peers with quartile distribution, multi-period trend
-2. **NRR Methodology Notes** — How each peer's NRR was sourced/implied
-3. **Management Commentary on NRR** — Key quotes from earnings calls about retention
-4. **Current-State Customer Journey** — 6-8 stages with strengths and pain points per stage, competitive context flags
-5. **Diagnostic Synthesis** — Narrative summary tying NRR to CX findings
-6. **Top Strengths** — 3 strengths with detailed evidence and quotes
-7. **Top Risks to NRR** — 3 risks with detailed evidence and quotes
+1. **NRR Benchmark** — Horizontal bar chart with quartile coloring, estimated/implied opacity, per-peer methodology notes, multi-period trend line
+2. **Management Commentary on NRR** — Key quotes from earnings calls displayed in a responsive grid
+3. **Current-State Customer Journey** — 6-8 stages with strengths and pain points per stage, competitive context flags, severity legend
+4. **Diagnostic Synthesis** — Narrative summary + side-by-side Top Strengths and Top Risks with collapsible detail cards
 
 ## Data Gathering
 
 Before generating, collect:
 
-### Required
+### Required — NRR Benchmarking
 - **Client name** and sector/sub-sector
 - **Client NRR** (latest reported or implied from revenue growth)
 - **Peer set** (5-7 companies in the same sub-sector)
 - **Peer NRR figures** (from SEC filings, earnings calls, or NRR Tracker at `nrr-tracker/data/`)
 - **Multiple periods** of NRR data if available (4 quarters/years for trend)
+- **Per-peer methodology**: For EVERY peer (including the target), document how NRR was sourced. Each peer must have a named methodology note in this format:
+  - `"CompanyName: Direct disclosure from FY2025 10-K filing."` (if reported)
+  - `"CompanyName: Implied from X% revenue growth and Y% ARR growth. Company does not disclose NRR directly."` (if estimated)
+  - Include the calculation logic, data source, and any caveats
 
-### For Journey Map
-- Review G2, Gartner Peer Insights, Reddit, and earnings call transcripts
-- Identify 3-5 strengths and 3-5 pain points across journey stages
-- For each, note whether it's unique to the client, competitors do better, or industry-wide
-- Collect real verbatim quotes with attribution
+### For Journey Map — Voice of Customer ONLY
+- **Source exclusively from customer-experience data**: G2 reviews, Gartner Peer Insights ratings, TrustRadius reviews, Reddit threads (r/sysadmin, r/devops, product-specific subs), Capterra, App Store reviews, Trustpilot
+- **Every strength and pain point must be grounded in what customers actually say** — real user sentiment, verbatim language patterns, and review themes
+- **DO NOT include financial results, revenue metrics, or investor-facing data in journey stages.** The journey map is about the customer's lived experience, not the company's financial performance. Financial data belongs in the NRR Benchmark and Synthesis sections only.
+- For each finding, note whether it's unique to the client, competitors do better, or industry-wide
+- Collect real verbatim quotes with attribution (reviewer role, platform, date where available)
+- Example of GOOD journey content: "G2 reviewers consistently cite 'difficult migration from legacy version' as the top onboarding pain point (3.2/5 ease of setup)"
+- Example of BAD journey content: "Revenue grew 20% indicating strong adoption" — this is financial data, not customer experience
 
 ### For Synthesis
 - Identify the 3 most important strengths driving NRR
 - Identify the 3 biggest risks to NRR
 - Each should have 2-3 paragraphs of evidence with sourced quotes
+- The synthesis CAN reference financial data — this is where NRR performance meets CX findings
 
 ## Output Structure
 
@@ -50,51 +55,52 @@ The client-specific data goes in `public/data/client-data.json` following this s
     "financials": "ARR/revenue, growth rate, public/private status"
   },
   "nrr": {
-    "current": { "value": 106, "period": "FY2025Q4", "quartile": "Q4" },
+    "current": 106,
+    "currentPeriod": "FY2025Q4",
+    "quartile": "Q4",
     "history": [
-      { "value": 120, "period": "FY2023", "estimated": false },
-      { "value": 115, "period": "FY2024", "estimated": false }
+      { "period": "FY2023", "nrr": 120 },
+      { "period": "FY2024", "nrr": 115 }
     ],
     "peers": {
       "count": 6,
       "median": 114.0,
       "topQuartile": 115.0,
       "bottomQuartile": 110.0,
-      "range": [106, 116]
+      "range": "106–116%"
     },
     "peerData": [
-      { "name": "Peer1", "value": 116, "period": "FY2025", "estimated": false, "note": "Methodology note" }
+      { "company": "Peer1", "nrr": 116, "period": "FY2025", "isTarget": false, "isEstimated": false },
+      { "company": "ClientName", "nrr": 106, "period": "FY2025Q4", "isTarget": true, "isEstimated": false }
     ],
-    "methodologyNotes": ["Peer1: Direct disclosure from 10-K filing."],
+    "methodologyNotes": [
+      "Peer1: Direct NRR disclosure from FY2025 10-K filing.",
+      "ClientName: Implied from X% revenue growth. Company does not disclose NRR directly. Conservative estimate reflecting..."
+    ],
     "managementCommentary": [
-      { "source": "Q4 FY2025 Earnings Call", "quote": "Relevant quote about NRR/retention..." }
+      { "quote": "Relevant quote about NRR/retention...", "source": "CEO, Q4 FY2025 Earnings Call" }
     ]
   },
   "journey": {
+    "description": "ClientName — strengths and pain points across the B2B customer experience journey",
     "stages": [
       {
         "number": 1,
-        "name": "Stage Name",
-        "description": "What happens in this stage",
-        "strengths": [{ "text": "Strength description", "level": "high" }],
-        "painPoints": [{ "text": "Pain point description", "level": "high" }],
-        "competitiveContext": "unique|competitors_better|industry_wide"
+        "name": "Awareness & Discovery",
+        "description": "How prospects first encounter the product",
+        "strengths": [{ "text": "Voice-of-customer finding with source", "severity": "high" }],
+        "painPoints": [{ "text": "Voice-of-customer finding with source", "severity": "high" }],
+        "competitiveContext": [{ "label": "Context note", "type": "unique" }]
       }
     ]
   },
   "synthesis": {
     "narrative": "2-3 paragraph synthesis connecting NRR to CX findings...",
     "topStrengths": [
-      {
-        "title": "Short title",
-        "detail": "2-3 paragraphs with evidence and sourced quotes"
-      }
+      { "title": "Short title", "detail": "2-3 paragraphs with evidence and sourced quotes" }
     ],
     "topRisks": [
-      {
-        "title": "Short title",
-        "detail": "2-3 paragraphs with evidence and sourced quotes"
-      }
+      { "title": "Short title", "detail": "2-3 paragraphs with evidence and sourced quotes" }
     ]
   }
 }
@@ -105,12 +111,33 @@ The client-specific data goes in `public/data/client-data.json` following this s
 Before deployment:
 - [ ] NRR figures verified against SEC filings or NRR Tracker
 - [ ] Peer set is appropriate (same sub-sector, comparable scale)
+- [ ] **Every peer has a named methodology note** explaining how NRR was sourced or implied
 - [ ] Every journey stage has at least 1 strength or pain point
+- [ ] **Journey content is 100% voice-of-customer** — no financial results, revenue metrics, or investor language in journey stages
 - [ ] All quotes are real and sourced (never fabricated)
-- [ ] Methodology notes explain how each peer NRR was derived
 - [ ] Management commentary quotes are from actual earnings calls
 - [ ] Synthesis narrative is specific to this client (not generic)
 - [ ] Responsive layout works at 1280px+
+
+## Skeptical Client Review (REQUIRED before publishing)
+
+After generating the full diagnostic, perform a **skeptical client review pass**. Read through the entire output as if you are the client's VP of Customer Success — someone who knows this business intimately and will push back on anything that feels wrong, generic, or unsupported.
+
+### What to check:
+1. **Peer set credibility** — Would the client agree these are the right peers? Are any peers from a different sub-sector, different scale, or different business model that would undermine the comparison?
+2. **NRR accuracy** — Are any NRR figures stale, wrong, or based on flawed logic? Would a client who tracks their own NRR daily spot an error?
+3. **Journey specificity** — Do the journey findings feel specific to THIS company, or could they apply to any B2B SaaS company? Replace generic findings with specific ones.
+4. **Strength/risk balance** — Are the strengths genuinely strong (not just "they have a product")? Are the risks genuinely risky (not just "competition exists")?
+5. **Quote quality** — Would a client read a management quote and say "that's taken out of context" or "that's from 2 years ago"? Use the most recent, most relevant quotes.
+6. **Tone** — Is the language appropriately analytical and respectful? Nothing condescending, nothing that reads as obvious padding.
+
+### What to fix:
+- Replace any finding a skeptical client would challenge
+- Tighten language that feels vague or hedged
+- Add specificity where the content feels generic
+- Remove or rewrite any section where confidence is low
+
+Document any changes made during this review pass.
 
 ## Deployment
 

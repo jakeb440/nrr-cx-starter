@@ -17,7 +17,24 @@ interface JourneyMapProps {
   companyName: string;
 }
 
-/** Current-state customer journey map with stages, strengths, and pain points */
+const SEVERITY_COLORS = {
+  high: { strength: "bg-emerald-500", pain: "bg-red-500" },
+  medium: { strength: "bg-emerald-300", pain: "bg-red-300" },
+  low: { strength: "bg-emerald-200", pain: "bg-red-200" },
+};
+
+const CONTEXT_LABELS: Record<string, string> = {
+  unique: "Unique to client",
+  "competitors-better": "Competitors do better",
+  "industry-wide": "Industry-wide",
+};
+
+const CONTEXT_STYLES: Record<string, string> = {
+  unique: "bg-indigo-50 text-indigo-700 border border-indigo-200",
+  "competitors-better": "bg-amber-50 text-amber-700 border border-amber-200",
+  "industry-wide": "bg-slate-100 text-slate-600 border border-slate-200",
+};
+
 export function JourneyMap({ journey, companyName }: JourneyMapProps) {
   return (
     <section className="bg-white rounded-xl border border-border shadow-sm">
@@ -29,7 +46,8 @@ export function JourneyMap({ journey, companyName }: JourneyMapProps) {
           </h2>
         </div>
         <p className="text-sm text-text-secondary mt-1">
-          {journey.description || `${companyName} customer lifecycle stages with CX strengths and pain points`}
+          {journey.description ||
+            `${companyName} — strengths and pain points across the B2B customer experience journey`}
         </p>
       </div>
 
@@ -57,6 +75,39 @@ export function JourneyMap({ journey, companyName }: JourneyMapProps) {
         {journey.stages.map((stage) => (
           <StageCard key={stage.number} stage={stage} />
         ))}
+      </div>
+
+      {/* Severity + competitive context legend */}
+      <div className="px-6 py-4 border-t border-border bg-surface-alt">
+        <div className="flex flex-wrap gap-6 text-xs text-text-secondary">
+          <div className="flex items-center gap-3">
+            <span className="font-medium text-text">Strengths:</span>
+            {(["high", "medium", "low"] as const).map((s) => (
+              <span key={s} className="flex items-center gap-1.5">
+                <span className={cn("h-2.5 w-2.5 rounded-full", SEVERITY_COLORS[s].strength)} />
+                {s}
+              </span>
+            ))}
+          </div>
+          <div className="flex items-center gap-3">
+            <span className="font-medium text-text">Pain points:</span>
+            {(["high", "medium", "low"] as const).map((s) => (
+              <span key={s} className="flex items-center gap-1.5">
+                <span className={cn("h-2.5 w-2.5 rounded-full", SEVERITY_COLORS[s].pain)} />
+                {s}
+              </span>
+            ))}
+          </div>
+          <div className="flex items-center gap-3">
+            <span className="font-medium text-text">Competitive context:</span>
+            {Object.entries(CONTEXT_LABELS).map(([key, label]) => (
+              <span key={key} className="flex items-center gap-1.5">
+                <span className={cn("h-2.5 w-2.5 rounded-full", key === "unique" ? "bg-indigo-400" : key === "competitors-better" ? "bg-amber-400" : "bg-slate-400")} />
+                {label}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -104,7 +155,6 @@ function StageCard({ stage }: { stage: JourneyStage }) {
 
       {expanded && (
         <div className="mt-4 grid md:grid-cols-2 gap-4 pl-10">
-          {/* Strengths */}
           <div>
             <h4 className="text-xs font-medium text-emerald-700 uppercase tracking-wide mb-2 flex items-center gap-1.5">
               <CheckCircle2 className="w-3.5 h-3.5" />
@@ -130,7 +180,6 @@ function StageCard({ stage }: { stage: JourneyStage }) {
             </ul>
           </div>
 
-          {/* Pain points */}
           <div>
             <h4 className="text-xs font-medium text-red-700 uppercase tracking-wide mb-2 flex items-center gap-1.5">
               <AlertTriangle className="w-3.5 h-3.5" />
@@ -156,7 +205,6 @@ function StageCard({ stage }: { stage: JourneyStage }) {
             </ul>
           </div>
 
-          {/* Competitive context flags */}
           {stage.competitiveContext && stage.competitiveContext.length > 0 && (
             <div className="md:col-span-2">
               <h4 className="text-xs font-medium text-text-secondary uppercase tracking-wide mb-2 flex items-center gap-1.5">
@@ -169,7 +217,7 @@ function StageCard({ stage }: { stage: JourneyStage }) {
                     key={i}
                     className={cn(
                       "inline-flex items-center text-xs px-2.5 py-1 rounded-full font-medium",
-                      contextStyle(ctx.type)
+                      CONTEXT_STYLES[ctx.type] ?? CONTEXT_STYLES["industry-wide"]
                     )}
                   >
                     {ctx.label}
@@ -202,16 +250,4 @@ function severityBorder(
     low: "border-red-200 bg-red-50/20",
   };
   return map[severity] ?? map.medium;
-}
-
-function contextStyle(
-  type: "unique" | "competitors-better" | "industry-wide"
-): string {
-  const map: Record<string, string> = {
-    unique: "bg-indigo-50 text-indigo-700 border border-indigo-200",
-    "competitors-better":
-      "bg-amber-50 text-amber-700 border border-amber-200",
-    "industry-wide": "bg-slate-100 text-slate-600 border border-slate-200",
-  };
-  return map[type] ?? map["industry-wide"];
 }

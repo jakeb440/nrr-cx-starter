@@ -55,7 +55,13 @@ Last reviewed: 2026-02-19
 - Always review the peer set before publishing — incorrect peers undermine credibility instantly
 
 ### Data gathering
-- (No entries yet — add from feedback/)
+- Journey map content must be 100% voice-of-customer (G2, Gartner Peer Insights, Reddit, Trustpilot) — never financial metrics or investor language
+- Each peer needs a named methodology note explaining how NRR was sourced or implied — this is what makes the benchmarking credible
+- Target the most recent earnings call quotes (< 6 months old) — stale quotes undermine trust
+
+### Quality assurance
+- Always run the "skeptical client review" pass before publishing — read as the client's VP of Customer Success and challenge anything generic, unsupported, or wrong
+- Generic journey findings ("good product, some competition") are the #1 quality issue — every finding needs to reference a real platform, reviewer, or review theme
 
 ### Deployment
 - (No entries yet — add from feedback/)
