@@ -1,4 +1,4 @@
-import { ExternalLink, Clock, ArrowRight } from "lucide-react";
+import { ExternalLink, Clock, ArrowRight, Github } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 interface ProductCardProps {
@@ -7,6 +7,7 @@ interface ProductCardProps {
   description: string;
   time: string;
   exampleUrl: string;
+  repoUrl?: string;
   accentColor: string;
   badgeBg: string;
 }
@@ -17,6 +18,7 @@ export default function ProductCard({
   description,
   time,
   exampleUrl,
+  repoUrl,
   accentColor,
   badgeBg,
 }: ProductCardProps) {
@@ -49,14 +51,27 @@ export default function ProductCard({
           <ExternalLink className="h-3.5 w-3.5" />
           View Example
         </a>
-        <a
-          href="#getting-started"
-          className="inline-flex items-center justify-center gap-1.5 rounded-lg px-3.5 py-2 text-xs font-medium text-white transition-colors"
-          style={{ backgroundColor: accentColor }}
-        >
-          Get Started
-          <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-        </a>
+        {repoUrl ? (
+          <a
+            href={repoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-1.5 rounded-lg px-3.5 py-2 text-xs font-medium text-white transition-colors"
+            style={{ backgroundColor: accentColor }}
+          >
+            <Github className="h-3.5 w-3.5" />
+            Open Repo
+          </a>
+        ) : (
+          <a
+            href="#getting-started"
+            className="inline-flex items-center justify-center gap-1.5 rounded-lg px-3.5 py-2 text-xs font-medium text-white transition-colors"
+            style={{ backgroundColor: accentColor }}
+          >
+            Get Started
+            <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+          </a>
+        )}
       </div>
     </div>
   );
