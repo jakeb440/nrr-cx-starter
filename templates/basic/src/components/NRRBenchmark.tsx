@@ -50,8 +50,6 @@ function QuartileBadge({ label }: { label: string }) {
 }
 
 export function NRRBenchmark({ nrr, companyName }: NRRBenchmarkProps) {
-  const [notesOpen, setNotesOpen] = useState(false);
-
   const sortedPeers = [...nrr.peerData].sort((a, b) => b.nrr - a.nrr);
   const { topQuartile, bottomQuartile, median } = nrr.peers;
 
@@ -105,7 +103,7 @@ export function NRRBenchmark({ nrr, companyName }: NRRBenchmarkProps) {
           <StatCard label="Range" value={nrr.peers.range} />
         </div>
 
-        {/* Horizontal bar chart with quartile coloring */}
+        {/* Vertical bar chart with quartile coloring */}
         <div className="rounded-xl border border-border p-4">
           <div className="mb-4 flex flex-wrap items-center gap-4 text-xs text-text-secondary">
             <span className="font-medium text-text">Quartile:</span>
@@ -133,27 +131,27 @@ export function NRRBenchmark({ nrr, companyName }: NRRBenchmarkProps) {
             </span>
           </div>
 
-          <ResponsiveContainer width="100%" height={Math.max(280, sortedPeers.length * 48)}>
+          <ResponsiveContainer width="100%" height={320}>
             <BarChart
               data={chartData}
-              layout="vertical"
-              margin={{ top: 0, right: 40, left: 0, bottom: 0 }}
+              margin={{ top: 10, right: 20, bottom: 5, left: 0 }}
             >
-              <CartesianGrid strokeDasharray="3 3" horizontal={false} />
+              <CartesianGrid strokeDasharray="3 3" vertical={false} />
               <XAxis
-                type="number"
+                dataKey="name"
+                tick={{ fontSize: 11, fill: "#64748b" }}
+                interval={0}
+                angle={-35}
+                textAnchor="end"
+                height={70}
+              />
+              <YAxis
+                tick={{ fontSize: 11, fill: "#64748b" }}
                 domain={[
                   (dataMin: number) => Math.floor(dataMin / 5) * 5 - 5,
                   (dataMax: number) => Math.ceil(dataMax / 5) * 5 + 5,
                 ]}
                 tickFormatter={(v: number) => `${v}%`}
-                tick={{ fontSize: 12, fill: "#94a3b8" }}
-              />
-              <YAxis
-                type="category"
-                dataKey="name"
-                width={120}
-                tick={{ fontSize: 12, fill: "#334155" }}
               />
               <Tooltip
                 cursor={{ fill: "#f1f5f9" }}
@@ -175,12 +173,17 @@ export function NRRBenchmark({ nrr, companyName }: NRRBenchmarkProps) {
                 }}
               />
               <ReferenceLine
-                x={nrr.peers.median}
+                y={nrr.peers.median}
                 stroke="#94a3b8"
                 strokeDasharray="4 4"
-                label={{ value: "Median", position: "top", fontSize: 11, fill: "#94a3b8" }}
+                label={{
+                  value: `Median ${formatNumber(nrr.peers.median, 0)}%`,
+                  position: "right",
+                  fontSize: 11,
+                  fill: "#94a3b8",
+                }}
               />
-              <Bar dataKey="nrr" radius={[0, 4, 4, 0]} barSize={24}>
+              <Bar dataKey="nrr" radius={[4, 4, 0, 0]} barSize={32}>
                 {chartData.map((entry, index) => (
                   <Cell
                     key={`cell-${index}`}
@@ -229,31 +232,32 @@ export function NRRBenchmark({ nrr, companyName }: NRRBenchmarkProps) {
           </div>
         )}
 
-        {/* Methodology notes */}
+        {/* Methodology notes — always visible, per-peer detail */}
         {nrr.methodologyNotes.length > 0 && (
-          <div className="border-t border-border pt-4">
-            <button
-              onClick={() => setNotesOpen(!notesOpen)}
-              className="flex w-full items-center justify-between text-left"
-            >
-              <span className="text-sm font-semibold text-text-secondary">
-                NRR Methodology Notes
-              </span>
-              {notesOpen ? (
-                <ChevronUp className="h-4 w-4 text-text-muted" />
-              ) : (
-                <ChevronDown className="h-4 w-4 text-text-muted" />
-              )}
-            </button>
-            {notesOpen && (
-              <ul className="mt-3 space-y-2">
-                {nrr.methodologyNotes.map((note, i) => (
-                  <li key={i} className="text-sm text-text-secondary">
-                    {note}
-                  </li>
-                ))}
-              </ul>
-            )}
+          <div className="border-t border-border pt-5">
+            <h3 className="text-sm font-semibold text-text mb-3">
+              NRR Methodology Notes
+            </h3>
+            <div className="space-y-3">
+              {nrr.methodologyNotes.map((note, i) => {
+                const colonIdx = note.indexOf(":");
+                const hasPeerName = colonIdx > 0 && colonIdx < 40;
+                return (
+                  <div key={i} className="text-sm text-text-secondary leading-relaxed">
+                    {hasPeerName ? (
+                      <>
+                        <span className="font-semibold text-text">
+                          {note.slice(0, colonIdx)}:
+                        </span>
+                        {note.slice(colonIdx + 1)}
+                      </>
+                    ) : (
+                      note
+                    )}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         )}
       </div>

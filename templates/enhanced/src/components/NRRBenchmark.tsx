@@ -28,13 +28,6 @@ function quartileColor(nrr: number, q1: number, q4: number, median: number): str
   return "#ef4444";
 }
 
-function quartileLabel(nrr: number, q1: number, q4: number, median: number): string {
-  if (nrr >= q1) return "Q1";
-  if (nrr >= median) return "Q2";
-  if (nrr >= q4) return "Q3";
-  return "Q4";
-}
-
 function QuartileBadge({ label }: { label: string }) {
   const colorMap: Record<string, string> = {
     Q1: "bg-emerald-100 text-emerald-800",
@@ -55,8 +48,6 @@ function QuartileBadge({ label }: { label: string }) {
 }
 
 export function NRRBenchmark({ nrr, company }: NRRBenchmarkProps) {
-  const [notesOpen, setNotesOpen] = useState(false);
-
   const sortedPeers = [...nrr.peerData].sort((a, b) => b.nrr - a.nrr);
   const { topQuartile, bottomQuartile, median } = nrr.peers;
 
@@ -102,6 +93,7 @@ export function NRRBenchmark({ nrr, company }: NRRBenchmarkProps) {
         <StatCard label="Range" value={nrr.peers.range} />
       </div>
 
+      {/* Vertical bar chart with quartile coloring */}
       <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
         <div className="mb-4 flex flex-wrap items-center gap-4 text-xs text-slate-500">
           <span className="font-medium text-slate-700">Quartile:</span>
@@ -129,27 +121,27 @@ export function NRRBenchmark({ nrr, company }: NRRBenchmarkProps) {
           </span>
         </div>
 
-        <ResponsiveContainer width="100%" height={Math.max(280, sortedPeers.length * 48)}>
+        <ResponsiveContainer width="100%" height={320}>
           <BarChart
             data={chartData}
-            layout="vertical"
-            margin={{ top: 0, right: 40, left: 0, bottom: 0 }}
+            margin={{ top: 10, right: 20, bottom: 5, left: 0 }}
           >
-            <CartesianGrid strokeDasharray="3 3" horizontal={false} />
+            <CartesianGrid strokeDasharray="3 3" vertical={false} />
             <XAxis
-              type="number"
+              dataKey="name"
+              tick={{ fontSize: 11, fill: "#64748b" }}
+              interval={0}
+              angle={-35}
+              textAnchor="end"
+              height={70}
+            />
+            <YAxis
+              tick={{ fontSize: 11, fill: "#64748b" }}
               domain={[
                 (dataMin: number) => Math.floor(dataMin / 5) * 5 - 5,
                 (dataMax: number) => Math.ceil(dataMax / 5) * 5 + 5,
               ]}
               tickFormatter={(v: number) => `${v}%`}
-              tick={{ fontSize: 12, fill: "#94a3b8" }}
-            />
-            <YAxis
-              type="category"
-              dataKey="name"
-              width={120}
-              tick={{ fontSize: 12, fill: "#334155" }}
             />
             <Tooltip
               cursor={{ fill: "#f1f5f9" }}
@@ -171,12 +163,17 @@ export function NRRBenchmark({ nrr, company }: NRRBenchmarkProps) {
               }}
             />
             <ReferenceLine
-              x={nrr.peers.median}
+              y={nrr.peers.median}
               stroke="#94a3b8"
               strokeDasharray="4 4"
-              label={{ value: "Median", position: "top", fontSize: 11, fill: "#94a3b8" }}
+              label={{
+                value: `Median ${formatNumber(nrr.peers.median, 0)}%`,
+                position: "right",
+                fontSize: 11,
+                fill: "#94a3b8",
+              }}
             />
-            <Bar dataKey="nrr" radius={[0, 4, 4, 0]} barSize={24}>
+            <Bar dataKey="nrr" radius={[4, 4, 0, 0]} barSize={32}>
               {chartData.map((entry, index) => (
                 <Cell
                   key={`cell-${index}`}
@@ -191,32 +188,32 @@ export function NRRBenchmark({ nrr, company }: NRRBenchmarkProps) {
         </ResponsiveContainer>
       </div>
 
+      {/* Methodology notes — always visible, per-peer detail */}
       {nrr.methodologyNotes.length > 0 && (
-        <div className="rounded-xl border border-slate-200 bg-white shadow-sm">
-          <button
-            onClick={() => setNotesOpen(!notesOpen)}
-            className="flex w-full items-center justify-between px-6 py-4 text-left"
-          >
-            <span className="text-sm font-semibold text-slate-700">
-              NRR Methodology Notes
-            </span>
-            {notesOpen ? (
-              <ChevronUp className="h-4 w-4 text-slate-400" />
-            ) : (
-              <ChevronDown className="h-4 w-4 text-slate-400" />
-            )}
-          </button>
-          {notesOpen && (
-            <div className="border-t border-slate-100 px-6 pb-4 pt-2">
-              <ul className="space-y-2">
-                {nrr.methodologyNotes.map((note, i) => (
-                  <li key={i} className="text-sm text-slate-600">
-                    {note}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+        <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 className="text-sm font-semibold text-slate-700 mb-4">
+            NRR Methodology Notes
+          </h3>
+          <div className="space-y-3">
+            {nrr.methodologyNotes.map((note, i) => {
+              const colonIdx = note.indexOf(":");
+              const hasPeerName = colonIdx > 0 && colonIdx < 40;
+              return (
+                <div key={i} className="text-sm text-slate-600 leading-relaxed">
+                  {hasPeerName ? (
+                    <>
+                      <span className="font-semibold text-slate-900">
+                        {note.slice(0, colonIdx)}:
+                      </span>
+                      {note.slice(colonIdx + 1)}
+                    </>
+                  ) : (
+                    note
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
       )}
     </div>

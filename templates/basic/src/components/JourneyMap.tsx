@@ -17,17 +17,34 @@ interface JourneyMapProps {
   companyName: string;
 }
 
-const SEVERITY_COLORS = {
-  high: { strength: "bg-emerald-500", pain: "bg-red-500" },
-  medium: { strength: "bg-emerald-300", pain: "bg-red-300" },
-  low: { strength: "bg-emerald-200", pain: "bg-red-200" },
-};
+const SEVERITY_WEIGHT: Record<string, number> = { high: 3, medium: 2, low: 1 };
 
-const CONTEXT_LABELS: Record<string, string> = {
-  unique: "Unique to client",
-  "competitors-better": "Competitors do better",
-  "industry-wide": "Industry-wide",
-};
+/** Computes a red/amber/green color for a stage based on strengths vs pain points */
+function stageHealthColor(stage: JourneyStage): {
+  bg: string;
+  text: string;
+  ring: string;
+} {
+  const strengthScore = stage.strengths.reduce(
+    (sum, s) => sum + (SEVERITY_WEIGHT[s.severity] ?? 2),
+    0
+  );
+  const painScore = stage.painPoints.reduce(
+    (sum, p) => sum + (SEVERITY_WEIGHT[p.severity] ?? 2),
+    0
+  );
+
+  if (stage.strengths.length === 0 && stage.painPoints.length === 0) {
+    return { bg: "bg-slate-100", text: "text-slate-600", ring: "ring-slate-300" };
+  }
+  if (painScore > strengthScore) {
+    return { bg: "bg-red-100", text: "text-red-700", ring: "ring-red-300" };
+  }
+  if (strengthScore > painScore) {
+    return { bg: "bg-emerald-100", text: "text-emerald-700", ring: "ring-emerald-300" };
+  }
+  return { bg: "bg-amber-100", text: "text-amber-700", ring: "ring-amber-300" };
+}
 
 const CONTEXT_STYLES: Record<string, string> = {
   unique: "bg-indigo-50 text-indigo-700 border border-indigo-200",
@@ -51,22 +68,32 @@ export function JourneyMap({ journey, companyName }: JourneyMapProps) {
         </p>
       </div>
 
-      {/* Journey timeline rail */}
+      {/* Journey timeline rail with color-coded bubbles */}
       <div className="px-6 py-4 border-b border-border bg-surface-alt">
         <div className="flex items-center gap-1 overflow-x-auto pb-1">
-          {journey.stages.map((stage, i) => (
-            <div key={stage.number} className="flex items-center shrink-0">
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-border text-xs font-medium text-text-secondary">
-                <span className="w-5 h-5 rounded-full bg-primary/10 text-primary text-[10px] font-bold flex items-center justify-center">
-                  {stage.number}
-                </span>
-                {stage.name}
+          {journey.stages.map((stage, i) => {
+            const health = stageHealthColor(stage);
+            return (
+              <div key={stage.number} className="flex items-center shrink-0">
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-border text-xs font-medium text-text-secondary">
+                  <span
+                    className={cn(
+                      "w-5 h-5 rounded-full text-[10px] font-bold flex items-center justify-center ring-1",
+                      health.bg,
+                      health.text,
+                      health.ring
+                    )}
+                  >
+                    {stage.number}
+                  </span>
+                  {stage.name}
+                </div>
+                {i < journey.stages.length - 1 && (
+                  <div className="w-4 h-px bg-border mx-0.5" />
+                )}
               </div>
-              {i < journey.stages.length - 1 && (
-                <div className="w-4 h-px bg-border mx-0.5" />
-              )}
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
@@ -77,35 +104,38 @@ export function JourneyMap({ journey, companyName }: JourneyMapProps) {
         ))}
       </div>
 
-      {/* Severity + competitive context legend */}
+      {/* Legend */}
       <div className="px-6 py-4 border-t border-border bg-surface-alt">
         <div className="flex flex-wrap gap-6 text-xs text-text-secondary">
           <div className="flex items-center gap-3">
-            <span className="font-medium text-text">Strengths:</span>
-            {(["high", "medium", "low"] as const).map((s) => (
-              <span key={s} className="flex items-center gap-1.5">
-                <span className={cn("h-2.5 w-2.5 rounded-full", SEVERITY_COLORS[s].strength)} />
-                {s}
-              </span>
-            ))}
-          </div>
-          <div className="flex items-center gap-3">
-            <span className="font-medium text-text">Pain points:</span>
-            {(["high", "medium", "low"] as const).map((s) => (
-              <span key={s} className="flex items-center gap-1.5">
-                <span className={cn("h-2.5 w-2.5 rounded-full", SEVERITY_COLORS[s].pain)} />
-                {s}
-              </span>
-            ))}
+            <span className="font-medium text-text">Stage health:</span>
+            <span className="flex items-center gap-1.5">
+              <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
+              Net positive
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
+              Mixed
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
+              Net negative
+            </span>
           </div>
           <div className="flex items-center gap-3">
             <span className="font-medium text-text">Competitive context:</span>
-            {Object.entries(CONTEXT_LABELS).map(([key, label]) => (
-              <span key={key} className="flex items-center gap-1.5">
-                <span className={cn("h-2.5 w-2.5 rounded-full", key === "unique" ? "bg-indigo-400" : key === "competitors-better" ? "bg-amber-400" : "bg-slate-400")} />
-                {label}
-              </span>
-            ))}
+            <span className="flex items-center gap-1.5">
+              <span className="h-2.5 w-2.5 rounded-full bg-indigo-400" />
+              Unique to client
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
+              Competitors do better
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="h-2.5 w-2.5 rounded-full bg-slate-400" />
+              Industry-wide
+            </span>
           </div>
         </div>
       </div>
@@ -115,6 +145,7 @@ export function JourneyMap({ journey, companyName }: JourneyMapProps) {
 
 function StageCard({ stage }: { stage: JourneyStage }) {
   const [expanded, setExpanded] = useState(true);
+  const health = stageHealthColor(stage);
 
   const strengthCount = stage.strengths.length;
   const painCount = stage.painPoints.length;
@@ -126,7 +157,14 @@ function StageCard({ stage }: { stage: JourneyStage }) {
         className="w-full flex items-center justify-between text-left group"
       >
         <div className="flex items-center gap-3">
-          <span className="w-7 h-7 rounded-full bg-primary/10 text-primary text-xs font-bold flex items-center justify-center">
+          <span
+            className={cn(
+              "w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center ring-1",
+              health.bg,
+              health.text,
+              health.ring
+            )}
+          >
             {stage.number}
           </span>
           <div>
@@ -139,12 +177,16 @@ function StageCard({ stage }: { stage: JourneyStage }) {
           </div>
         </div>
         <div className="flex items-center gap-3 shrink-0 ml-4">
-          <span className="text-xs text-emerald-600 font-medium">
-            {strengthCount} strength{strengthCount !== 1 ? "s" : ""}
-          </span>
-          <span className="text-xs text-red-600 font-medium">
-            {painCount} pain point{painCount !== 1 ? "s" : ""}
-          </span>
+          {strengthCount > 0 && (
+            <span className="text-xs text-emerald-600 font-medium">
+              {strengthCount} strength{strengthCount !== 1 ? "s" : ""}
+            </span>
+          )}
+          {painCount > 0 && (
+            <span className="text-xs text-red-600 font-medium">
+              {painCount} pain point{painCount !== 1 ? "s" : ""}
+            </span>
+          )}
           {expanded ? (
             <ChevronUp className="w-4 h-4 text-text-muted" />
           ) : (
