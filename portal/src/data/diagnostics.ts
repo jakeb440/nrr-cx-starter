@@ -36,18 +36,6 @@ export const diagnostics: Diagnostic[] = [
       "Enhanced diagnostic showing 38pp NRR compression (145% → 107%), Power Automate displacement, and path to 121%.",
   },
   {
-    client: "UiPath",
-    product: "agentic",
-    url: "https://dashboard-seven-gray.vercel.app",
-    created: "2026-02-11",
-    author: "Jake",
-    status: "deployed",
-    nrr: "107%",
-    sector: "RPA / Intelligent Automation",
-    description:
-      "CX Teardown with scraped customer feedback from Reddit, Trustpilot, and G2. 6,847 mentions analyzed.",
-  },
-  {
     client: "Okta",
     product: "basic",
     url: "https://nrr-cx-okta.vercel.app",
