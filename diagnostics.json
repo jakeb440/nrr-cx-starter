@@ -4,35 +4,119 @@
     "product": "enhanced",
     "repo": "jakeb440/nrr-cx-databricks-enhanced",
     "url": "https://nrr-cx-databricks-enhanced.vercel.app",
-    "created": "2026-02-01",
+    "created": "2026-02-09",
     "author": "jake",
     "status": "deployed",
     "nrr": "140%",
     "sector": "Data Intelligence Platform / Lakehouse / AI/ML",
-    "description": "Full NRR CX Enhanced diagnostic with maturity assessment, waterfall, value-at-stake, and 5 highest-impact actions."
+    "description": "Full Enhanced diagnostic with maturity assessment, waterfall, value-at-stake, and 5 highest-impact actions."
+  },
+  {
+    "client": "uipath",
+    "product": "enhanced",
+    "repo": "",
+    "url": "https://dist-pi-ruddy-76.vercel.app",
+    "created": "2026-02-11",
+    "author": "jake",
+    "status": "deployed",
+    "nrr": "107%",
+    "sector": "RPA / Intelligent Automation",
+    "description": "Enhanced diagnostic showing 38pp NRR compression (145% to 107%), Power Automate displacement, and path to 121%."
   },
   {
     "client": "okta",
     "product": "basic",
-    "repo": "jakeb440/nrr-cx-okta",
+    "repo": "",
     "url": "https://nrr-cx-okta.vercel.app",
-    "created": "2026-01-15",
+    "created": "2026-02-09",
     "author": "jake",
     "status": "deployed",
     "nrr": "106%",
     "sector": "Identity & Access Management",
-    "description": "NRR CX Basic diagnostic with peer benchmark, journey map, and synthesis."
+    "description": "Basic diagnostic with NRR trend (120% to 106%), Microsoft Entra bundling risk, Auth0 CX crisis analysis."
+  },
+  {
+    "client": "mimecast",
+    "product": "basic",
+    "repo": "",
+    "url": "https://nrr-cx-mimecast.vercel.app",
+    "created": "2026-02-08",
+    "author": "jake",
+    "status": "deployed",
+    "nrr": "",
+    "sector": "Email Security / Cybersecurity",
+    "description": "Basic diagnostic with peer benchmark, competitive context, and synthesis."
+  },
+  {
+    "client": "datadog",
+    "product": "basic",
+    "repo": "",
+    "url": "https://nrr-cx-datadog.vercel.app",
+    "created": "2026-02-08",
+    "author": "jake",
+    "status": "deployed",
+    "nrr": "",
+    "sector": "Observability & DevOps",
+    "description": "Basic diagnostic with NRR benchmark against observability peers."
+  },
+  {
+    "client": "xero",
+    "product": "basic",
+    "repo": "",
+    "url": "https://nrr-cx-xero.vercel.app",
+    "created": "2026-02-09",
+    "author": "jake",
+    "status": "deployed",
+    "nrr": "",
+    "sector": "SMB Accounting",
+    "description": "Basic diagnostic with Melio acquisition analysis and payments moat."
+  },
+  {
+    "client": "ptc",
+    "product": "basic",
+    "repo": "",
+    "url": "https://nrr-cx-ptc.vercel.app",
+    "created": "2026-02-09",
+    "author": "jake",
+    "status": "deployed",
+    "nrr": "",
+    "sector": "Engineering Software (CAD/PLM)",
+    "description": "Basic diagnostic with renewal-focused analysis. Peers: Autodesk, Ansys."
+  },
+  {
+    "client": "oracle",
+    "product": "agentic",
+    "repo": "maxfj433/Customer-Operations-Assessment",
+    "url": "https://oracle-ops-assessment.vercel.app",
+    "created": "2026-02-15",
+    "author": "jake",
+    "status": "deployed",
+    "nrr": "",
+    "sector": "Enterprise Software (ERP/Cloud)",
+    "description": "Customer Operations Assessment — agentic AI readiness for CS, PS, and Support."
+  },
+  {
+    "client": "athenahealth",
+    "product": "agentic",
+    "repo": "maxfj433/Customer-Operations-Assessment",
+    "url": "https://athenahealth-ops-assessment.vercel.app",
+    "created": "2026-02-15",
+    "author": "jake",
+    "status": "deployed",
+    "nrr": "",
+    "sector": "Healthcare IT",
+    "description": "Customer Operations Assessment — agentic AI readiness for CS, PS, and Support."
   },
   {
     "client": "overview",
     "product": "agentic",
     "repo": "",
-    "url": "https://n-eight-zeta.vercel.app",
+    "url": "https://agentic-customer-ops.vercel.app",
     "created": "2026-02-10",
     "author": "jake",
     "status": "deployed",
     "nrr": "",
     "sector": "Enterprise Software (Cross-sector)",
-    "description": "Agentic Customer Operations Transformation research overview — CS, PS, Support impact analysis."
+    "description": "Agentic Customer Operations Transformation research overview."
   }
 ]

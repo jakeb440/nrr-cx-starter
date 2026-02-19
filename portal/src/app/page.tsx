@@ -73,7 +73,7 @@ export default function Home() {
             title="Customer Operations Assessment"
             description="Agentic AI readiness assessment for Customer Success, Professional Services, and Support. Role-by-role impact and transformation roadmap."
             time="~2–4 hours"
-            exampleUrl="https://agentic-customer-ops.vercel.app/"
+            exampleUrl="https://oracle-ops-assessment.vercel.app/"
             repoUrl="https://github.com/maxfj433/Customer-Operations-Assessment"
             accentColor="#a855f7"
             badgeBg="rgba(168, 85, 247, 0.15)"

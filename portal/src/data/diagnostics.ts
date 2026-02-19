@@ -99,6 +99,30 @@ export const fallbackDiagnostics: Diagnostic[] = [
       "Basic diagnostic with renewal-focused analysis and methodology footnotes. Peers: Autodesk, Ansys.",
   },
   {
+    client: "Oracle",
+    product: "agentic",
+    url: "https://oracle-ops-assessment.vercel.app",
+    created: "2026-02-15",
+    author: "Jake",
+    status: "deployed",
+    nrr: "",
+    sector: "Enterprise Software (ERP/Cloud)",
+    description:
+      "Customer Operations Assessment — agentic AI readiness for CS, PS, and Support.",
+  },
+  {
+    client: "athenahealth",
+    product: "agentic",
+    url: "https://athenahealth-ops-assessment.vercel.app",
+    created: "2026-02-15",
+    author: "Jake",
+    status: "deployed",
+    nrr: "",
+    sector: "Healthcare IT",
+    description:
+      "Customer Operations Assessment — agentic AI readiness for CS, PS, and Support.",
+  },
+  {
     client: "Overview",
     product: "agentic",
     url: "https://agentic-customer-ops.vercel.app",
