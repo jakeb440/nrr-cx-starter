@@ -1,0 +1,22 @@
+---
+description: Accumulated learnings from generating and sharing diagnostics with clients
+globs:
+alwaysApply: true
+---
+
+# Lessons Learned — Generation Knowledge Base
+
+Before generating any diagnostic, read `LESSONS_LEARNED.md` in the repo root. It contains curated themes from colleague and client feedback organized by product type.
+
+## How to use this during generation
+
+1. Read `LESSONS_LEARNED.md` to understand what has worked well and what to avoid for the product type being generated.
+2. Apply the "What works well" insights proactively — e.g., if the lesson says "lead with the waterfall," structure the output accordingly.
+3. Avoid documented pitfalls — e.g., if a lesson says "clients questioned the peer set," be extra careful to validate the peer selection.
+4. After generation, if you discover a new insight that should be captured, note it for the colleague to add via the portal feedback form.
+
+## Where feedback lives
+
+- `feedback/` directory — raw JSON entries from colleagues (generation learnings + client reactions)
+- `LESSONS_LEARNED.md` — curated summaries extracted from those entries
+- Portal feedback form — https://portal-agentic-customer.vercel.app (scroll to Submit Feedback)

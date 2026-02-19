@@ -220,6 +220,64 @@ print(json.dumps(current, indent=2))
   fi
 fi
 
+# ── Step 5: Optional feedback capture ──
+
+echo ""
+echo -e "${CYAN}${BOLD}Any learnings from this generation?${RESET}"
+echo -e "${CYAN}(What worked well, what was tricky, anything to improve next time)${RESET}"
+read -rp "$(echo -e "${CYAN}Enter feedback${RESET} (or press Enter to skip): ")" FEEDBACK_TEXT
+
+if [[ -n "$FEEDBACK_TEXT" ]]; then
+  FEEDBACK_DATE=$(date +%Y-%m-%d)
+  FEEDBACK_SLUG=$(echo "$CLIENT" | tr '[:upper:]' '[:lower:]' | tr -cs 'a-z0-9' '-')
+  AUTHOR_SLUG=$(echo "$AUTHOR" | tr '[:upper:]' '[:lower:]' | tr -cs 'a-z0-9' '-')
+  FEEDBACK_FILE="feedback/${FEEDBACK_DATE}-${FEEDBACK_SLUG}-${AUTHOR_SLUG}.json"
+
+  FEEDBACK_JSON=$(cat <<FBEOF
+{
+  "date": "$FEEDBACK_DATE",
+  "client": "$CLIENT",
+  "product": "$PRODUCT",
+  "type": "generation_learning",
+  "submitter": "$AUTHOR",
+  "feedback": "$FEEDBACK_TEXT",
+  "suggestion": ""
+}
+FBEOF
+  )
+
+  # Save locally
+  mkdir -p "$ROOT_DIR/feedback"
+  echo "$FEEDBACK_JSON" > "$ROOT_DIR/$FEEDBACK_FILE"
+  echo -e "${GREEN}✓${RESET} Feedback saved locally to $FEEDBACK_FILE"
+
+  # Push to GitHub if we have a token
+  if [[ -n "$GH_TOKEN" ]]; then
+    FB_ENCODED=$(echo "$FEEDBACK_JSON" | python3 -c "import sys,base64; print(base64.b64encode(sys.stdin.buffer.read()).decode())")
+
+    FB_RESULT=$(curl -s -X PUT \
+      -H "Authorization: token $GH_TOKEN" \
+      -H "Content-Type: application/json" \
+      "https://api.github.com/repos/${GITHUB_REPO}/contents/${FEEDBACK_FILE}" \
+      -d "{
+        \"message\": \"feedback: generation learning for ${CLIENT} from ${AUTHOR}\",
+        \"content\": \"${FB_ENCODED}\"
+      }")
+
+    FB_SHA=$(echo "$FB_RESULT" | python3 -c "import sys,json; print(json.load(sys.stdin).get('commit',{}).get('sha','ERROR'))" 2>/dev/null || echo "ERROR")
+
+    if [[ "$FB_SHA" != "ERROR" && -n "$FB_SHA" ]]; then
+      echo -e "${GREEN}✓${RESET} Feedback pushed to GitHub"
+    else
+      echo -e "${YELLOW}Could not push feedback to GitHub.${RESET} Local copy saved."
+    fi
+  fi
+
+  echo ""
+  echo -e "  You can also submit client reactions later at:"
+  echo -e "  ${BOLD}https://portal-agentic-customer.vercel.app#submit-feedback${RESET}"
+fi
+
 echo ""
 echo -e "${GREEN}${BOLD}Deploy complete!${RESET}"
 echo -e "  URL:      ${BOLD}$DEPLOYED_URL${RESET}"

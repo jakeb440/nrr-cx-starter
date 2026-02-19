@@ -5,10 +5,12 @@ import {
   LayoutGrid,
   Activity,
   Zap,
+  MessageSquarePlus,
 } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
 import DiagnosticsTable from "@/components/DiagnosticsTable";
 import GettingStarted from "@/components/GettingStarted";
+import FeedbackForm from "@/components/FeedbackForm";
 import { fallbackDiagnostics } from "@/data/diagnostics";
 
 export default function Home() {
@@ -96,6 +98,21 @@ export default function Home() {
           subtitle="All diagnostics created by the team, sorted by date."
         />
         <DiagnosticsTable />
+      </section>
+
+      {/* ─── Submit Feedback ─── */}
+      <section id="submit-feedback" className="mb-20">
+        <div className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3 py-1 text-xs font-medium text-indigo-300">
+          <MessageSquarePlus className="h-3 w-3" />
+          Feedback Loop
+        </div>
+        <SectionHeading
+          title="Submit Feedback"
+          subtitle="Share what you learned while generating, or relay client reactions after sharing. Your feedback improves future diagnostics for everyone."
+        />
+        <div className="rounded-xl border border-slate-700/60 bg-slate-800/30 p-6">
+          <FeedbackForm />
+        </div>
       </section>
 
       {/* ─── Footer ─── */}
