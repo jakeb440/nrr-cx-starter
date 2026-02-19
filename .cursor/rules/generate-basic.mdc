@@ -1,0 +1,124 @@
+# Generate NRR CX Basic Diagnostic
+
+When the user asks to generate an NRR CX Basic diagnostic, follow this process.
+
+## What Basic Includes
+
+The Basic diagnostic has these sections (reference: https://nrr-cx-okta.vercel.app/):
+
+1. **NRR Benchmark** — Client NRR vs 5-7 peers with quartile distribution, multi-period trend
+2. **NRR Methodology Notes** — How each peer's NRR was sourced/implied
+3. **Management Commentary on NRR** — Key quotes from earnings calls about retention
+4. **Current-State Customer Journey** — 6-8 stages with strengths and pain points per stage, competitive context flags
+5. **Diagnostic Synthesis** — Narrative summary tying NRR to CX findings
+6. **Top Strengths** — 3 strengths with detailed evidence and quotes
+7. **Top Risks to NRR** — 3 risks with detailed evidence and quotes
+
+## Data Gathering
+
+Before generating, collect:
+
+### Required
+- **Client name** and sector/sub-sector
+- **Client NRR** (latest reported or implied from revenue growth)
+- **Peer set** (5-7 companies in the same sub-sector)
+- **Peer NRR figures** (from SEC filings, earnings calls, or NRR Tracker at `nrr-tracker/data/`)
+- **Multiple periods** of NRR data if available (4 quarters/years for trend)
+
+### For Journey Map
+- Review G2, Gartner Peer Insights, Reddit, and earnings call transcripts
+- Identify 3-5 strengths and 3-5 pain points across journey stages
+- For each, note whether it's unique to the client, competitors do better, or industry-wide
+- Collect real verbatim quotes with attribution
+
+### For Synthesis
+- Identify the 3 most important strengths driving NRR
+- Identify the 3 biggest risks to NRR
+- Each should have 2-3 paragraphs of evidence with sourced quotes
+
+## Output Structure
+
+Generate a Next.js app in `output/nrr-cx-{client}-basic/` using `templates/basic/` as the base.
+
+The client-specific data goes in `public/data/client-data.json` following this schema:
+
+```json
+{
+  "company": {
+    "name": "Company Name",
+    "sector": "Sector description",
+    "financials": "ARR/revenue, growth rate, public/private status"
+  },
+  "nrr": {
+    "current": { "value": 106, "period": "FY2025Q4", "quartile": "Q4" },
+    "history": [
+      { "value": 120, "period": "FY2023", "estimated": false },
+      { "value": 115, "period": "FY2024", "estimated": false }
+    ],
+    "peers": {
+      "count": 6,
+      "median": 114.0,
+      "topQuartile": 115.0,
+      "bottomQuartile": 110.0,
+      "range": [106, 116]
+    },
+    "peerData": [
+      { "name": "Peer1", "value": 116, "period": "FY2025", "estimated": false, "note": "Methodology note" }
+    ],
+    "methodologyNotes": ["Peer1: Direct disclosure from 10-K filing."],
+    "managementCommentary": [
+      { "source": "Q4 FY2025 Earnings Call", "quote": "Relevant quote about NRR/retention..." }
+    ]
+  },
+  "journey": {
+    "stages": [
+      {
+        "number": 1,
+        "name": "Stage Name",
+        "description": "What happens in this stage",
+        "strengths": [{ "text": "Strength description", "level": "high" }],
+        "painPoints": [{ "text": "Pain point description", "level": "high" }],
+        "competitiveContext": "unique|competitors_better|industry_wide"
+      }
+    ]
+  },
+  "synthesis": {
+    "narrative": "2-3 paragraph synthesis connecting NRR to CX findings...",
+    "topStrengths": [
+      {
+        "title": "Short title",
+        "detail": "2-3 paragraphs with evidence and sourced quotes"
+      }
+    ],
+    "topRisks": [
+      {
+        "title": "Short title",
+        "detail": "2-3 paragraphs with evidence and sourced quotes"
+      }
+    ]
+  }
+}
+```
+
+## Quality Checklist
+
+Before deployment:
+- [ ] NRR figures verified against SEC filings or NRR Tracker
+- [ ] Peer set is appropriate (same sub-sector, comparable scale)
+- [ ] Every journey stage has at least 1 strength or pain point
+- [ ] All quotes are real and sourced (never fabricated)
+- [ ] Methodology notes explain how each peer NRR was derived
+- [ ] Management commentary quotes are from actual earnings calls
+- [ ] Synthesis narrative is specific to this client (not generic)
+- [ ] Responsive layout works at 1280px+
+
+## Deployment
+
+```bash
+cd output/nrr-cx-{client}-basic
+npm install
+npm run build    # Static export to out/
+npx vercel --prod
+```
+
+Then update `diagnostics.json` with the new entry.

@@ -1,0 +1,330 @@
+{
+  "company": {
+    "name": "Okta",
+    "sector": "Identity & Access Management",
+    "financials": "~$2.6B ARR, ~16% YoY growth, public (NASDAQ: OKTA)"
+  },
+  "nrr": {
+    "current": 106,
+    "currentPeriod": "FY2025Q4",
+    "quartile": "Q4",
+    "history": [
+      {
+        "period": "FY2023",
+        "nrr": 120
+      },
+      {
+        "period": "FY2024",
+        "nrr": 110
+      },
+      {
+        "period": "FY2025",
+        "nrr": 108
+      },
+      {
+        "period": "FY2025Q4",
+        "nrr": 106
+      }
+    ],
+    "peers": {
+      "count": 5,
+      "median": 114,
+      "topQuartile": 115,
+      "bottomQuartile": 110,
+      "range": "106–116%"
+    },
+    "peerData": [
+      {
+        "company": "CrowdStrike",
+        "nrr": 120,
+        "period": "FY2025",
+        "isTarget": false
+      },
+      {
+        "company": "Zscaler",
+        "nrr": 120,
+        "period": "FY2025",
+        "isTarget": false
+      },
+      {
+        "company": "CyberArk",
+        "nrr": 116,
+        "period": "FY2025 (est.)",
+        "isTarget": false,
+        "isEstimated": true
+      },
+      {
+        "company": "SailPoint",
+        "nrr": 112,
+        "period": "FY2025 (est.)",
+        "isTarget": false,
+        "isEstimated": true
+      },
+      {
+        "company": "Ping Identity",
+        "nrr": 110,
+        "period": "FY2025 (est.)",
+        "isTarget": false,
+        "isEstimated": true
+      },
+      {
+        "company": "Okta",
+        "nrr": 106,
+        "period": "FY2025Q4",
+        "isTarget": true
+      }
+    ],
+    "methodologyNotes": [
+      "Okta: Direct disclosure from FY2025Q4 earnings call and 10-K filing. Dollar-based net retention rate for all customers.",
+      "CrowdStrike: Direct disclosure from FY2025 earnings. Reflects strong module adoption (average 8+ modules per customer) and Falcon platform consolidation.",
+      "Zscaler: Direct disclosure from FY2025 earnings call. Driven by zero trust architecture expansion and pillar cross-sell (ZIA, ZPA, ZDX).",
+      "CyberArk: Implied from 33% ARR growth (FY2025) and high gross retention in privileged access. CyberArk does not formally disclose NRR.",
+      "SailPoint: Estimated from reported ARR growth and customer expansion metrics post-Thoma Bravo acquisition. Private company; NRR not publicly disclosed.",
+      "Ping Identity: Estimated from pre-acquisition growth metrics and Thales integration progress. Now part of Thales Group; standalone NRR no longer reported."
+    ],
+    "managementCommentary": [
+      {
+        "quote": "Net retention came in at 106% for the quarter. We are seeing stabilization in seat optimization trends, and our newer products — Identity Governance, Privileged Access, and Identity Security Posture Management — are beginning to contribute meaningfully to expansion. We believe NRR has bottomed and expect gradual improvement through FY2026.",
+        "source": "CEO Todd McKinnon, Q4 FY2025 Earnings Call"
+      },
+      {
+        "quote": "The NRR compression over the past two years primarily reflects two dynamics: first, the post-pandemic seat optimization wave as enterprises right-sized their workforce identity licenses; second, the Microsoft bundling effect in mid-market accounts where Entra ID is included with E5 licensing. Neither of these is a product quality issue — our workforce identity CSAT scores are the highest they’ve ever been.",
+        "source": "CFO Brett Tighe, Q4 FY2025 Earnings Call"
+      },
+      {
+        "quote": "Remaining Performance Obligations grew 17% to $4.3 billion and current RPO grew 13% to $2.3 billion. These forward-looking metrics suggest the business is healthier than the backward-looking NRR implies. We also reached GAAP operating profitability for the first time at $23 million, which demonstrates the operating leverage in the model as growth stabilizes.",
+        "source": "CFO Brett Tighe, Q4 FY2025 Earnings Call"
+      },
+      {
+        "quote": "Our strategy to combat the Microsoft bundling narrative is not to compete on price — that’s a losing game when your competitor gives it away for free. Instead, we’re doubling down on the multi-cloud, vendor-neutral value proposition. For organizations with 200+ applications across multiple clouds, Okta’s 7,000+ integrations create real technical value that Entra cannot replicate today.",
+        "source": "CEO Todd McKinnon, Investor Day, November 2025"
+      }
+    ]
+  },
+  "journey": {
+    "description": "Okta — strengths and pain points across the B2B CX journey",
+    "stages": [
+      {
+        "number": 1,
+        "name": "Awareness & Discovery",
+        "description": "Prospect discovers Okta through Gartner MQ (9-year Leader), zero trust initiatives, or competitive displacement from legacy on-prem IAM.",
+        "strengths": [
+          {
+            "text": "9-year Gartner Magic Quadrant Leader status creates strong inbound demand and analyst-driven credibility — CISOs and IT leaders default to Okta as the category reference point",
+            "severity": "high"
+          }
+        ],
+        "painPoints": [],
+        "competitiveContext": [
+          {
+            "label": "Microsoft Entra gaining mindshare with bundled E5 narrative",
+            "type": "competitors-better"
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "name": "Evaluation & Selection",
+        "description": "Prospect evaluates Okta vs Microsoft Entra ID, Ping Identity, CyberArk, and ForgeRock through POCs, pricing analysis, and analyst reports.",
+        "strengths": [
+          {
+            "text": "7,000+ pre-built application integrations provide the broadest coverage in the market — evaluation teams consistently cite integration breadth as the #1 selection criterion",
+            "severity": "high"
+          }
+        ],
+        "painPoints": [
+          {
+            "text": "Microsoft Entra’s bundled pricing (included with E5 licensing) creates a ‘77% cheaper’ narrative that procurement teams exploit, forcing Okta to justify standalone IAM cost vs ‘free’ alternative",
+            "severity": "high"
+          },
+          {
+            "text": "The 2022-2023 security breaches (Lapsus$, Okta support system compromise) persist in procurement evaluation checklists — security teams raise breach history as a risk factor during selection",
+            "severity": "medium"
+          }
+        ],
+        "competitiveContext": [
+          {
+            "label": "Microsoft Entra bundling creates structural price disadvantage",
+            "type": "competitors-better"
+          },
+          {
+            "label": "Breach history scrutiny common in IAM evaluations",
+            "type": "industry-wide"
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "name": "Purchase & Contracting",
+        "description": "SKU selection (Workforce vs Customer Identity), pricing negotiation, contract structuring. Auth0 pricing for CIAM use cases.",
+        "strengths": [
+          {
+            "text": "Flexible SKU packaging allows customers to start with Workforce Identity and expand to IGA, PAM, and Customer Identity — modular purchasing reduces initial commitment risk",
+            "severity": "medium"
+          }
+        ],
+        "painPoints": [
+          {
+            "text": "Auth0 pricing shocks (300-1000% increases reported by developers) have created significant trust damage in the CIAM/developer segment, with multiple documented cases of forced migration or churn",
+            "severity": "high"
+          }
+        ],
+        "competitiveContext": [
+          {
+            "label": "Auth0 pricing complaints well-documented on Hacker News and Reddit",
+            "type": "unique"
+          }
+        ]
+      },
+      {
+        "number": 4,
+        "name": "Onboarding & Implementation",
+        "description": "SSO configuration, directory integration, MFA rollout, application connectors setup, user provisioning.",
+        "strengths": [],
+        "painPoints": [],
+        "competitiveContext": [
+          {
+            "label": "Implementation complexity standard across enterprise IAM",
+            "type": "industry-wide"
+          }
+        ]
+      },
+      {
+        "number": 5,
+        "name": "Adoption & Value Realization",
+        "description": "Day-to-day SSO/MFA usage, application integration expansion, lifecycle management, compliance workflows.",
+        "strengths": [
+          {
+            "text": "Workforce identity product satisfaction is exceptionally high: 4.6/5 on Gartner Peer Insights with 1,066 ratings, 91% recommend rate, and zero one- or two-star reviews",
+            "severity": "high"
+          },
+          {
+            "text": "Universal Directory and Lifecycle Management automate user provisioning across the entire app landscape — IT teams report 60-80% reduction in manual access management tasks",
+            "severity": "high"
+          },
+          {
+            "text": "Adaptive MFA with risk-based authentication balances security and user experience — end users encounter MFA challenges only when risk signals warrant it, reducing friction",
+            "severity": "medium"
+          },
+          {
+            "text": "CrowdStrike partnership integrating identity and endpoint signals creates unique security posture visibility that single-vendor alternatives cannot match",
+            "severity": "medium"
+          }
+        ],
+        "painPoints": [
+          {
+            "text": "Auth0 developer experience has degraded post-acquisition — forced Rules/Hooks to Actions migration, support response times measured in days rather than hours, and documentation gaps frustrate developer users",
+            "severity": "high"
+          }
+        ],
+        "competitiveContext": [
+          {
+            "label": "Workforce Identity satisfaction scores are category-leading",
+            "type": "unique"
+          },
+          {
+            "label": "Auth0 DX decline well-documented vs pre-acquisition baseline",
+            "type": "competitors-better"
+          }
+        ]
+      },
+      {
+        "number": 6,
+        "name": "Technical Support",
+        "description": "Ticket resolution, federation troubleshooting, Auth0 developer support, integration debugging.",
+        "strengths": [],
+        "painPoints": [
+          {
+            "text": "Auth0 support response times have degraded significantly — developers report week-long waits for critical integration issues, compared to same-day response pre-acquisition",
+            "severity": "high"
+          },
+          {
+            "text": "Support knowledge fragmentation between Okta Workforce Identity and Auth0 Customer Identity teams creates handoff friction — customers with both products describe ‘talking to two different companies’",
+            "severity": "medium"
+          }
+        ],
+        "competitiveContext": [
+          {
+            "label": "Support fragmentation is an acquisition integration issue",
+            "type": "unique"
+          }
+        ]
+      },
+      {
+        "number": 7,
+        "name": "Ongoing Customer Success",
+        "description": "CSM engagement, security posture reviews, expansion guidance, product roadmap communication.",
+        "strengths": [],
+        "painPoints": [],
+        "competitiveContext": [
+          {
+            "label": "CS engagement model typical for enterprise security SaaS",
+            "type": "industry-wide"
+          }
+        ]
+      },
+      {
+        "number": 8,
+        "name": "Renewal & Expansion",
+        "description": "License renewal, seat expansion, cross-sell (Workforce to IGA, Auth0 CIAM), competitive re-evaluation vs Microsoft Entra.",
+        "strengths": [
+          {
+            "text": "RPO growth of 17% to $4.3B signals forward commitment strength — customers are signing multi-year agreements even as NRR compresses, indicating confidence in the platform’s long-term value",
+            "severity": "high"
+          }
+        ],
+        "painPoints": [
+          {
+            "text": "Microsoft Entra bundling drives consolidation pressure at renewal in Microsoft-primary mid-market accounts — procurement teams leverage ‘included with E5’ to extract 10-20% discount concessions or reduce seat counts",
+            "severity": "high"
+          },
+          {
+            "text": "Security breach trust deficit persists in renewal negotiations — procurement teams use ‘2022-2023 breaches’ as a negotiation lever to suppress expansion commitments and extract price concessions, despite $100M+ investment in Secure Identity Commitment",
+            "severity": "medium"
+          }
+        ],
+        "competitiveContext": [
+          {
+            "label": "Microsoft bundling pressure concentrated in mid-market",
+            "type": "competitors-better"
+          },
+          {
+            "label": "Security breach negotiation leverage unique to Okta",
+            "type": "unique"
+          }
+        ]
+      }
+    ]
+  },
+  "synthesis": {
+    "narrative": "Okta’s NRR has declined from 120% to 106% over three years — the steepest compression in its identity/security peer set. However, the diagnostic reveals a more nuanced picture than the headline metric suggests. Forward indicators (RPO +17% to $4.3B, GAAP profitability) are healthy, and workforce identity satisfaction remains exceptionally high (4.6/5 Gartner, 91% recommend). The NRR pressure is concentrated in two areas: (1) Microsoft Entra bundling creating consolidation pressure in Microsoft-primary mid-market accounts, and (2) Auth0’s post-acquisition pricing and support issues generating churn in the developer/CIAM segment. The workforce identity core — Okta’s primary business — is not the source of the NRR problem.\n\nThe path to NRR stabilization runs through fixing Auth0’s CX crisis and defending the multi-cloud value proposition against Microsoft’s bundling narrative. The positive signal is that the compression appears to be reaching a floor: seat optimization trends are stabilizing, new products (IGA, PAM, ISPM) are beginning to contribute to expansion, and RPO growth indicates customers are committing forward even as backward-looking NRR remains depressed. If management’s thesis is correct that ‘NRR has bottomed,’ the diagnostic suggests the recovery will be driven by the new product expansion wedge rather than a return to the organic seat growth that fueled the 120% NRR era.",
+    "topStrengths": [
+      {
+        "title": "Workforce identity satisfaction (4.6/5, 91% recommend) shows the core product is healthy",
+        "detail": "Okta’s workforce identity product has 1,066 Gartner ratings at 4.6/5 with zero one- or two-star reviews. This is among the highest satisfaction scores in enterprise security. The NRR decline is not a product quality problem in the core business — it’s a pricing/bundling problem (Microsoft) and an acquired-product problem (Auth0). Customers who use Okta Workforce Identity are overwhelmingly satisfied; the issue is that some are being pulled away by Microsoft’s bundling economics, not by product dissatisfaction.\n\nThis distinction matters for the intervention strategy: the answer isn’t ‘fix the product’ — it’s ‘articulate the value vs free.’ G2 reviewers consistently rate Okta’s SSO and MFA experience above Entra, with comments like ‘Entra works for Microsoft apps, but we have 300 non-Microsoft apps and Okta handles all of them.’ The satisfaction data suggests that customers who understand the multi-cloud value proposition retain at high rates; the risk is concentrated among those for whom the Microsoft-centric simplification resonates."
+      },
+      {
+        "title": "RPO growth (+17%) and GAAP profitability suggest NRR may be a lagging indicator",
+        "detail": "While NRR compressed to 106%, Remaining Performance Obligations grew 17% to $4.3B and current RPO grew 13% to $2.3B. Okta also reached GAAP operating profitability ($23M) for the first time. These forward-looking metrics suggest the business is healthier than the backward-looking NRR implies. RPO captures new multi-year commitments that haven’t yet flowed through NRR.\n\nThe NRR compression may reflect a one-time seat optimization wave (post-pandemic normalization, macro-driven license right-sizing) that is now largely complete. If RPO continues to grow while NRR stabilizes, the thesis that ‘NRR bottomed’ becomes credible. The GAAP profitability milestone also signals that Okta is not sacrificing margins to defend retention — the compression is happening despite, not because of, disciplined pricing. Investors and enterprise customers alike interpret profitability as a signal of business model durability."
+      },
+      {
+        "title": "Vendor neutrality + 7,000 integrations create real switching costs in multi-cloud accounts",
+        "detail": "For organizations running multi-cloud (AWS + Azure + GCP) or with significant non-Microsoft application landscapes, Okta’s 7,000+ pre-built integrations create genuine technical switching costs. The ‘77% cheaper with Microsoft’ argument only works if your app landscape is Microsoft-centric. One Gartner reviewer noted: ‘We looked at the Entra migration seriously. Then we mapped our 400 apps — 40% don’t have Entra connectors. The just-use-Microsoft argument fell apart in the spreadsheet.’\n\nThe CrowdStrike partnership (identity + endpoint integration) adds another layer of entrenchment for security-conscious organizations that want best-of-breed rather than bundled solutions. The multi-cloud segment is Okta’s defensible core; the risk is that this segment represents a potentially shrinking share of the total addressable market as Microsoft 365 penetration deepens in the mid-market. The strategic question is whether multi-cloud enterprise remains large enough to sustain premium-priced, standalone identity."
+      }
+    ],
+    "topRisks": [
+      {
+        "title": "Microsoft Entra bundling is the primary NRR headwind — but it’s segment-specific, not universal",
+        "detail": "The Microsoft consolidation threat is real but concentrated in Microsoft-primary mid-market accounts. The ‘77% cheaper’ claim is a specific scenario (all-Microsoft stack for 5,000 users), not a universal truth. For multi-cloud enterprises with 200+ applications, migrating to Entra is a multi-month project with real gaps in non-Microsoft app coverage.\n\nThe NRR impact is likely a 3-5 point drag from mid-market Microsoft-primary accounts consolidating at renewal, partially offset by expansion in multi-cloud enterprise accounts where Okta’s neutrality premium holds. The intervention isn’t price-matching Microsoft (impossible) — it’s identifying which accounts are Microsoft-primary (high flight risk) vs multi-cloud (defensible) and concentrating retention resources accordingly. Account segmentation by Microsoft stack density would allow targeted defense spending rather than broad-based discounting that compresses margins across the entire book."
+      },
+      {
+        "title": "Auth0’s CX crisis is a segment-isolated problem that is spilling over reputationally",
+        "detail": "Auth0’s pricing shocks (300-1000% increases), support collapse (week-long response times), and forced Rules/Hooks migration are real and well-documented across Hacker News, Reddit r/auth0, and developer forums. However, this affects the CIAM/developer segment specifically — not the workforce identity core that represents approximately 80% of Okta’s revenue.\n\nThe danger is reputational spillover: developers who have bad Auth0 experiences become internal advocates against Okta workforce products, even though the products are operationally separate. One Reddit commenter captured this: ‘Auth0 burned us so badly on pricing that when our IT team proposed Okta Workforce, engineering vetoed it on principle.’ The NRR impact from Auth0 churn is likely 1-2 points directly, but the indirect reputational drag on workforce identity sales and renewals may be larger. Fixing Auth0’s pricing model and support quality is the highest-ROI intervention for overall NRR stabilization."
+      },
+      {
+        "title": "Security breach trust deficit persists in procurement — but the underlying security posture has improved",
+        "detail": "The 2022 Lapsus$ attack and 2023 support system compromise created a lasting trust deficit that procurement teams exploit at renewal. This is real and ongoing — ‘you got breached twice’ is a negotiating lever that suppresses expansion revenue and enables discount extraction. Multiple Gartner Peer Insights reviews from 2024-2025 still reference the breaches as a concern, even when the reviewer rates the product highly.\n\nHowever, it’s important to distinguish the procurement narrative from the actual security posture: Okta’s Secure Identity Commitment invested $100M+ in security infrastructure, and the product is materially more secure than in 2023. The issue isn’t current security risk — it’s historical reputation. The NRR impact is primarily through discount compression (customers extracting 10-20% concessions at renewal by citing breach history) rather than outright churn. Over time, as the breach recedes from memory and the security investments become visible, this headwind should diminish — but it may take 2-3 more years for the procurement narrative to fully normalize."
+      }
+    ]
+  }
+}

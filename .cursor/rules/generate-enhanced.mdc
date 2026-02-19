@@ -1,0 +1,164 @@
+# Generate NRR CX Enhanced Diagnostic
+
+When the user asks to generate an NRR CX Enhanced diagnostic, follow this process.
+
+## What Enhanced Includes
+
+Everything in Basic PLUS (reference: https://nrr-cx-databricks-enhanced.vercel.app/):
+
+1. **NRR Benchmark** — Same as Basic (peer quartiles, multi-period, methodology notes)
+2. **Management Commentary** — Same as Basic
+3. **Current-State Customer Journey** — Same as Basic (stages, strengths, pain points)
+4. **NRR Maturity Assessment** — 6 dimensions rated on a Basic → Advanced → Next-gen scale
+5. **NRR Waterfall** — Decomposition of current NRR into retention/expansion components with 2-3yr improvement targets
+6. **Value at Stake** — Current, Realistic, and Aspirational NRR improvement scenarios with incremental ARR and EV gain
+7. **Highest-Impact Actions** — 5 actions with pp NRR impact, timeline, dimension mapping, and detailed rationale
+8. **Diagnostic Synthesis** — Same as Basic (narrative + strengths + risks)
+
+## The 6 NRR Maturity Dimensions
+
+These come from the McKinsey NRR Maturity Benchmark (N=101 B2B SaaS companies):
+
+1. **Segment & Cover** — Account segmentation, coverage model, resource allocation
+2. **Design Journeys Customer-Back** — Customer journey design, onboarding, time-to-value
+3. **Predict & Preempt Health** — Health scoring, churn prediction, proactive intervention
+4. **Pricing, Packaging & Policies** — Pricing model clarity, packaging, renewal policies
+5. **Org & Talent Engine** — CS org structure, talent, roles, AI readiness
+6. **Equip the Frontline** — Tools, playbooks, data access for frontline teams
+
+Rate each as transitions: "Basic→Advanced" or "Advanced→Next-gen" based on evidence.
+
+## NRR Waterfall Construction
+
+Decompose NRR into:
+- **Gross retention** (logos retained × ARR retained)
+- **Expansion** (upsell + cross-sell + price increases)
+- **Contraction** (downgrades + partial churn)
+
+Show current NRR and target NRR (2-3 year) with the improvement delta.
+
+## Value at Stake Scenarios
+
+| Scenario | NRR Target | How to derive |
+|---|---|---|
+| Current | Actual NRR | Reported figure |
+| Realistic | +3-5pp | Achievable with focused CX improvements, 12-18 months |
+| Aspirational | +8-12pp | Requires structural changes, 2-3 years |
+
+For each scenario, calculate:
+- **Incremental ARR** = Base ARR × (Target NRR - Current NRR) / 100
+- **EV Multiple** = Current or re-rated based on NRR improvement
+- **Implied EV Gain** = Incremental ARR × EV Multiple + (New EV Multiple - Current Multiple) × Current Revenue
+
+Explain the EV multiple rationale for each scenario.
+
+## Highest-Impact Actions
+
+Generate exactly 5 actions. Each must have:
+- **Title** — Actionable, specific (not generic "improve customer experience")
+- **NRR impact** — Stated in pp (e.g., "+2pp NRR")
+- **Timeline** — e.g., "6-12 months"
+- **Dimension** — Which maturity dimension it maps to
+- **Rationale** — 1-2 paragraphs explaining the mechanism, with supporting evidence/quotes
+
+The 5 actions should sum to the realistic scenario improvement target.
+
+Include a note explaining that actions are uniquely weighted and how they sum.
+
+## Data Schema
+
+The Enhanced `client-data.json` extends Basic with additional fields:
+
+```json
+{
+  "company": { ... },
+  "nrr": {
+    ...basicFields,
+    "maturity": [
+      {
+        "dimension": "Segment & Cover",
+        "current": "Advanced",
+        "target": "Next-gen",
+        "label": "Advanced→Next-gen"
+      }
+    ],
+    "waterfall": {
+      "currentNRR": 140,
+      "targetNRR": 145.5,
+      "improvement": 5.5,
+      "components": {
+        "grossRetention": { "current": 95, "target": 96 },
+        "expansion": { "current": 50, "target": 53 },
+        "contraction": { "current": -5, "target": -3.5 }
+      }
+    },
+    "valueAtStake": {
+      "baseARR": "$5.4B",
+      "currentMultiple": 25,
+      "scenarios": [
+        {
+          "name": "Realistic",
+          "targetNRR": 145,
+          "incrementalARR": "$270M/yr",
+          "evMultiple": 27,
+          "evGain": "$18.1B",
+          "rationale": "Explanation of why this is realistic..."
+        }
+      ]
+    },
+    "actions": [
+      {
+        "rank": 1,
+        "title": "Action title — specific and actionable",
+        "impact": "+2pp NRR",
+        "timeline": "6-12 months",
+        "dimension": "Predict & Preempt",
+        "rationale": "Detailed explanation with evidence..."
+      }
+    ]
+  },
+  "journey": { ...sameAsBasic },
+  "synthesis": { ...sameAsBasic }
+}
+```
+
+## Scraping Pipeline (Optional)
+
+For Enhanced diagnostics that use the CX Teardown pipeline:
+
+```bash
+cd templates/enhanced
+
+# Set up Python environment
+python3 -m venv venv && source venv/bin/activate
+pip install -r requirements.txt
+
+# Configure API keys
+cp .env.example .env  # Edit with your keys
+
+# Run scraping + analysis
+python cx_teardown.py \
+  --company "Company Name" \
+  --competitors "Comp1,Comp2,Comp3" \
+  --industry b2b-enterprise-software
+```
+
+### Scraping Best Practices
+
+**B2B Enterprise Software:** G2, Gartner Peer Insights, Reddit (r/sysadmin, r/devops, product-specific subs)
+**B2C:** App Store, Trustpilot, Reddit consumer subs
+
+- Target 50-200 reviews per source, prioritize last 12-18 months
+- Skip reviews shorter than 50 words
+- After automated scraping, manually add 5-10 quotes from earnings calls and analyst reports
+- Use the industry taxonomy YAML to classify reviews
+
+## Quality Checklist (in addition to Basic checklist)
+
+- [ ] NRR maturity ratings are supported by evidence
+- [ ] Waterfall components sum correctly to total NRR
+- [ ] Value-at-stake math is internally consistent
+- [ ] EV multiples are reasonable (cite comp company multiples)
+- [ ] 5 actions sum to the realistic improvement target
+- [ ] Each action has specific, non-generic language
+- [ ] Actions cite real customer/market evidence

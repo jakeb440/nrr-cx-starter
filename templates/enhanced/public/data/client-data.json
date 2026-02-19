@@ -1,0 +1,276 @@
+{
+  "company": {
+    "name": "Example Corp",
+    "sector": "Enterprise Analytics Platform / Data Infrastructure / AI",
+    "financials": "$2.1B ARR, 42% YoY growth, public (NYSE: EXMP)"
+  },
+  "nrr": {
+    "current": 118,
+    "currentPeriod": "Q4 FY2025",
+    "quartile": "Q2",
+    "history": [
+      { "period": "Q1 FY2025", "nrr": 121 },
+      { "period": "Q2 FY2025", "nrr": 119 },
+      { "period": "Q3 FY2025", "nrr": 118 },
+      { "period": "Q4 FY2025", "nrr": 118 }
+    ],
+    "peers": {
+      "count": 6,
+      "median": 115,
+      "topQuartile": 122,
+      "bottomQuartile": 110,
+      "range": "105–132%"
+    },
+    "peerData": [
+      { "company": "AlphaData", "nrr": 132, "period": "FY2025", "isTarget": false },
+      { "company": "Example Corp", "nrr": 118, "period": "Q4 FY2025", "isTarget": true },
+      { "company": "BetaCloud", "nrr": 122, "period": "FY2025", "isTarget": false },
+      { "company": "GammaSoft", "nrr": 115, "period": "FY2025", "isTarget": false },
+      { "company": "DeltaAI", "nrr": 110, "period": "FY2025 (est.)", "isTarget": false, "isEstimated": true },
+      { "company": "EpsilonDB", "nrr": 108, "period": "FY2025", "isTarget": false },
+      { "company": "ZetaPlatform", "nrr": 105, "period": "FY2025 (est.)", "isTarget": false, "isEstimated": true }
+    ],
+    "methodologyNotes": [
+      "DeltaAI: Implied from ~30% revenue growth and reported customer expansion metrics. Private company; NRR not publicly disclosed.",
+      "ZetaPlatform: Estimated from S-1 filing data and analyst consensus. Recently IPO'd; limited NRR history available.",
+      "AlphaData: Reported directly in Q4 FY2025 earnings. Reflects strong AI-driven upsell motion."
+    ],
+    "managementCommentary": [
+      {
+        "quote": "Our net revenue retention remained healthy at 118%, reflecting continued platform adoption across our enterprise customer base. We're seeing particular strength in AI and advanced analytics modules.",
+        "source": "CEO, Q4 FY2025 Earnings Call"
+      },
+      {
+        "quote": "The expansion motion is evolving — customers who started with our core analytics are now adopting AI workloads, which carry a higher ASP. We expect this to be a tailwind for NRR over the next 12 months.",
+        "source": "CRO, Investor Day Presentation, Jan 2026"
+      },
+      {
+        "quote": "We've invested significantly in our customer success function this year. The early signals are positive — time-to-value has decreased by 30% and our at-risk accounts are down quarter over quarter.",
+        "source": "CCO, Q3 FY2025 Earnings Call"
+      }
+    ],
+    "maturity": [
+      { "dimension": "Segment & Cover", "current": "Advanced", "target": "Next-gen", "label": "Advanced→Next-gen" },
+      { "dimension": "Design Journeys Customer-Back", "current": "Basic", "target": "Advanced", "label": "Basic→Advanced" },
+      { "dimension": "Predict & Preempt Health", "current": "Advanced", "target": "Next-gen", "label": "Advanced→Next-gen" },
+      { "dimension": "Pricing, Packaging & Policies", "current": "Basic", "target": "Advanced", "label": "Basic→Advanced" },
+      { "dimension": "Org & Talent Engine", "current": "Advanced", "target": "Next-gen", "label": "Advanced→Next-gen" },
+      { "dimension": "Equip the Frontline", "current": "Basic", "target": "Advanced", "label": "Basic→Advanced" }
+    ],
+    "waterfall": {
+      "currentNRR": 118,
+      "targetNRR": 124,
+      "improvement": 6,
+      "components": {
+        "grossRetention": { "current": 92, "target": 94 },
+        "expansion": { "current": 32, "target": 35 },
+        "contraction": { "current": -6, "target": -5 }
+      }
+    },
+    "valueAtStake": {
+      "baseARR": "$2.1B",
+      "currentMultiple": 12,
+      "methodology": "Example Corp trades at ~12x revenue ($25.2B market cap / $2.1B ARR). Comp: AlphaData trades at 18x (private, 132% NRR, 55% growth). GammaSoft at 8x (public, 115% NRR, 25% growth). Example Corp's multiple reflects solid growth (42%) and improving NRR (118%). Multiple re-rating is the primary value creation lever — every 1pp of NRR improvement correlates with ~0.5x multiple expansion in the current market environment.",
+      "scenarios": [
+        {
+          "name": "Current",
+          "targetNRR": 118,
+          "incrementalARR": "—",
+          "evMultiple": 12,
+          "evGain": "—",
+          "rationale": "Example Corp's current state: 118% NRR with strong product-market fit in enterprise analytics. The 12x multiple reflects market confidence in sustained 40%+ growth but discounts NRR compression risk relative to higher-NRR peers. No additional value creation assumed."
+        },
+        {
+          "name": "Realistic",
+          "targetNRR": 124,
+          "incrementalARR": "+$126M/yr",
+          "evMultiple": 14,
+          "evGain": "+$5.9B",
+          "rationale": "At 124% NRR, Example Corp would move into the top quartile of its peer set. The 6pp improvement comes from better onboarding (reducing time-to-value from 90 to 45 days), proactive health scoring (catching at-risk accounts 60 days earlier), and AI module cross-sell. A 14x multiple reflects re-rating toward best-in-class peers. Incremental ARR of $126M plus multiple expansion on the full revenue base creates $5.9B of enterprise value."
+        },
+        {
+          "name": "Aspirational",
+          "targetNRR": 130,
+          "incrementalARR": "+$252M/yr",
+          "evMultiple": 16,
+          "evGain": "+$12.5B",
+          "rationale": "ASPIRATIONAL — requires platform expansion into adjacent data infrastructure use cases AND successful AI monetization strategy. 130% NRR at $2.1B+ scale would place Example Corp among the top 5% of public SaaS companies. A 16x multiple reflects premium valuation for a company demonstrating elite retention, accelerating growth, and AI-driven expansion. This scenario assumes successful execution on all 5 highest-impact actions over 2-3 years."
+        }
+      ]
+    },
+    "actions": [
+      {
+        "rank": 1,
+        "title": "Redesign onboarding to cut time-to-value from 90 days to 45 days — the #1 driver of early churn",
+        "impact": "+2pp NRR",
+        "timeline": "6-12 months",
+        "dimension": "Journey Design",
+        "rationale": "The single biggest NRR drag is customers who churn or contract before reaching full platform value. Current onboarding averages 90 days to first meaningful insight — during which period 15% of new logos disengage. A structured onboarding program with milestone-based activation (data connected → first dashboard → first shared insight → first AI model) would compress this timeline. One churned customer: 'We spent 3 months trying to get value and eventually gave up.' Another who stayed: 'Once we got past the initial setup, the platform became indispensable.' The 45-day gap between these outcomes is entirely addressable. Impact: +1pp from reduced early churn + 1pp from faster expansion triggers."
+      },
+      {
+        "rank": 2,
+        "title": "Deploy predictive health scoring to catch at-risk accounts 60 days before renewal",
+        "impact": "+1.5pp NRR",
+        "timeline": "6-12 months",
+        "dimension": "Predict & Preempt",
+        "rationale": "Example Corp's CS team currently identifies at-risk accounts reactively — often within 30 days of renewal, when it's too late to intervene meaningfully. Building a composite health score from product usage (login frequency, feature breadth, query volume), support ticket sentiment, and billing patterns would surface risk signals 60-90 days earlier. A CS leader: 'By the time we know a customer is unhappy, they've already signed with a competitor.' The predictive model doesn't need to be perfect — even a 70% precision rate would save 20+ accounts per quarter. Impact: +1.5pp from prevented downgrades and logo churn."
+      },
+      {
+        "rank": 3,
+        "title": "Launch AI module cross-sell motion targeting existing analytics-only customers",
+        "impact": "+1pp NRR",
+        "timeline": "12-18 months",
+        "dimension": "Segment & Cover",
+        "rationale": "40% of Example Corp's customer base uses only core analytics — no AI, no advanced data pipelines, no real-time capabilities. These accounts represent a $400M cross-sell opportunity. The AI module has 85% attach rate among new customers but only 25% among accounts signed before 2024. Building a dedicated cross-sell motion (product-led trials, ROI calculators, AI readiness assessments) would close this gap. A customer who adopted AI: 'The analytics platform was good. The AI layer made it essential.' Impact: +1pp from AI module attach rate increase from 25% to 40%."
+      },
+      {
+        "rank": 4,
+        "title": "Simplify pricing tiers — customers cannot forecast their bill as they grow",
+        "impact": "+1pp NRR",
+        "timeline": "6-12 months",
+        "dimension": "Pricing & Packaging",
+        "rationale": "The current pricing model has 4 tiers, 3 add-on modules, and usage-based overages that create bill unpredictability. A Gartner reviewer: 'We love the product but dread the true-up conversation every quarter.' Finance teams at 3 major accounts imposed internal spending caps due to unpredictable costs — directly suppressing consumption growth. Simplifying to 2 tiers with transparent usage-based pricing and a built-in cost forecasting tool would remove this friction. Impact: +0.5pp from removing finance-imposed caps + 0.5pp from improved renewal confidence."
+      },
+      {
+        "rank": 5,
+        "title": "Equip frontline CSMs with real-time product analytics to make every QBR actionable",
+        "impact": "+0.5pp NRR",
+        "timeline": "12-18 months",
+        "dimension": "Equip the Frontline",
+        "rationale": "CSMs currently prepare QBRs manually from disconnected data sources — taking 4-6 hours per account. The result is backward-looking slides that customers describe as 'nice but not useful.' Building a real-time CSM dashboard with usage trends, health indicators, and personalized expansion recommendations would transform QBRs from status updates to strategic planning sessions. A CSM: 'If I had real-time product data, I could walk into every meeting with a specific recommendation instead of asking what's working.' Impact: +0.5pp from improved CSM effectiveness driving expansion conversations."
+      }
+    ]
+  },
+  "journey": {
+    "description": "Example Corp — strengths and pain points across the B2B CX journey",
+    "stages": [
+      {
+        "number": 1,
+        "name": "Evaluation & POC",
+        "description": "Enterprise data teams evaluate Example Corp vs AlphaData vs cloud-native alternatives. POC with sample datasets. Strong product reputation drives initial interest but lengthy evaluation cycles slow conversion.",
+        "strengths": [
+          { "text": "Strong product reputation and analyst recognition (Leader in Gartner MQ) drives inbound demand", "severity": "high" }
+        ],
+        "painPoints": [
+          { "text": "POC setup requires dedicated SE support — self-service trial limited to small datasets", "severity": "medium" }
+        ],
+        "competitiveContext": [
+          { "label": "AlphaData has faster POC setup", "type": "competitors-better" }
+        ]
+      },
+      {
+        "number": 2,
+        "name": "Contracting & Pricing",
+        "description": "Enterprise agreements with annual commits. Usage-based pricing with tier overages creates forecasting challenges for procurement and finance teams.",
+        "strengths": [],
+        "painPoints": [
+          { "text": "Complex pricing with 4 tiers and usage overages makes cost forecasting difficult for finance teams", "severity": "high" },
+          { "text": "Contract negotiation averages 45 days — slower than competitors offering simplified pricing", "severity": "medium" }
+        ],
+        "competitiveContext": [
+          { "label": "Industry-wide pricing complexity in analytics platforms", "type": "industry-wide" }
+        ]
+      },
+      {
+        "number": 3,
+        "name": "Platform Deployment",
+        "description": "Cloud deployment, data source integration, security configuration, user provisioning. Technical implementation requires dedicated project team.",
+        "strengths": [
+          { "text": "Cloud-native deployment is faster than on-prem competitors — average 3 weeks to production", "severity": "medium" }
+        ],
+        "painPoints": [
+          { "text": "Data source integration requires custom connectors for legacy systems — 30% of deployments delayed", "severity": "high" }
+        ],
+        "competitiveContext": [
+          { "label": "Unique connector library advantage", "type": "unique" }
+        ]
+      },
+      {
+        "number": 4,
+        "name": "Core Platform Usage",
+        "description": "Daily analytics workloads, dashboard creation, report scheduling, team collaboration. Platform stickiness grows with usage but steep learning curve limits adoption beyond power users.",
+        "strengths": [
+          { "text": "Platform stickiness is extremely high — once teams build dashboards and workflows, switching costs are substantial", "severity": "high" },
+          { "text": "Query performance consistently rated 4.5/5 by users — 'fastest analytics engine we've used'", "severity": "medium" }
+        ],
+        "painPoints": [
+          { "text": "Steep learning curve limits adoption to power users — business analysts default to Excel or simpler BI tools", "severity": "high" }
+        ],
+        "competitiveContext": [
+          { "label": "Competitors offer more intuitive self-service BI", "type": "competitors-better" }
+        ]
+      },
+      {
+        "number": 5,
+        "name": "Expansion & AI Adoption",
+        "description": "Additional team onboarding, AI/ML module adoption, advanced use cases. The primary expansion vector for growing NRR.",
+        "strengths": [
+          { "text": "AI module creates a compelling expansion path — customers who adopt AI spend 2.3x more than analytics-only", "severity": "high" },
+          { "text": "Land-and-expand motion works well — 70% of accounts expand within 18 months of initial deployment", "severity": "medium" }
+        ],
+        "painPoints": [],
+        "competitiveContext": [
+          { "label": "AI capabilities are a unique differentiator", "type": "unique" }
+        ]
+      },
+      {
+        "number": 6,
+        "name": "Support & Optimization",
+        "description": "Technical support, performance tuning, cost optimization. Support quality is a known friction point in customer satisfaction surveys.",
+        "strengths": [],
+        "painPoints": [
+          { "text": "Support response times average 48 hours for non-critical issues — customers expect same-day resolution", "severity": "medium" },
+          { "text": "Lack of proactive cost optimization guidance — customers discover overspend retroactively", "severity": "high" }
+        ],
+        "competitiveContext": [
+          { "label": "AlphaData offers dedicated TAMs at lower tiers", "type": "competitors-better" }
+        ]
+      },
+      {
+        "number": 7,
+        "name": "Renewal & Committed Spend",
+        "description": "Annual renewal with committed spend increase negotiation. Competitive re-evaluation at renewal is increasing as the market matures.",
+        "strengths": [
+          { "text": "92% gross retention is strong — customers who reach full platform value rarely leave", "severity": "high" }
+        ],
+        "painPoints": [
+          { "text": "Renewal conversations start too late — CS engagement 30 days before renewal vs industry best practice of 90 days", "severity": "medium" }
+        ],
+        "competitiveContext": [
+          { "label": "Industry-wide renewal pressure from budget scrutiny", "type": "industry-wide" }
+        ]
+      }
+    ]
+  },
+  "synthesis": {
+    "narrative": "Example Corp's 118% NRR positions it solidly in the second quartile of its peer set — healthy, but with significant room for improvement. The platform demonstrates the classic enterprise analytics pattern: deeply sticky once adopted (92% gross retention), with strong expansion potential through AI modules (2.3x spend multiplier), but hampered by three systematic CX frictions. First, onboarding takes too long — 90 days to meaningful value means 15% of new logos disengage before experiencing the platform's full capability. Second, pricing complexity creates a trust deficit with finance teams, who impose spending caps when they cannot forecast bills. Third, the platform's power comes with a steep learning curve that confines usage to data engineering teams, limiting the expansion addressable market within each account.\n\nThe actionable insight for Example Corp's customer leadership: the expansion engine is strong but artificially constrained. Customers who reach full platform value expand reliably — the challenge is ensuring more customers reach that point faster, and removing the billing friction that caps consumption even among successful accounts. A focused 12-month program targeting onboarding compression, predictive health scoring, and pricing simplification could move NRR from 118% to 124%, creating $5.9B in enterprise value.",
+    "topStrengths": [
+      {
+        "title": "Platform stickiness creates deep moats — once deployed, switching costs make competitive displacement rare",
+        "detail": "92% gross retention reflects a platform customers describe as 'infrastructure.' One customer evaluated switching to AlphaData: 'After 6 months of analysis, we concluded the migration cost exceeded 18 months of savings.' The combination of data pipelines, trained models, custom dashboards, and team workflows creates accumulated switching costs that grow over time. Unlike per-seat SaaS, Example Corp's retention is driven by data gravity — the more data processed through the platform, the harder it is to leave. This dynamic means NRR improvement should focus primarily on expansion acceleration and contraction prevention rather than logo retention."
+      },
+      {
+        "title": "AI module creates a second growth engine with 2.3x spend multiplier among adopters",
+        "detail": "Customers who adopt the AI module spend 2.3x more than analytics-only accounts — and the AI attach rate among new customers (85%) far exceeds the installed base (25%). This gap represents a $400M cross-sell opportunity. An ML engineer: 'The AI module changed our workflow fundamentally. We went from months of custom model development to weeks.' As enterprise AI adoption accelerates, Example Corp's integrated analytics-to-AI pipeline becomes a competitive advantage that AlphaData (analytics-only) and point AI tools cannot match."
+      },
+      {
+        "title": "Land-and-expand motion is working — 70% of accounts expand within 18 months",
+        "detail": "The natural expansion trajectory is strong: customers start with a single team and use case, prove value, and expand to adjacent teams and workloads. 70% of accounts expand within 18 months without dedicated sales effort. This organic expansion is the foundation of the 118% NRR and suggests that the platform delivers genuine value. The opportunity is not to build a new expansion motion but to remove the frictions (onboarding length, pricing complexity, learning curve) that prevent the remaining 30% from following the same path."
+      }
+    ],
+    "topRisks": [
+      {
+        "title": "Onboarding length is the primary NRR drag — 90 days to value means 15% of new logos disengage before experiencing the platform's capability",
+        "detail": "The 90-day onboarding timeline is 2x the industry benchmark for cloud analytics platforms. During this period, customers are paying full price but receiving limited value — creating a window of vulnerability where competitive alternatives look attractive. A churned customer: 'We spent 3 months trying to make it work. AlphaData had us running in 3 weeks.' The fix is structural, not incremental: milestone-based onboarding with clear success criteria at day 7, 14, 30, and 45 would compress the timeline and reduce early disengagement. Every week saved in onboarding increases the probability of reaching the 'sticky' phase where 92% retention kicks in."
+      },
+      {
+        "title": "Pricing complexity erodes trust with finance teams — CFOs impose spending caps when they cannot forecast bills",
+        "detail": "The 4-tier pricing model with usage-based overages creates unpredictable quarterly bills. At 3 major enterprise accounts, finance teams imposed hard spending caps after unexpected true-up charges — directly suppressing the consumption growth that drives NRR. A procurement leader: 'The product is excellent but the pricing model is adversarial. We budget conservatively because we've been surprised before.' This is not a pricing level issue (customers accept the cost) but a pricing clarity issue. Transparent cost forecasting tools and simplified tier structures would remove the friction without reducing revenue per account."
+      },
+      {
+        "title": "Learning curve confines platform adoption to power users — the business analyst expansion vector is blocked",
+        "detail": "Example Corp's platform is powerful but complex. Data engineers love it; business analysts find it intimidating. In customer accounts, this creates a ceiling: the platform saturates the data engineering team but cannot penetrate the larger population of business analysts and business users who default to simpler BI tools. A business analyst: 'I know the platform is better, but I can get my answer in Excel in 5 minutes. Learning the query language would take weeks.' Addressing this through guided experiences, natural language query interfaces, and simplified self-service analytics would unlock a new consumption vector that currently goes to competitors."
+      }
+    ]
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "company": {
+    "name": "Example Corp",
+    "sector": "B2B SaaS — Project Management & Collaboration",
+    "financials": "~$800M ARR · 18% YoY growth · Public (NYSE: EXMP)"
+  },
+  "nrr": {
+    "current": 112,
+    "currentPeriod": "FY2025",
+    "quartile": "Q2",
+    "history": [
+      { "period": "FY2022", "nrr": 118 },
+      { "period": "FY2023", "nrr": 116 },
+      { "period": "FY2024", "nrr": 114 },
+      { "period": "FY2025", "nrr": 112 }
+    ],
+    "peers": {
+      "count": 6,
+      "median": 113,
+      "topQuartile": 118,
+      "bottomQuartile": 108,
+      "range": "103–125%"
+    },
+    "peerData": [
+      { "company": "Asana", "nrr": 103, "period": "FY2025", "isTarget": false, "isEstimated": false },
+      { "company": "Monday.com", "nrr": 112, "period": "FY2025", "isTarget": false, "isEstimated": false },
+      { "company": "Example Corp", "nrr": 112, "period": "FY2025", "isTarget": true, "isEstimated": false },
+      { "company": "Smartsheet", "nrr": 114, "period": "FY2025", "isTarget": false, "isEstimated": true },
+      { "company": "Notion", "nrr": 118, "period": "FY2025", "isTarget": false, "isEstimated": true },
+      { "company": "ClickUp", "nrr": 108, "period": "FY2025", "isTarget": false, "isEstimated": true },
+      { "company": "Atlassian", "nrr": 125, "period": "FY2025", "isTarget": false, "isEstimated": false }
+    ],
+    "methodologyNotes": [
+      "Example Corp: Direct NRR disclosure from FY2025 10-K filing (dollar-based net retention rate).",
+      "Atlassian: NRR reported in Q4 FY2025 earnings call as 'dollar-based net retention rate' for Cloud customers.",
+      "Asana: Direct disclosure from FY2025 10-K. Declined from 110% in FY2023.",
+      "Monday.com: Reported NRR in Q4 FY2025 earnings supplement. Includes price increases.",
+      "Smartsheet: Estimated from revenue growth and churn disclosures in FY2025 10-K; NRR not directly reported.",
+      "Notion: Private company. Estimated from public statements on ARR growth and reported enterprise retention metrics.",
+      "ClickUp: Private company. Estimated from reported ARR milestones and enterprise customer growth rate."
+    ],
+    "managementCommentary": [
+      {
+        "quote": "Our net retention rate of 112% reflects healthy expansion within our installed base, though down from 118% two years ago as we've shifted focus toward landing larger enterprise deals with longer expansion cycles.",
+        "source": "Q4 FY2025 Earnings Call — CEO"
+      },
+      {
+        "quote": "We're seeing strong seat expansion in accounts that adopt our new AI features. Those cohorts are expanding at roughly 130%, which gives us confidence that NRR will stabilize and improve as AI adoption broadens across the base.",
+        "source": "Q4 FY2025 Earnings Call — CRO"
+      },
+      {
+        "quote": "Gross retention remains above 92%, and we believe that's a direct result of our investments in customer success and onboarding over the past two years.",
+        "source": "Q3 FY2025 Earnings Call — CFO"
+      }
+    ]
+  },
+  "journey": {
+    "description": "Example Corp customer lifecycle from initial evaluation through expansion, based on G2, Gartner Peer Insights, and Reddit feedback analysis.",
+    "stages": [
+      {
+        "number": 1,
+        "name": "Evaluation & Purchase",
+        "description": "Initial discovery, trial, and purchase decision",
+        "strengths": [
+          { "text": "Free tier and generous trial period reduce friction for team-level adoption; self-serve signup takes under 2 minutes.", "severity": "high" },
+          { "text": "Transparent, published pricing eliminates back-and-forth negotiation for SMB and mid-market deals.", "severity": "medium" }
+        ],
+        "painPoints": [
+          { "text": "Enterprise procurement process is slow and opaque — multiple customers report 3-6 month sales cycles with limited visibility into deal progress.", "severity": "medium" }
+        ],
+        "competitiveContext": [
+          { "label": "Free tier parity with Asana and ClickUp", "type": "industry-wide" },
+          { "label": "Notion offers more flexible pricing tiers", "type": "competitors-better" }
+        ]
+      },
+      {
+        "number": 2,
+        "name": "Onboarding & Setup",
+        "description": "Account configuration, team setup, and initial workflows",
+        "strengths": [
+          { "text": "Template gallery with 200+ pre-built workflows significantly reduces time-to-value for common use cases.", "severity": "high" }
+        ],
+        "painPoints": [
+          { "text": "Complex permission structures and workspace hierarchies confuse new enterprise admins — steep learning curve for IT teams.", "severity": "high" },
+          { "text": "Data migration from legacy tools (Jira, Trello) is manual and error-prone; no automated migration tool available.", "severity": "medium" }
+        ],
+        "competitiveContext": [
+          { "label": "Monday.com offers guided onboarding wizard", "type": "competitors-better" },
+          { "label": "Migration pain universal across PM tools", "type": "industry-wide" }
+        ]
+      },
+      {
+        "number": 3,
+        "name": "Adoption & Daily Use",
+        "description": "Ongoing product usage for project management and collaboration",
+        "strengths": [
+          { "text": "Intuitive drag-and-drop interface with multiple views (board, timeline, table) consistently rated as best-in-class by G2 reviewers.", "severity": "high" },
+          { "text": "Integrations with 100+ tools (Slack, GitHub, Salesforce) embedded in daily workflows reduce context-switching.", "severity": "medium" }
+        ],
+        "painPoints": [
+          { "text": "Performance degrades noticeably with large projects (1,000+ tasks); multiple Reddit threads report UI lag and slow load times.", "severity": "high" },
+          { "text": "Mobile app lacks feature parity — users cannot create custom automations or edit complex views from mobile.", "severity": "low" }
+        ],
+        "competitiveContext": [
+          { "label": "UI rated above Asana on G2 ease-of-use", "type": "unique" }
+        ]
+      },
+      {
+        "number": 4,
+        "name": "Expansion & Upsell",
+        "description": "Adding seats, upgrading plans, and adopting advanced features",
+        "strengths": [
+          { "text": "AI-powered features (auto-assign, smart scheduling) creating measurable productivity gains that justify plan upgrades.", "severity": "high" }
+        ],
+        "painPoints": [
+          { "text": "Seat-based pricing model penalizes large teams; customers report difficulty justifying cost for light users who only view dashboards.", "severity": "high" },
+          { "text": "No proactive outreach about underused features — customers discover advanced capabilities only through self-exploration.", "severity": "medium" }
+        ],
+        "competitiveContext": [
+          { "label": "Atlassian offers free viewer seats", "type": "competitors-better" }
+        ]
+      },
+      {
+        "number": 5,
+        "name": "Support & Issue Resolution",
+        "description": "Technical support, bug resolution, and feature requests",
+        "strengths": [
+          { "text": "Comprehensive knowledge base with video tutorials and community forums receives consistent praise.", "severity": "medium" }
+        ],
+        "painPoints": [
+          { "text": "Live support response times averaging 24-48 hours for non-enterprise tiers; no phone support available below Enterprise.", "severity": "high" },
+          { "text": "Feature request process is opaque — customers report submitting ideas that go unacknowledged for months.", "severity": "medium" }
+        ],
+        "competitiveContext": [
+          { "label": "Slow support common across PM SaaS", "type": "industry-wide" }
+        ]
+      },
+      {
+        "number": 6,
+        "name": "Renewal & Retention",
+        "description": "Annual renewal, contract negotiation, and churn risk",
+        "strengths": [
+          { "text": "Auto-renewal with 92%+ gross retention indicates strong product stickiness and high switching costs once embedded in workflows.", "severity": "high" }
+        ],
+        "painPoints": [
+          { "text": "Renewal pricing increases of 8-12% annually cited as a top frustration in G2 reviews; perceived as out of line with value adds.", "severity": "high" },
+          { "text": "No dedicated CSM for mid-market accounts below $100K ACV — renewal is transactional rather than consultative.", "severity": "medium" }
+        ],
+        "competitiveContext": [
+          { "label": "Price increase frustration universal", "type": "industry-wide" },
+          { "label": "Smartsheet provides CSM at lower tiers", "type": "competitors-better" }
+        ]
+      }
+    ]
+  },
+  "synthesis": {
+    "narrative": "Example Corp's NRR of 112% places it at the peer median for the B2B project management and collaboration category, reflecting solid but not exceptional expansion dynamics. The declining trend from 118% in FY2022 to 112% in FY2025 warrants attention, though management attributes this partly to longer enterprise expansion cycles.\n\nThe company's core product experience — intuitive UI, strong template library, and expanding AI capabilities — provides a strong foundation for retention and expansion. However, structural friction in the expansion motion (seat-based pricing penalties for light users, lack of proactive CSM outreach) is limiting NRR upside. Competitors like Atlassian, who offer free viewer seats, are demonstrating that pricing flexibility can unlock significantly higher expansion rates.\n\nThe path to improving NRR from 112% to peer-leading territory (118%+) will require addressing both the pricing model flexibility and the CS coverage gap in mid-market accounts. The AI-powered feature adoption data is encouraging — cohorts using AI features expand at ~130%, suggesting the product roadmap is directionally correct, but go-to-market execution must catch up.",
+    "topStrengths": [
+      {
+        "title": "Best-in-Class Product Experience Driving Organic Adoption",
+        "detail": "Example Corp's intuitive drag-and-drop interface with multiple views (board, timeline, table, calendar) is consistently rated #1 on G2 for ease-of-use in the project management category, with a 9.1/10 score. This translates directly to organic team-level expansion: once one team adopts, adjacent teams follow.\n\nG2 reviews highlight the template gallery (200+ pre-built workflows) as a key time-to-value accelerator. As one enterprise reviewer noted: \"We went from zero to fully operational project tracking in under a day. That's never happened with other tools.\" This low-friction adoption model contributes to the 92%+ gross retention rate cited by the CFO.\n\nThe integration ecosystem (100+ tools) further reinforces stickiness by embedding Example Corp into daily workflows across engineering, marketing, and operations teams."
+      },
+      {
+        "title": "AI Feature Adoption Creating New Expansion Wedge",
+        "detail": "Management disclosed that customers using AI-powered features (auto-assign, smart scheduling, predictive timeline) are expanding at approximately 130% NRR — nearly 20pp above the company average. This represents a significant new expansion vector.\n\nThe AI features provide measurable, demonstrable productivity gains that justify plan upgrades from Professional to Enterprise tier. The CRO noted on the Q4 call that \"AI is becoming the primary upsell conversation in enterprise renewals.\" Early data suggests AI-adopting cohorts also show higher gross retention (95%+ vs. 92% average), indicating these features deepen product engagement.\n\nWith AI features still at roughly 30% penetration across the base, there is substantial runway for this expansion vector to meaningfully lift overall NRR."
+      },
+      {
+        "title": "Strong Gross Retention as Foundation",
+        "detail": "At 92%+ gross retention, Example Corp demonstrates strong fundamental product-market fit and high switching costs. Once teams embed workflows, templates, and integrations, the cost of switching becomes prohibitive.\n\nThis gross retention floor provides a stable base from which to drive expansion revenue. Even modest improvements in expansion rate compound significantly when the installed base is this stable. The CFO attributed the strong retention directly to \"investments in customer success and onboarding over the past two years.\"\n\nCompared to peers, 92% gross retention is solid — Asana has seen gross retention decline below 90%, while Atlassian maintains approximately 95%. The gap to best-in-class represents an opportunity worth approximately 2-3pp of NRR."
+      }
+    ],
+    "topRisks": [
+      {
+        "title": "Seat-Based Pricing Model Constraining Expansion in Large Accounts",
+        "detail": "Example Corp's per-seat pricing model creates significant friction in large enterprise accounts where many users are light viewers (viewing dashboards, commenting) rather than heavy creators. Multiple G2 reviews and Reddit threads cite this as a top frustration: \"We'd love to roll this out to our entire 500-person org, but we can't justify $15/month for people who just need to see project status.\"\n\nAtlassian's free viewer seats demonstrate an alternative model that unlocks much broader organizational penetration. Their 125% NRR reflects in part this pricing flexibility — free viewers convert to paid seats over time as usage deepens.\n\nIf Example Corp does not introduce a viewer/read-only tier or usage-based pricing component, it risks capping expansion within accounts that have already saturated their core user base. This could contribute to continued NRR decline toward 108-110%."
+      },
+      {
+        "title": "Mid-Market CS Coverage Gap Limiting Proactive Expansion",
+        "detail": "Accounts below $100K ACV do not receive a dedicated CSM, making the renewal and expansion motion entirely transactional. This represents approximately 60% of Example Corp's account base by count and 35% by ARR.\n\nWithout proactive outreach about underused features, expansion opportunities, or health monitoring, these accounts rely on self-service discovery. The result is lower expansion rates and higher involuntary churn risk. Competitors like Smartsheet provide CSM coverage at lower ACV thresholds, and their mid-market retention metrics are reportedly stronger.\n\nThe AI feature adoption data reinforces this concern: penetration is likely lowest in unsupported mid-market accounts, precisely where CSM-driven feature education would have the highest marginal impact on NRR."
+      },
+      {
+        "title": "Performance Degradation Eroding Power-User Satisfaction",
+        "detail": "Multiple data sources (Reddit r/projectmanagement, G2 reviews, Gartner Peer Insights) report significant performance degradation with large projects exceeding 1,000 tasks. Common complaints include UI lag, slow load times, and browser memory issues.\n\nPower users — project managers with the most complex workflows — are disproportionately affected. These are often the internal champions who drive expansion decisions. Frustrating their daily experience creates churn risk at the most damaging level: champion-driven churn.\n\nCompetitor investments in performance (Atlassian's infrastructure refresh, Monday.com's recent speed improvements) are raising the baseline expectation. If performance issues persist through 2026, Example Corp risks losing power-user advocacy, which could accelerate NRR decline in the enterprise segment."
+      }
+    ]
+  }
+}

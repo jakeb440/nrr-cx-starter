@@ -1,0 +1,56 @@
+# NRR CX Diagnostics Starter
+
+This repo generates three types of CX diagnostic products for McKinsey client engagements. Each produces a deployable Vercel web app.
+
+## Products
+
+1. **NRR CX Basic** — NRR benchmark + customer journey map + diagnostic synthesis (~2-4 hrs)
+2. **NRR CX Enhanced** — Full deep-dive with maturity assessment, waterfall, value-at-stake, and actions (~1-2 days)
+3. **Agentic CX Teardown** — How agentic AI transforms CS/PS/Support for a company (~1-2 days)
+
+## Gold Standard Examples
+
+- Basic: https://nrr-cx-okta.vercel.app/
+- Enhanced: https://nrr-cx-databricks-enhanced.vercel.app/
+- Agentic: https://n-eight-zeta.vercel.app/
+
+## How to Generate
+
+Tell Cursor one of:
+- "Generate an NRR CX basic for [Company]"
+- "Generate an NRR CX enhanced for [Company]"
+- "Generate an agentic CX teardown for [Company]"
+
+Cursor will follow the rules in `.cursor/rules/` for the chosen product type.
+
+## Naming Convention
+
+- `nrr-cx-{client}-basic` or `nrr-cx-{client}-enhanced` for NRR diagnostics
+- `agentic-cx-{client}` for agentic teardowns
+- Client names: lowercase, hyphens OK (e.g., `databricks`, `t-mobile`)
+
+## Templates
+
+- `templates/basic/` — Next.js template for Basic product
+- `templates/enhanced/` — Next.js template + Python scrapers for Enhanced product
+- `templates/agentic/` — Next.js template for Agentic Teardown
+
+## After Generation
+
+1. Review the output for accuracy
+2. Deploy: `cd output/nrr-cx-{client}-{product} && npx vercel --prod`
+3. Update `diagnostics.json` with the new entry
+
+## Tech Stack
+
+- Next.js 16 + React 19 + TypeScript + Tailwind CSS 4
+- Recharts for charts
+- Static export (`output: "export"`) for Vercel deployment
+- Python 3.11+ for Enhanced scrapers/analysis (OpenAI API, Reddit API, yfinance)
+
+## Key Rules
+
+- All client-specific content lives in `public/data/client-data.json` — the dashboard reads from this single file
+- Never hardcode client names in component code
+- Follow the quality checklist before deploying (see `.cursor/rules/`)
+- Real verbatim quotes only — never generate fake customer quotes

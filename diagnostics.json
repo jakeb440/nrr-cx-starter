@@ -1,0 +1,38 @@
+[
+  {
+    "client": "databricks",
+    "product": "enhanced",
+    "repo": "jakeb440/nrr-cx-databricks-enhanced",
+    "url": "https://nrr-cx-databricks-enhanced.vercel.app",
+    "created": "2026-02-01",
+    "author": "jake",
+    "status": "deployed",
+    "nrr": "140%",
+    "sector": "Data Intelligence Platform / Lakehouse / AI/ML",
+    "description": "Full NRR CX Enhanced diagnostic with maturity assessment, waterfall, value-at-stake, and 5 highest-impact actions."
+  },
+  {
+    "client": "okta",
+    "product": "basic",
+    "repo": "jakeb440/nrr-cx-okta",
+    "url": "https://nrr-cx-okta.vercel.app",
+    "created": "2026-01-15",
+    "author": "jake",
+    "status": "deployed",
+    "nrr": "106%",
+    "sector": "Identity & Access Management",
+    "description": "NRR CX Basic diagnostic with peer benchmark, journey map, and synthesis."
+  },
+  {
+    "client": "overview",
+    "product": "agentic",
+    "repo": "",
+    "url": "https://n-eight-zeta.vercel.app",
+    "created": "2026-02-10",
+    "author": "jake",
+    "status": "deployed",
+    "nrr": "",
+    "sector": "Enterprise Software (Cross-sector)",
+    "description": "Agentic Customer Operations Transformation research overview — CS, PS, Support impact analysis."
+  }
+]
