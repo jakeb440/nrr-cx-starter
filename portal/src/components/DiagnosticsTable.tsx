@@ -58,6 +58,14 @@ export default function DiagnosticsTable() {
   const [diagnostics, setDiagnostics] =
     useState<Diagnostic[]>(fallbackDiagnostics);
   const [isLive, setIsLive] = useState(false);
+  const [showAuthor, setShowAuthor] = useState(false);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("admin") === "true") {
+      setShowAuthor(true);
+    }
+  }, []);
 
   useEffect(() => {
     fetch(GITHUB_DIAGNOSTICS_URL)
@@ -123,9 +131,11 @@ export default function DiagnosticsTable() {
               <th className="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-400">
                 URL
               </th>
-              <th className="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-400">
-                Author
-              </th>
+              {showAuthor && (
+                <th className="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-400">
+                  Author
+                </th>
+              )}
               <th className="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-400">
                 Date
               </th>
@@ -164,9 +174,11 @@ export default function DiagnosticsTable() {
                     <ExternalLink className="h-3 w-3" />
                   </a>
                 </td>
-                <td className="px-5 py-3.5 text-sm text-slate-300">
-                  {d.author}
-                </td>
+                {showAuthor && (
+                  <td className="px-5 py-3.5 text-sm text-slate-300">
+                    {d.author}
+                  </td>
+                )}
                 <td className="px-5 py-3.5 text-sm text-slate-300">
                   {formatDate(d.created)}
                 </td>
@@ -209,7 +221,7 @@ export default function DiagnosticsTable() {
               <ExternalLink className="h-3 w-3" />
             </a>
             <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-400">
-              <span>{d.author}</span>
+              {showAuthor && <span>{d.author}</span>}
               <span>{formatDate(d.created)}</span>
               <StatusBadge status={d.status} />
               {d.nrr && (
