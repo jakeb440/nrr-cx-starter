@@ -28,26 +28,19 @@ function quartileColor(nrr: number, q1: number, q4: number, median: number): str
   return "#ef4444";
 }
 
-function QuartileBadge({ label }: { label: string }) {
-  const colorMap: Record<string, string> = {
-    Q1: "bg-emerald-100 text-emerald-800",
-    Q2: "bg-blue-100 text-blue-800",
-    Q3: "bg-amber-100 text-amber-800",
-    Q4: "bg-red-100 text-red-800",
+function quartileBg(quartile: string): string {
+  const map: Record<string, string> = {
+    Q1: "bg-emerald-600",
+    Q2: "bg-blue-600",
+    Q3: "bg-amber-500",
+    Q4: "bg-red-600",
   };
-  return (
-    <span
-      className={cn(
-        "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold",
-        colorMap[label] ?? "bg-slate-100 text-slate-800"
-      )}
-    >
-      {label}
-    </span>
-  );
+  return map[quartile] ?? "bg-slate-500";
 }
 
 export function NRRBenchmark({ nrr, company }: NRRBenchmarkProps) {
+  const [notesOpen, setNotesOpen] = useState(true);
+
   const sortedPeers = [...nrr.peerData].sort((a, b) => b.nrr - a.nrr);
   const { topQuartile, bottomQuartile, median } = nrr.peers;
 
@@ -63,38 +56,45 @@ export function NRRBenchmark({ nrr, company }: NRRBenchmarkProps) {
     opacity: p.isEstimated ? 0.6 : 1,
   }));
 
+  const uniquePeriods = [...new Set(nrr.peerData.map((p) => p.period))];
+
   return (
     <div className="space-y-8">
-      <div>
-        <h2 className="text-2xl font-bold text-slate-900">NRR Benchmark</h2>
-        <p className="mt-1 text-sm text-slate-500">
-          {company.sector} · {company.financials} ·{" "}
-          {nrr.peers.count} peers · {nrr.history.length} periods
-        </p>
-      </div>
-
-      <div className="flex flex-wrap items-baseline gap-4">
+      {/* Section heading + NRR circle */}
+      <div className="flex items-start justify-between gap-6">
         <div>
-          <span className="text-4xl font-bold text-indigo-600">
-            {nrr.current}%
-          </span>
-          <span className="ml-2 text-sm text-slate-500">
-            ({nrr.currentPeriod})
-          </span>
+          <h2 className="text-2xl font-bold text-slate-900">NRR Benchmark</h2>
+          <p className="mt-1 text-sm text-slate-500">
+            {company.sector} &middot; {company.financials} &middot;{" "}
+            {nrr.peers.count} peers &middot; {nrr.history.length} periods
+          </p>
         </div>
-        <QuartileBadge label={nrr.quartile} />
+
+        {/* Large quartile circle */}
+        <div
+          className={cn(
+            "flex h-28 w-28 shrink-0 flex-col items-center justify-center rounded-full text-white shadow-lg",
+            quartileBg(nrr.quartile)
+          )}
+        >
+          <span className="text-xs font-medium opacity-90">{company.name}:</span>
+          <span className="text-lg font-bold leading-tight">{nrr.current}% ({nrr.currentPeriod})</span>
+          <span className="text-xs font-semibold opacity-80">&mdash; {nrr.quartile}</span>
+        </div>
       </div>
 
+      {/* 5-stat cards */}
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-5">
-        <StatCard label="Peers" value={String(nrr.peers.count)} />
-        <StatCard label="Median" value={`${formatNumber(nrr.peers.median)}%`} />
-        <StatCard label="Top quartile (Q1)" value={`≥ ${formatNumber(nrr.peers.topQuartile)}%`} />
-        <StatCard label="Bottom quartile (Q4)" value={`≤ ${formatNumber(nrr.peers.bottomQuartile)}%`} />
-        <StatCard label="Range" value={nrr.peers.range} />
+        <StatCard label="PEERS" value={String(nrr.peers.count)} />
+        <StatCard label="MEDIAN" value={`${formatNumber(nrr.peers.median)}%`} />
+        <StatCard label="TOP QUARTILE (Q1)" value={`≥ ${formatNumber(nrr.peers.topQuartile)}%`} />
+        <StatCard label="BOTTOM QUARTILE (Q4)" value={`≤ ${formatNumber(nrr.peers.bottomQuartile)}%`} />
+        <StatCard label="RANGE" value={nrr.peers.range} />
       </div>
 
-      {/* Vertical bar chart with quartile coloring */}
+      {/* Horizontal bar chart */}
       <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+        {/* Legend */}
         <div className="mb-4 flex flex-wrap items-center gap-4 text-xs text-slate-500">
           <span className="font-medium text-slate-700">Quartile:</span>
           {[
@@ -108,40 +108,53 @@ export function NRRBenchmark({ nrr, company }: NRRBenchmarkProps) {
               {q.label}
             </span>
           ))}
-          <span className="ml-4 border-l border-slate-200 pl-4 font-medium text-slate-700">
-            Period opacity:
-          </span>
-          <span className="flex items-center gap-1.5">
-            <span className="h-3 w-3 rounded-sm bg-slate-400" />
-            Reported
-          </span>
-          <span className="flex items-center gap-1.5">
-            <span className="h-3 w-3 rounded-sm bg-slate-400/60" />
-            Estimated / implied
-          </span>
         </div>
 
-        <ResponsiveContainer width="100%" height={320}>
+        {/* Period timeline */}
+        <div className="mb-4 flex flex-wrap items-center gap-3 text-xs text-slate-500">
+          <span className="font-medium text-slate-700">Period opacity:</span>
+          {uniquePeriods.map((period) => {
+            const isEstimated = period.includes("est.") || period.includes("impl.");
+            return (
+              <span
+                key={period}
+                className={cn(
+                  "font-medium",
+                  isEstimated ? "text-slate-300" : "text-slate-600"
+                )}
+              >
+                {period}
+              </span>
+            );
+          })}
+        </div>
+
+        <div className="mb-2 flex items-center gap-2 text-xs text-slate-400">
+          <span className="inline-flex h-3 w-3 items-center justify-center rounded border border-dashed border-slate-400 text-[6px]">⋯</span>
+          Estimated / implied
+        </div>
+
+        <ResponsiveContainer width="100%" height={Math.max(280, sortedPeers.length * 48)}>
           <BarChart
             data={chartData}
-            margin={{ top: 10, right: 20, bottom: 5, left: 0 }}
+            layout="vertical"
+            margin={{ top: 0, right: 40, left: 0, bottom: 0 }}
           >
-            <CartesianGrid strokeDasharray="3 3" vertical={false} />
+            <CartesianGrid strokeDasharray="3 3" horizontal={false} />
             <XAxis
-              dataKey="name"
-              tick={{ fontSize: 11, fill: "#64748b" }}
-              interval={0}
-              angle={-35}
-              textAnchor="end"
-              height={70}
-            />
-            <YAxis
-              tick={{ fontSize: 11, fill: "#64748b" }}
+              type="number"
               domain={[
                 (dataMin: number) => Math.floor(dataMin / 5) * 5 - 5,
                 (dataMax: number) => Math.ceil(dataMax / 5) * 5 + 5,
               ]}
               tickFormatter={(v: number) => `${v}%`}
+              tick={{ fontSize: 12, fill: "#94a3b8" }}
+            />
+            <YAxis
+              type="category"
+              dataKey="name"
+              width={140}
+              tick={{ fontSize: 12, fill: "#334155" }}
             />
             <Tooltip
               cursor={{ fill: "#f1f5f9" }}
@@ -163,17 +176,12 @@ export function NRRBenchmark({ nrr, company }: NRRBenchmarkProps) {
               }}
             />
             <ReferenceLine
-              y={nrr.peers.median}
+              x={nrr.peers.median}
               stroke="#94a3b8"
               strokeDasharray="4 4"
-              label={{
-                value: `Median ${formatNumber(nrr.peers.median, 0)}%`,
-                position: "right",
-                fontSize: 11,
-                fill: "#94a3b8",
-              }}
+              label={{ value: "Median", position: "top", fontSize: 11, fill: "#94a3b8" }}
             />
-            <Bar dataKey="nrr" radius={[4, 4, 0, 0]} barSize={32}>
+            <Bar dataKey="nrr" radius={[0, 4, 4, 0]} barSize={24}>
               {chartData.map((entry, index) => (
                 <Cell
                   key={`cell-${index}`}
@@ -188,10 +196,10 @@ export function NRRBenchmark({ nrr, company }: NRRBenchmarkProps) {
         </ResponsiveContainer>
       </div>
 
-      {/* Methodology notes — always visible, per-peer detail */}
+      {/* Methodology notes — always visible, per-peer bold names */}
       {nrr.methodologyNotes.length > 0 && (
         <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h3 className="text-sm font-semibold text-slate-700 mb-4">
+          <h3 className="mb-4 text-xs font-bold uppercase tracking-wider text-slate-500">
             NRR Methodology Notes
           </h3>
           <div className="space-y-3">
@@ -199,11 +207,11 @@ export function NRRBenchmark({ nrr, company }: NRRBenchmarkProps) {
               const colonIdx = note.indexOf(":");
               const hasPeerName = colonIdx > 0 && colonIdx < 40;
               return (
-                <div key={i} className="text-sm text-slate-600 leading-relaxed">
+                <div key={i} className="text-sm text-slate-500 leading-relaxed">
                   {hasPeerName ? (
                     <>
-                      <span className="font-semibold text-slate-900">
-                        {note.slice(0, colonIdx)}:
+                      <span className="font-bold text-slate-800">
+                        {note.slice(0, colonIdx).toUpperCase()}:
                       </span>
                       {note.slice(colonIdx + 1)}
                     </>
@@ -223,8 +231,8 @@ export function NRRBenchmark({ nrr, company }: NRRBenchmarkProps) {
 function StatCard({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-xl border border-slate-200 bg-white px-4 py-3 shadow-sm">
-      <p className="text-xs font-medium text-slate-500">{label}</p>
-      <p className="mt-1 text-lg font-semibold text-slate-900">{value}</p>
+      <p className="text-[10px] font-semibold uppercase tracking-wider text-slate-400">{label}</p>
+      <p className="mt-1 text-lg font-bold text-slate-900">{value}</p>
     </div>
   );
 }

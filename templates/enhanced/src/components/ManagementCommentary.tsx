@@ -13,14 +13,14 @@ export function ManagementCommentary({ commentary }: ManagementCommentaryProps) 
   if (commentary.length === 0) return null;
 
   return (
-    <div className="space-y-0">
+    <div className="rounded-xl border border-slate-200 bg-white shadow-sm">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center justify-between text-left"
+        className="flex w-full items-center justify-between px-6 py-4 text-left"
       >
-        <h2 className="text-2xl font-bold text-slate-900">
+        <h3 className="text-lg font-semibold text-slate-900">
           Management Commentary on NRR
-        </h2>
+        </h3>
         <div className="text-slate-400 shrink-0 ml-4">
           {isOpen ? (
             <ChevronUp className="h-5 w-5" />
@@ -29,26 +29,25 @@ export function ManagementCommentary({ commentary }: ManagementCommentaryProps) 
           )}
         </div>
       </button>
-      <p className="mt-1 text-sm text-slate-500">
-        Key quotes from earnings calls and investor presentations
-      </p>
 
       {isOpen && (
-        <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {commentary.map((item, i) => (
-            <div
-              key={i}
-              className="relative rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
-            >
-              <Quote className="absolute right-4 top-4 h-6 w-6 text-indigo-100" />
-              <blockquote className="relative text-sm leading-relaxed text-slate-700">
-                &ldquo;{item.quote}&rdquo;
-              </blockquote>
-              <p className="mt-4 text-xs font-medium text-slate-500">
-                — {item.source}
-              </p>
-            </div>
-          ))}
+        <div className="border-t border-slate-100 p-6">
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {commentary.map((item, i) => (
+              <div
+                key={i}
+                className="relative rounded-xl border border-slate-200 bg-slate-50/50 p-5"
+              >
+                <Quote className="absolute right-4 top-4 h-6 w-6 text-indigo-100" />
+                <blockquote className="relative text-sm leading-relaxed text-slate-700">
+                  &ldquo;{item.quote}&rdquo;
+                </blockquote>
+                <p className="mt-3 text-xs font-medium text-slate-500">
+                  — {item.source}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </div>
